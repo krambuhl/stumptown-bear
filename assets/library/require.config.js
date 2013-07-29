@@ -6,8 +6,8 @@ require.config({
         backbone: "../../bower_components/backbone/backbone",
         handlebars: "../../bower_components/handlebars/handlebars.runtime",
         requirejs: "../../bower_components/requirejs/require",
-        hbs: "library/backbone/hbs",
-        text: "library/backbone/text",
+        hbs: "library/hbs",
+        text: "library/text",
         icon: "library/icon",
         app: "app",
         templates: "templates"

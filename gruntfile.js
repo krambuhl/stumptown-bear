@@ -19,6 +19,8 @@ module.exports = function (grunt) {
         },
 
         // TASKS
+        clean: ['assets/style/compile'],
+        
         uglify: {
             options: {
                 banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
@@ -32,7 +34,7 @@ module.exports = function (grunt) {
         compass: { // Task
             options: { // Target options
                 sassDir: 'assets/style/',
-                cssDir: 'assets/',
+                cssDir: 'assets/style/compile',
                 noLineComments: true
             },
             
@@ -50,9 +52,6 @@ module.exports = function (grunt) {
                 }
             }
         }
-        
-        
-
     });
 
     // load NPM Tasks
@@ -68,8 +67,8 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-clean');
 
     // Define Tasks
-    grunt.registerTask('default', ['compass:dist']);
-    grunt.registerTask('develop', ['compass:dev']);
+    grunt.registerTask('default', ['clean', 'compass:dist']);
+    grunt.registerTask('develop', ['clean', 'compass:dev']);
     
     grunt.registerTask('install', ['bower-install', 'bower']);
     grunt.registerTask('bower-install', function () {

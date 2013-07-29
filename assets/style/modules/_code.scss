@@ -1,0 +1,31 @@
+.code {
+    float: left;
+    margin-left: 60px;
+    @include grid(12, $gutter);
+    
+    text-align: left;
+    overflow: hidden;
+    
+}
+
+.code-header {
+    margin-bottom: $spacing;
+
+    text-transform: uppercase;
+    font-family: "Museo Sans";
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.code-list {
+    float: left;
+    width: 100%;
+}
+
+.code-list-item {
+    float: left;
+    width: 100%;
+}
+
+.code-list-item {
+}

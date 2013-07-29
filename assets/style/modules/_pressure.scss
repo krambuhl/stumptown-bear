@@ -1,0 +1,122 @@
+.pressure {
+    position: relative;
+    display: block;
+    
+    min-width: gridw(12);
+    max-width: gridw(12, $gutter + 120);
+    height: 64px;
+
+    & + * { margin-top: -36px; }
+}
+.pressure-fade {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    
+    z-index: -10;
+    
+    background: white;
+}
+
+
+.pressure::before,
+.pressure::after {
+    content: '\0020';
+    position: absolute;
+    top: 0;
+    bottom: 14px;
+    
+    z-index: -1;
+}
+
+.pressure::before  { left: 50%; right: 0; background-color: rgba($stb-red,   0.5); }
+.pressure::after   { right: 50%; left: 0; background-color: rgba($stb-green, 0.5); }
+
+.pressure-list {
+    position: relative;
+    @include grid(12, $gutter);
+    margin: 0 auto;
+    background-color: $stb-red;
+    
+    height: 50px;
+    font-size: 0;
+}
+
+.pressure-item {
+    display: inline-block;
+    position: relative;
+    height: 50px;
+    
+    text-align: center;
+    text-transform: uppercase;
+    
+    font-family: "museo sans", helvetica;
+    font-weight: 300;
+    font-size: 16px;
+    
+    @include transition-duration(0.25s);
+    @include transition-property(width, height);
+    @include transition-timing-function(ease);
+    
+    & > a {      
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 100%;
+        padding: 18px;
+        
+        z-index: 3;
+        
+        font-weight: 300;
+        text-decoration: none;
+        color: rgba(white, 0.85);
+        
+        &:hover { color: white; }
+    }
+    
+    &:nth-child(1) { background-color: $stb-green;
+        path { fill: $stb-green; }}
+        
+    &:nth-child(2) { background-color: $stb-blue;
+        path { fill: $stb-blue; }}
+        
+    &:nth-child(3) { background-color: $stb-purple;
+        path { fill: $stb-purple; }}
+        
+    &:nth-child(4) { background-color: $stb-red;
+        path { fill: $stb-red; }}
+}
+
+.pressure-item-icon {
+    position: absolute;
+    left: 50%;
+    bottom: 0px;
+    margin-left: -8px;
+    
+    width: 16px;
+    height: 16px;
+    
+    z-index: -1;
+    
+    @include transition-duration(0.25s);
+    @include transition-property(bottom);
+    @include transition-timing-function(linear);
+}
+
+
+// states
+
+.pressure-list:hover > .pressure-item  {
+    @include grid(2.66, $gutter);
+    
+    &:hover { @include grid(4, $gutter); 
+        & > .pressure-item-icon { bottom: -12px; }}
+}
+
+.pressure-list:not(:hover) > .pressure-item  {
+    @include grid(3, $gutter);
+    
+    &.is-active  { @include grid(3, $gutter); 
+        & > .pressure-item-icon { bottom: -8px; }}
+}
+

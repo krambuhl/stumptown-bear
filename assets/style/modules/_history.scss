@@ -1,0 +1,66 @@
+.history {
+    float: left;
+    margin-left: 60px;
+    @include grid(12, $gutter);
+    
+    text-align: left;
+    overflow: hidden;
+    
+}
+.history-header { margin-bottom: 30px; }
+
+.history-header-main {
+    text-transform: uppercase;
+    font-family: "Museo Sans";
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.history-list {
+    display: block;
+    width: 100%;
+    height: gridw(4);
+    margin: 0 auto;
+    
+    background: red;
+    
+    overflow: hidden;
+}
+
+.history-node {
+    float: left;
+    @include grid(4, $gutter);
+    height: gridw(4);
+    
+    padding: $gutter;
+    
+    text-align: left;
+    color: white;
+    background: #333;
+    
+    @include transition-duration(0.5s);
+    @include transition-property(background);
+    @include transition-timing-function(ease);
+    
+    &:nth-child(2n) { background: mix(#333, #222); }
+}
+
+//complete state
+.history-node {
+//    &:nth-child(4n+1) { background-color: rgba($stb-blue, 1); }
+//    &:nth-child(4n+2) { background-color: rgba($stb-purple, 1); }
+//    &:nth-child(4n+3) { background-color: rgba($stb-red, 1); }
+}
+
+.history-label {
+    margin: 0 0 10px 0;
+    
+    font-family: "Museo Sans";
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.history-story {
+    font-size: 16px;
+    line-height: 1.6;
+}

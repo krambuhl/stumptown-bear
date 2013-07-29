@@ -1,0 +1,20 @@
+.icon {
+    path, 
+    rect, 
+    elipse { 
+        fill: white; 
+        stroke: none; 
+    }
+}
+
+.icon.is-black {
+    path, 
+    rect, 
+    elipse { fill: #000; }
+}
+
+.icon.is-gray {
+    path, 
+    rect, 
+    elipse { fill: #333; }
+}

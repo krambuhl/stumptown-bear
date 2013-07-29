@@ -19,7 +19,7 @@ module.exports = function (grunt) {
         },
 
         // TASKS
-        clean: ['assets/style/compile'],
+        clean: ['assets/style/', 'tmp/'],
         
         uglify: {
             options: {
@@ -33,8 +33,8 @@ module.exports = function (grunt) {
 
         compass: { // Task
             options: { // Target options
-                sassDir: 'assets/style/',
-                cssDir: 'assets/style/compile',
+                sassDir: 'assets/sass/',
+                cssDir: 'assets/style/',
                 noLineComments: true
             },
             
@@ -67,9 +67,13 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-clean');
 
     // Define Tasks
-    grunt.registerTask('default', ['clean', 'compass:dist']);
+    grunt.registerTask('default', ['production']);
+    
+    // Build Tasks
+    grunt.registerTask('production', ['clean', 'compass:dist'])
     grunt.registerTask('develop', ['clean', 'compass:dev']);
     
+    // Component Installs
     grunt.registerTask('install', ['bower-install', 'bower']);
     grunt.registerTask('bower-install', function () {
         require('bower').commands

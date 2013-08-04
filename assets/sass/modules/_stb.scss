@@ -1,15 +1,8 @@
-body.is-stb {
-    background-color: $site-color-bg;
-    color: $site-color-font;
-} 
-
-
 .stb {
     margin: 0 auto;
     padding-bottom: 128px;
     width: 100%;
     min-width: gridw(12);
-    max-width: 1080px;
     min-height: 680px;
 }
 
@@ -31,9 +24,4 @@ body.is-stb {
     height: 0px !important;
     
     @include transition-duration(0s);
-}
-
-
-.yield {
-    position: relative;
 }

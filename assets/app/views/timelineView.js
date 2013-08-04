@@ -16,7 +16,7 @@ define([
             template: Handlebars.compile(timelineTemplate),
             
             initialize: function() {
-                this.$el.append(this.template);
+                this.setElement(this.template())
                 this.$timeline = this.$el.find('.js-timeline');
                 
                 this.items = [];
@@ -63,7 +63,7 @@ define([
             
             setOffset: function(offset) {
                 this.offset = offset;
-                $('body').css('padding-bottom', parseInt(this.offset * 1.5));
+                this.$el.closest('.js-yield').css('padding-bottom', parseInt(this.offset * 1.5));
             },
             
             setActiveItem: function (offset) {

@@ -7,16 +7,16 @@ define([
     ], function($, _, Backbone, Handlebars, contactTemplate) {
         
         return Backbone.View.extend({
-            el: ".stb",
-        
             events: { },
             
             template: Handlebars.compile(contactTemplate),
             
             initialize: function() {
-                this.$el.append(this.template());
+                this.setElement(this.template());
                 
-                $('body').css('padding-bottom', 0);
+                console.log()
+
+                this.$el.closest('.js-yield').css('padding-bottom', 0);
                 this.$el.find('[data-icon]').each(function() {
                     icon.render(this)
                 });

@@ -15,7 +15,7 @@ define([
             template: Handlebars.compile(designTemplate),
             
             initialize: function() {
-                this.$el.append(this.template);
+                this.setElement(this.template())
                 this.$loader = this.$el.find('.js-loader');
                 this.$samples = this.$el.find('.js-samples');
                 this.items = [];
@@ -29,8 +29,8 @@ define([
                 }, this);
                 
                 this.collection.fetch({reset: true});
-                
-                $('body').css('padding-bottom', 0);
+
+                this.$el.closest('.js-yield').css('padding-bottom', 0);
                 this.$el.find('[data-icon]').each(function() {
                     icon.render(this)
                 });

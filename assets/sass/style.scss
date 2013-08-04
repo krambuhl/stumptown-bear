@@ -16,9 +16,16 @@
 @import "standard/icon";
 
 // custom modules
+
+
+// Site Structure
 @import "modules/stb";
 @import "modules/header";
 @import "modules/pressure";
+@import "modules/content";
+@import "modules/footer";
+
+// Pages & content
 @import "modules/loader";
 @import "modules/samples";
 @import "modules/code";

@@ -1,6 +1,5 @@
 .samples {
     @include grid(12, $gutter);
-    margin: 0 auto;
     padding-top: 6px;
     
     &, * { 

@@ -4,8 +4,8 @@ define([
         "backbone",
         "handlebars",
         "icon",
-        "text!templates/header.handlebars"
-    ], function($, _, Backbone, Handlebars, icon, headerTemplate) {
+        "text!templates/footer.handlebars"
+    ], function($, _, Backbone, Handlebars, icon, footerTemplate) {
         
         return Backbone.View.extend({
             
@@ -13,7 +13,7 @@ define([
                 this.render();
             },
         
-            template: Handlebars.compile(headerTemplate),
+            template: Handlebars.compile(footerTemplate),
             
             render: function() {
                 this.setElement(this.template())

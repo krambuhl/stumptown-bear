@@ -11,7 +11,9 @@ $fontsize-large:  $baseline * 3;
 
 $spacing: 12px;
 $spacing-double: $spacing * 2;
+$spacing-quad:   $spacing * 4;
 $spacing-half:   $spacing / 2;
+$spacing-fourth: $spacing / 4;
 
 
 // ***** 
@@ -19,6 +21,7 @@ $spacing-half:   $spacing / 2;
 // *****
 
 $site-fontfamily: "Droid Serif", "FF Meta Serif", Helvetica, Tahoma, sans-serif;
+$site-headerfont: "Museo Sans";
 
 // COLORS
 

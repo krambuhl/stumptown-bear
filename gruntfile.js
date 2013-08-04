@@ -1,4 +1,16 @@
 module.exports = function (grunt) {
+    // load NPM Tasks
+    
+    // Bower Tasks
+    grunt.loadNpmTasks('grunt-bower-task');
+    grunt.loadNpmTasks('grunt-bower-requirejs');
+
+    // Contrib Tasks
+    grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-compass');
+    grunt.loadNpmTasks('grunt-contrib-clean');
+
 
     // Project configuration.
     grunt.initConfig({
@@ -7,14 +19,19 @@ module.exports = function (grunt) {
         // WATCH -- File Watching
         watch: {
             styles: {
-                files: ['assets/style/**/*.scss', 'assets/style/*.scss'],
-                tasks: ['develop']
+                files: ['assets/sass/**/*.scss'],
+                tasks: ['clean:0', 'compass:dev']
+            },
+            
+            options: {
+                spawn: false,
+                interrupt: true,
             }
         },
         
         bower: {
             target: {
-                rjsConfig: 'assets/library/require.config.js'
+                rjsConfig: 'assets/script/script.js'
             }
         },
 
@@ -54,19 +71,10 @@ module.exports = function (grunt) {
         }
     });
 
-    // load NPM Tasks
-    
-    // Bower Tasks
-    grunt.loadNpmTasks('grunt-bower-task');
-    grunt.loadNpmTasks('grunt-bower-requirejs');
-
-    // Contrib Tasks
-    grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-contrib-compass');
-    grunt.loadNpmTasks('grunt-contrib-clean');
 
     // Define Tasks
+    
+    // Default Task
     grunt.registerTask('default', ['production']);
     
     // Build Tasks

@@ -1,0 +1,119 @@
+.contact { 
+    position: relative;
+    @include grid(12, gutter);
+    padding-bottom: (2 * $spacing);
+    margin-left: auto;
+    margin-right: auto;
+    
+    line-height: 1.7em;
+    font-size: 20px;
+    text-align: center;
+    
+    color: #444;
+    
+    @include clearfix();
+    
+    &, * { 
+        @include transition-duration(0.5s);
+        @include transition-property(width, height, padding, margin, opacity, color, background, border);
+        @include transition-timing-function(ease);
+        
+        -webkit-transform: translate3d(0, 0, 0);
+        -webkit-backface-visibility: hidden;
+        -webkit-perspective: 1000;
+    }
+    
+    a { color: $stb-red; text-decoration: underline; }
+}
+
+.contact-divider { 
+    display: block;
+    @include grid(4);
+    height: 1px;
+    
+    margin: $spacing-double auto $spacing-double * 1.5 auto;
+    
+    border: none;
+    border-top: 1px dashed #ddd;
+    border-top: 1px dashed rgba($stb-red, 0.5);
+    
+    background: transparent;
+} 
+
+.contact-paragraph {
+    @include grid(8);
+    
+    margin: 0 auto $spacing-double * 1.5 auto;
+}
+
+.contact-image {
+    display: block;
+    @include grid(10);
+    
+    margin: 0 auto $spacing-double * 1.5 auto;;
+}
+
+
+.contact-list {
+    display: block;
+    @include grid(9);
+    margin: 0 auto;
+    
+    @include clearfix;
+    
+    &:hover > .contact-item > a:not(:hover) { background: rgba($stb-red, 0.2); };
+}
+
+.contact-item {
+    float: left; 
+    @include clearfix;
+    
+    &:nth-child(2n) {
+        margin: 0 $gutter; 
+    }
+    
+    
+    path { fill: white; }//rgba($stb-red, 0.5); }
+    
+    & > a {
+        position: relative;
+        display: block;
+        @include grid(3);
+        height: gridw(3);
+        padding: gridw(3) / 2 - 24px 0 0 0;
+        
+        background: $stb-red;
+        
+        text-align: center;
+        
+        & > .icon { 
+            display: inline-block; 
+            height: 64px;
+            width: 96px;
+            
+            &[data-icon=linkedin] { margin-top: -12px; }
+            &[data-icon=email] { margin-top: -6px; }
+        }
+        
+        &:hover {
+            background: $stb-red;
+            
+            path { fill: white; }// $stb-red; }
+        };
+    }
+    
+}
+
+//
+//<section id="contact" class="stb-contact contact yield">
+//    <p class="contact-paragraph">I'm Evan Krambuhl (sometimes Evan Price). I am the creator of beautiful, funcational experiences and forward thinking development.  I specialize in simplicity.  I make products that are powerful and easy to use.</p>
+//        
+//    <div class="contact-paragraph">Away from work I am a musician, releasing 6 albums over the last nine years as <a href="http://pmisdead.com">Precision Machines,</a> my musical identity.  I play guitar, piano and drums and most recently I released an 11 track Electric-Rock album called, &quot;<a href="http://nad.iounoi.com">Nourish and Destroy</a>&quot; under my <cite title="I Owe You No I"> IOUNOI</cite> pseudonym.</div>
+//    
+//    <div class="contact-paragraph">There are a few different ways to get a hold of me, feel free to drop a line to say hello or ask for my expertise on your project.</div>
+//
+//    <ul class="contact-list">
+//        <li class="contact-item"><a href="https://twitter.com/evan_is"><i class="contact-list-item icon icon-48" data-icon="twitter"></i></a></li>
+//        <li class="contact-item"><a href="mailto:evan.krambuhl@gmail.com"><i class="contact-list-item icon icon-48" data-icon="email"></i></a></li>
+//    </ul>
+//</section>

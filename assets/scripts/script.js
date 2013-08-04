@@ -1,44 +1,38 @@
 require.config({
-    baseUrl: "assets/scripts",
+    baseUrl: "assets",
     paths: {
-        jquery: "../library/jquery",
-        underscore: "../library/backbone/underscore",
-        backbone: "../library/backbone/backbone",
-        hbs: "../library/backbone/hbs",
-        text: "../library/backbone/text",
-        handlebars: "../library/handlebars",
-        icon: "../library/icon",
-        
-        app: "../app",
-        templates: "../app/templates",
-        data: "../data"
+        jquery: "../bower_components/jquery/jquery",
+        underscore: "../bower_components/underscore/underscore",
+        backbone: "../bower_components/backbone/backbone",
+        handlebars: "../bower_components/handlebars/handlebars",
+        requirejs: "../bower_components/requirejs/require",
+        hbs: "library/hbs",
+        text: "library/text",
+        icon: "library/icon",
+        app: "app",
+        templates: "app/templates"
     },
-    
     waitSeconds: 15,
-    
     shim: {
-        'backbone': {
-            //These script dependencies should be loaded before loading
-            //backbone.js
-            deps: ['underscore', 'jquery'],
-            //Once loaded, use the global 'Backbone' as the
-            //module value.
-            exports: 'Backbone'
+        backbone: {
+            deps: [
+                "underscore",
+                "jquery"
+            ],
+            exports: "Backbone"
         },
-        
-        'underscore': {
-            exports: '_'
+        underscore: {
+            exports: "_"
         },
-        
-        'handlebars': {
-            exports: 'Handlebars'
+        handlebars: {
+            exports: "Handlebars"
         },
-        
-        'icon': {
-            exports: 'icon'
+        icon: {
+            exports: "icon"
         }
     }
 });
+
 
 
 

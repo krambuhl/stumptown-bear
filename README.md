@@ -21,4 +21,4 @@ downloads and installs required components
 
 *production*
 
-grunt production
+    grunt production

@@ -5,11 +5,9 @@ define([
         "handlebars",
         "icon",
         
-        "app/collections/designs",
-        
         "app/views/headerView",
         "app/views/pressureView"
-    ], function($, _, Backbone, Handlebars, icon, Designs, headerView, pressureView) {
+    ], function($, _, Backbone, Handlebars, icon, headerView, pressureView) {
         return Backbone.View.extend({
             el: $(".layout-stb"),
             
@@ -28,13 +26,19 @@ define([
             yield: function(route) {
                 var that = this;
                 
-                this.$el.children('.yield').fadeOut(function() {
-                    $(this).remove();
-                });
+                this.$el.children('.yield').remove();
                 
                 if (route == "design") {
-                    requirejs(["app/views/designView"], function(designView){
+                    requirejs(["app/collections/designs", "app/views/designView"], function(Designs, designView){
                         that.$el.append(new designView({ collection: new Designs() }))
+                    })
+                } else if (route == "history") {
+                    requirejs(["app/collections/timelines", "app/views/timelineView"], function(Timlines, timelineView){
+                        that.$el.append(new timelineView({ collection: new Timlines() }))
+                    })
+                } else if (route == "contact") {
+                    requirejs(["app/views/contactView"], function(contactView){
+                        that.$el.append(new contactView())
                     })
                 } else {
                     console.log(route)

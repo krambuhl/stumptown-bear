@@ -6,7 +6,7 @@
     max-width: gridw(12, $gutter + 120);
     height: 64px;
 
-    & + * { margin-top: -36px; }
+    & + * { margin-top: $spacing-quad; }
 }
 .pressure-fade {
     position: absolute;

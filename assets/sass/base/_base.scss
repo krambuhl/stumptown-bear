@@ -1,5 +1,5 @@
 body {
-    background: url(images/dot-grid.png) top center repeat fixed !important;
+    background: url(../images/dot-grid.png) top center repeat fixed !important;
     
     text-transform: none;
     text-decoration: none;
@@ -16,10 +16,6 @@ body {
     -webkit-font-smoothing: antialiased;
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: transparent; 
-    
-    @include transition-duration(.25s);
-    @include transition-property(background, color);
-    @include transition-timing-function(ease);
 }
 
 ::selection 	 	{ background: $selection-color; }
@@ -29,7 +25,7 @@ img::-moz-selection	{ background: $selection-color; }
 
 
 
-a        { color: $site-color-font; text-decoration: none; }
+a        { color: $site-color-font; text-decoration: underline; }
 a:hover  { color: $site-color-font; }
 a:active { color: $site-color-font; }
 
@@ -43,3 +39,6 @@ pre, code { font-family: monospace;}
 
 
 * { @include box-sizing(border-box); *behavior: url(assets/library/boxsizing.htc); }
+
+
+.is-hidden { @include opacity(0); }

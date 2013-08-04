@@ -1,13 +1,13 @@
 <li class="samples-item">
     <header class="samples-header">
         <h2 class="samples-header-main">{{title}}</h2>
-        <h3 class="samples-header-sub">{{subTitle}}</h3>
+        <h3 class="samples-header-sub">{{description}}</h3>
     </header>
     
     <section class="samples-preview">
         <ul class="samples-preview-list">
             {{#each images}}
-            <li class="samples-image" style="background-image: url({{.}})"></li>
+            <li class="samples-image" style="background-image: url({{src}})"></li>
             {{/each}}
         </ul>
         

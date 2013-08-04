@@ -4,12 +4,9 @@ define([
     return Backbone.Model.extend({
         defaults: {
             title: "Project",
-            subTitle: "Responsibilities",
+            description: "Responsibilities",
             
-            images: [
-                "http://stream.stumptownbear.com/portfolio/wt-today/overview.jpg",
-                "http://stream.stumptownbear.com/portfolio/wt-today/webtrends.jpg"
-            ]
+            images: [{ src: "http://stream.stumptownbear.com/portfolio/wt-today/overview.jpg" }]
         }
     })
 })

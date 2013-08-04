@@ -1,23 +1,34 @@
 .samples {
     @include grid(12, $gutter);
-    padding: $gutter * 2  auto;
-    margin: -24px auto 0 auto;
-}
-
-.samples-item {
-    position: relative;
-    width: 100%;
-    margin: $gutter * 4 auto;
-
+    margin: 0 auto;
+    padding-top: 6px;
+    
     &, * { 
         @include transition-duration(0.5s);
         @include transition-property(width, height, opacity);
         @include transition-timing-function(ease);
 
-    	-webkit-transform: translate3d(0, 0, 0);
+        -webkit-transform: translate3d(0, 0, 0);
         -webkit-backface-visibility: hidden;
-    	-webkit-perspective: 1000;
+        -webkit-perspective: 1000;
     }
+    
+    a { color: $stb-green; text-decoration: underline; }
+}
+
+.samples-list {
+    position: relative;
+    width: 100%;
+    
+    &.is-loading { height: 480px; @include opacity(0); }
+}
+
+
+.samples-item {
+    position: relative;
+    width: 100%;
+    
+    &:not(:first-child) { margin: $gutter * 4 auto; };
 }
 
 

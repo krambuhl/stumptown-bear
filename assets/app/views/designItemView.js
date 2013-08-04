@@ -2,9 +2,10 @@ define([
         "underscore",
         "backbone",
         "handlebars",
+        "icon",
         "app/collections/designs",
         "text!templates/designItem.handlebars"
-    ], function(_, Backbone, Handlebars, Designs, designItemTemplate) {
+    ], function(_, Backbone, Handlebars, icon, Designs, designItemTemplate) {
         
         return Backbone.View.extend({
             events: {

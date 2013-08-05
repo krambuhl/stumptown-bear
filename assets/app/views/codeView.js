@@ -3,22 +3,20 @@ define([
         "underscore",
         "backbone",
         "handlebars",
-        "app/views/designItemView",
-        "text!templates/design.handlebars"
-    ], function($, _, Backbone, Handlebars, DesignItem, designTemplate) {
+//        "app/views/codeItemView",
+        "text!templates/code.handlebars"
+    ], function($, _, Backbone, Handlebars, codeTemplate) {
         
-        return Backbone.View.extend({
-            el: ".stb",
-        
+        return Backbone.View.extend({ 
             events: {
                 
             },
             
-            template: Handlebars.compile(designTemplate),
+            template: Handlebars.compile(codeTemplate),
             
             initialize: function() {
-                this.$el.append(this.template);
-                this.$samples = this.$el.find('.js-samples');
+                this.setElement(this.template());
+                this.$code = this.$el.find('.js-codes');
                 
                 this.collection.on('reset', function() {
                     this.renderAll();
@@ -28,7 +26,7 @@ define([
                     this.renderDesignItem(model);
                 }, this);
                 
-                this.collection.fetch();
+                //this.collection.fetch();
             },
             
             renderAll: function() {

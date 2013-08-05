@@ -14,7 +14,7 @@ define([
             initialize: function() {
                 this.setElement(this.template());
                 
-                console.log()
+                console.log(this.$el.closest('.js-yield'))
 
                 this.$el.closest('.js-yield').css('padding-bottom', 0);
                 this.$el.find('[data-icon]').each(function() {

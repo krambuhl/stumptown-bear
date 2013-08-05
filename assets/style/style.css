@@ -192,7 +192,7 @@ pre, code {
 
 .stb {
   margin: 0 auto;
-  padding-bottom: 128px;
+  padding-bottom: 64px;
   width: 100%;
   min-width: 940px;
   min-height: 680px; }
@@ -411,13 +411,15 @@ pre, code {
   -moz-transition-duration: 0.5s;
   -o-transition-duration: 0.5s;
   transition-duration: 0.5s;
-  margin-left: -480px;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
-  opacity: 0; }
+  opacity: 0;
+  margin-left: -1464px; }
   .content-item.is-active {
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
     margin-left: -480px; }
+    .content-item.is-active ~ .content-item {
+      margin-left: 504px; }
 
 .content-wrapper {
   display: block;
@@ -840,7 +842,7 @@ pre, code {
 
 .contact {
   width: 960px;
-  padding-top: 6px;
+  padding-bottom: 24px;
   line-height: 1.7em;
   font-size: 20px;
   text-align: center;

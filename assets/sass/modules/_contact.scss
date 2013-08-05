@@ -1,6 +1,6 @@
 .contact { 
     @include grid(12, $gutter);
-    padding-top: 6px;
+    padding-bottom: $spacing-double;
     
     line-height: 1.7em;
     font-size: 20px;

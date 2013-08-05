@@ -31,18 +31,18 @@
     top: 0;
     left: 50%;
     @include grid(12, $gutter);
-        @include transition-duration(0.5s);
+    @include transition-duration(0.5s);
     
-    //margin-left: -1.5 * gridw(12, $gutter + $spacing-double) + $spacing;
-        margin-left: -0.5 * gridw(12, $gutter + $spacing-double) + $spacing;
     @include opacity(0);
+    margin-left: -1.5 * gridw(12, $gutter + $spacing-double) + $spacing;
+    //    margin-left: -0.5 * gridw(12, $gutter + $spacing-double) + $spacing;
     
     &.is-active {    
         @include opacity(1);
         margin-left: -0.5 * gridw(12, $gutter + $spacing-double) + $spacing;
         
         & ~ .content-item { 
-           // margin-left: 0.5 * gridw(12, $gutter + $spacing-double) + $spacing;
+            margin-left: 0.5 * gridw(12, $gutter + $spacing-double) + $spacing;
         }
     }
 }

@@ -14,7 +14,7 @@ define([
             "":  "design",
             "design/":  "design",
             "code/":    "code",
-            "history/": "history",
+            "timeline/": "timeline",
             "contact/": "contact"
         },
         
@@ -22,9 +22,9 @@ define([
             console.log(msg);
         },
         
-        design:  function() { this.App.yield('design'); },
-        code:    function() { this.App.yield('code'); },
-        history: function() { this.App.yield('history'); },
-        contact: function() { this.App.yield('contact'); }
+        design:   function() { this.App.yield('design'); },
+        code:     function() { this.App.yield('code'); },
+        timeline: function() { this.App.yield('timeline'); },
+        contact:  function() { this.App.yield('contact'); }
     });
 })

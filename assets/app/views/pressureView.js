@@ -40,7 +40,7 @@ define([
                     switch (name) {
                         case "design":  return $items.eq(0);
                         case "code":    return $items.eq(1);
-                        case "history": return $items.eq(2);
+                        case "timeline": return $items.eq(2);
                         case "contact": return $items.eq(3);
                     }
                 }).call(this, name);

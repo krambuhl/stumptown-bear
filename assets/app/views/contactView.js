@@ -14,12 +14,11 @@ define([
             initialize: function() {
                 this.setElement(this.template());
                 
-                console.log(this.$el.closest('.js-yield'))
-
-                this.$el.closest('.js-yield').css('padding-bottom', 0);
-                this.$el.find('[data-icon]').each(function() {
-                    icon.render(this)
-                });
+                _.defer(_.bind(function() {
+                    this.$el.find('[data-icon]').each(function() {
+                        icon.render(this);
+                    });
+                }, this));
             }
         });
     }

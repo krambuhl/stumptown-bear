@@ -221,6 +221,7 @@ pre, code {
 .header {
   margin: 0 auto;
   padding: 96px 0 72px 0;
+  background-color: #222;
   width: 100%;
   min-width: 940px;
   max-width: 1180px;
@@ -379,10 +380,10 @@ pre, code {
     -moz-transition-duration: 1s;
     -o-transition-duration: 1s;
     transition-duration: 1s;
-    -webkit-transition-property: margin, opacity;
-    -moz-transition-property: margin, opacity;
-    -o-transition-property: margin, opacity;
-    transition-property: margin, opacity;
+    -webkit-transition-property: height, margin, opacity;
+    -moz-transition-property: height, margin, opacity;
+    -o-transition-property: height, margin, opacity;
+    transition-property: height, margin, opacity;
     -webkit-transition-timing-function: ease;
     -moz-transition-timing-function: ease;
     -o-transition-timing-function: ease;
@@ -395,10 +396,10 @@ pre, code {
   position: relative;
   width: 100%;
   min-height: 480px;
-  -webkit-transition-duration: 0s;
-  -moz-transition-duration: 0s;
-  -o-transition-duration: 0s;
-  transition-duration: 0s;
+  -webkit-transition-duration: 10s;
+  -moz-transition-duration: 10s;
+  -o-transition-duration: 10s;
+  transition-duration: 10s;
   overflow: hidden;
   *zoom: 1; }
 
@@ -406,6 +407,7 @@ pre, code {
   position: absolute;
   top: 0;
   left: 50%;
+  min-height: 480px;
   width: 960px;
   -webkit-transition-duration: 0.5s;
   -moz-transition-duration: 0.5s;
@@ -413,13 +415,17 @@ pre, code {
   transition-duration: 0.5s;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
-  margin-left: -1464px; }
+  margin-left: -480px;
+  z-index: -1; }
   .content-item.is-active {
+    position: relative;
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
-    margin-left: -480px; }
-    .content-item.is-active ~ .content-item {
-      margin-left: 504px; }
+    -webkit-transition-duration: 1s;
+    -moz-transition-duration: 1s;
+    -o-transition-duration: 1s;
+    transition-duration: 1s;
+    z-index: 10; }
 
 .content-wrapper {
   display: block;
@@ -493,14 +499,14 @@ pre, code {
         color: white; }
         .footer-item > a[data-link=code]:hover + .footer-item-icon path {
           fill: #396f85; }
-    .footer-item > a[data-link=history] {
+    .footer-item > a[data-link=timeline] {
       color: #7f5f97; }
-      .footer-item > a[data-link=history] + .footer-item-icon path {
+      .footer-item > a[data-link=timeline] + .footer-item-icon path {
         fill: rgba(255, 255, 255, 0.01); }
-      .footer-item > a[data-link=history]:hover {
+      .footer-item > a[data-link=timeline]:hover {
         background: #7f5f97;
         color: white; }
-        .footer-item > a[data-link=history]:hover + .footer-item-icon path {
+        .footer-item > a[data-link=timeline]:hover + .footer-item-icon path {
           fill: #7f5f97; }
     .footer-item > a[data-link=contact] {
       color: #d44242; }
@@ -717,26 +723,104 @@ pre, code {
     opacity: 1; }
 
 .code {
-  float: left;
-  margin-left: 60px;
-  width: 960px;
-  text-align: left;
-  overflow: hidden; }
+  padding-bottom: 72px;
+  line-height: 1.7em;
+  font-size: 20px;
+  overflow: hidden;
+  *zoom: 1; }
+  .code, .code * {
+    -webkit-transition-duration: 0.5s;
+    -moz-transition-duration: 0.5s;
+    -o-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+    -webkit-transition-property: height, margin, opacity;
+    -moz-transition-property: height, margin, opacity;
+    -o-transition-property: height, margin, opacity;
+    transition-property: height, margin, opacity;
+    -webkit-transition-timing-function: ease;
+    -moz-transition-timing-function: ease;
+    -o-transition-timing-function: ease;
+    transition-timing-function: ease; }
+
+.code-item {
+  margin-bottom: 72px; }
 
 .code-header {
-  margin-bottom: 12px;
+  display: block;
+  margin: 0 auto 24px auto;
+  width: 800px;
   text-transform: uppercase;
   font-family: "Museo Sans";
   font-size: 32px;
   font-weight: 700; }
 
-.code-list {
-  float: left;
-  width: 100%; }
+.code-container {
+  display: block;
+  margin: 0 auto 24px auto;
+  width: 800px;
+  overflow: hidden;
+  *zoom: 1; }
 
-.code-list-item {
+.code-description {
   float: left;
-  width: 100%; }
+  width: 480px;
+  min-height: 160px;
+  padding: 24px;
+  background: #396f85;
+  background: rgba(57, 111, 133, 0.1); }
+
+.code-download {
+  float: left;
+  position: relative;
+  display: block;
+  width: 160px;
+  height: 160px;
+  padding: 36px 0;
+  text-decoration: none;
+  text-align: center;
+  font-size: 18px;
+  text-transform: uppercase;
+  font-family: "Museo Sans";
+  font-weight: 700;
+  color: white;
+  background: #396f85;
+  -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+  transition-duration: 0.5s; }
+  .code-download:nth-child(2n) {
+    background: #36677b; }
+  .code-download .icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 48px;
+    height: 48px;
+    margin: -24px auto auto -24px; }
+    .code-download .icon path {
+      fill: white; }
+  .code-download span {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+    opacity: 0;
+    width: 100%;
+    margin-top: -16px;
+    text-align: center; }
+  .code-download:hover {
+    color: white;
+    -webkit-transition-duration: 0s;
+    -moz-transition-duration: 0s;
+    -o-transition-duration: 0s;
+    transition-duration: 0s; }
+    .code-download:hover .icon {
+      filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+      opacity: 0; }
+    .code-download:hover span {
+      filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+      opacity: 1; }
 
 .timeline {
   width: 960px;
@@ -842,7 +926,7 @@ pre, code {
 
 .contact {
   width: 960px;
-  padding-bottom: 24px;
+  padding-bottom: 72px;
   line-height: 1.7em;
   font-size: 20px;
   text-align: center;
@@ -922,6 +1006,10 @@ pre, code {
       .contact-item > a > .icon[data-icon=email] {
         margin-top: -6px; }
     .contact-item > a:hover {
-      background: #d44242; }
+      background: #d44242;
+      -webkit-transition-duration: 0s;
+      -moz-transition-duration: 0s;
+      -o-transition-duration: 0s;
+      transition-duration: 0s; }
       .contact-item > a:hover path {
         fill: white; }

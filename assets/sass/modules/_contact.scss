@@ -1,6 +1,6 @@
 .contact { 
     @include grid(12, $gutter);
-    padding-bottom: $spacing-double;
+    padding-bottom: $spacing-quad * 1.5;
     
     line-height: 1.7em;
     font-size: 20px;
@@ -94,6 +94,7 @@
         
         &:hover {
             background: $stb-red;
+            @include transition-duration(0s);
             
             path { fill: white; }// $stb-red; }
         };

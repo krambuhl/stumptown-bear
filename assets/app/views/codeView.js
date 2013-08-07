@@ -3,9 +3,9 @@ define([
         "underscore",
         "backbone",
         "handlebars",
-//        "app/views/codeItemView",
+        "app/views/codeItemView",
         "text!templates/code.handlebars"
-    ], function($, _, Backbone, Handlebars, codeTemplate) {
+    ], function($, _, Backbone, Handlebars, CodeItem, codeTemplate) {
         
         return Backbone.View.extend({ 
             events: {
@@ -16,28 +16,28 @@ define([
             
             initialize: function() {
                 this.setElement(this.template());
-                this.$code = this.$el.find('.js-codes');
+                this.$codes = this.$el.find('.js-codes');
                 
                 this.collection.on('reset', function() {
                     this.renderAll();
                 }, this);
 
                 this.collection.on('add', function(model) {
-                    this.renderDesignItem(model);
+                    this.renderCodeItem(model);
                 }, this);
                 
-                //this.collection.fetch();
+                this.collection.fetch({reset: true});
             },
             
             renderAll: function() {
                 _.each(this.collection.models, function(model) {
-                    this.renderDesignItem(model);
+                    this.renderCodeItem(model);
                 }, this);
             },
             
-            renderDesignItem: function(model) {                       
-                var DesignItemView = new DesignItem(model.attributes);
-                this.$samples.append(DesignItemView.$el);
+            renderCodeItem: function(model) {                       
+                var CodeItemView = new CodeItem(model.attributes);
+                this.$codes.append(CodeItemView.$el);
             }
         });
     }

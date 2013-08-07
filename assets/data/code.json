@@ -1,60 +1,31 @@
 [{
-    "title": "Webtrends Today",
-    "description": "HTML+CSS+Javascript Using Social APIs & Miscellaneous Design",
+    "title": "Northplate",
+    "description": "Boilerplate code for html projects using SMACSS style moduler CSS definitions using Sass and Compass",
     
-    "images": [{ 
-            "src": "http://stream.stumptownbear.com/portfolio/wt-today/overview.jpg", 
-            "description": "High level information about each connection social network." 
-        }, { 
-            "src": "http://stream.stumptownbear.com/portfolio/wt-today/twitter.jpg", 
-            "description": "Shows most recent and effective tweets along with user's profile stats." 
-        }, { 
-            "src": "http://stream.stumptownbear.com/portfolio/wt-today/facebook.jpg", 
-            "description": "Displays measurments from Facebook insight." 
-        }, { 
-            "src": "http://stream.stumptownbear.com/portfolio/wt-today/webtrends.jpg", 
-            "description": "Presents up-to-the-moment highlights from a Webtrends Analytics 10 profile." 
-        }, { 
-            "src": "http://stream.stumptownbear.com/portfolio/wt-today/youtube.jpg", 
-            "description": "Displays core stats and most recent or effective videos." 
-        }]
+    "download-link": "https://github.com/krambuhl/Northplate/archive/master.zip",
+    "source-link": "https://github.com/krambuhl/Northplate"
 }, {
-    "title": "Webtrends DI Lab",
-    "description": "Interactive Design & Social Data Visualization",
+    "title": "Stoplight",
+    "description": "jQuery plugin for form validation, uses data* attributes to define validation rules.",
     
-    "images": [
-        { "src": "http://stream.stumptownbear.com/portfolio/wt-dilab/dataviz-msn.jpg" },
-        { "src": "http://stream.stumptownbear.com/portfolio/wt-dilab/dataviz-redbull.jpg" },
-        { "src": "http://stream.stumptownbear.com/portfolio/wt-dilab/dataviz-telegraph.jpg" }
-    ]
+    "download-link": "https://raw.github.com/krambuhl/Stoplight/master/jquery.stoplight.js",
+    "source-link": "https://github.com/krambuhl/Stoplight"
 }, {
-    "title": "Precision Machines",
-    "description": "Creative Direction & Idenity",
+    "title": "Bobsled",
+    "description": "Slideshow jQuery plugin for timer based slideshows, compatible with touch devices as well. Used on the Webtrends.com home page.",
     
-    "images": [
-        { "src": "http://stream.stumptownbear.com/work/fullsize/pm-2.jpg" },
-        { "src": "http://stream.stumptownbear.com/work/fullsize/pm-1.jpg" },
-        { "src": "http://stream.stumptownbear.com/work/fullsize/pm-3.jpg" }
-    ]
+    "download-link": "https://raw.github.com/krambuhl/Bobsled/master/jquery.bobsled.js",
+    "source-link": "https://github.com/krambuhl/Bobsled"
 }, {
-    "title": "IOUNOI",
-    "description": "Creative Direction & Idenity",
+    "title": "Dropasaur",
+    "description": "A tiny jQuery plugin for extending drop down and menu behavior.  Also used on Webtrends.com",
     
-    "images": [
-        { "src": "http://stream.stumptownbear.com/portfolio/iounoi/iounoi-1.jpg" },
-        { "src": "http://stream.stumptownbear.com/portfolio/iounoi/iounoi-2.jpg" },
-        { "src": "http://stream.stumptownbear.com/portfolio/iounoi/iounoi-3.jpg" },
-        { "src": "http://stream.stumptownbear.com/portfolio/iounoi/iounoi-logo.jpg" }
-    ]
+    "download-link": "https://raw.github.com/krambuhl/dropasaur/master/jquery.dropasaur.js",
+    "source-link": "https://github.com/krambuhl/dropasaur"
 }, {
-    "title": "Other Projects",
-    "description": "Design Prototypes & All Sorts of Experiments",
+    "title": "Seperator.js",
+    "description": "Javascript interface for seperating display and data concerns in small scale projects.",
     
-    "images": [
-        { "src": "http://stream.stumptownbear.com/portfolio/open-remix/open-remix.png" },
-        { "src": "http://stream.stumptownbear.com/portfolio/southridge-tech/southridge-tech-1.png" },
-        { "src": "http://stream.stumptownbear.com/portfolio/southridge-high-school/banner.png" },
-        { "src": "http://stream.stumptownbear.com/portfolio/minutes-app/ma-1.jpg" },
-        { "src": "http://stream.stumptownbear.com/portfolio/blue-shoe-project/bsp1.jpg" }
-    ]
+    "download-link": "https://raw.github.com/krambuhl/Separator.js/master/separator.js",
+    "source-link": "https://github.com/krambuhl/Separator.js"
 }]

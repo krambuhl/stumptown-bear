@@ -47,7 +47,7 @@ define([
                     var imagesToPreload = [];
                     _.each(this.items, function(item) {
                         imagesToPreload.push(item.$el.find('.samples-image').map(function() {
-                            return $(this).css('background-image').replace('url(','').replace(')','')
+                            return $(this).css('background-image').replace('url(','').replace(')','').split('"')[1]
                         }).get());
                     });
                     
@@ -71,13 +71,13 @@ define([
             preloadImages: function(imgList, callback) {
                 var loaded = 0, 
                     images = [];
+                      
+                    
                     
                 var inc = function() {
                     loaded += 1;
                     
-                    if (loaded === imgList.length && callback) {
-                        callback(images);
-                    }
+                    if (loaded === imgList.length && callback) callback();
                 };
 
                 for (var i = 0; i < imgList.length; i++) {
@@ -86,7 +86,9 @@ define([
                     images[i].onerror = inc;
                     images[i].onload = inc;
                     images[i].src = imgList[i];
-                }
+                } 
+                
+                //debugger;
             }
         });
     }

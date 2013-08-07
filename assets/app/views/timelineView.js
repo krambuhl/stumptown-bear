@@ -63,7 +63,7 @@ define([
             
             setOffset: function(offset) {
                 this.offset = offset;
-                this.$el.closest('.js-yield').css('padding-bottom', parseInt(this.offset * 1.5));
+                this.$el.css('padding-bottom', parseInt(this.offset * 1.5));
             },
             
             setActiveItem: function (offset) {

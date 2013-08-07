@@ -40,36 +40,21 @@ define([
                         that.$placeholders.filter('[data-page=' + route + ']').replaceWith(view.el);
                         $.extend(that.$content, view);
             
+                        console.log(view.$el)
+            
                         that.$activePage = view.$el;
                         that.setActive(route);
-                        that.setHeight(route);
                     })
                 } else {
                     that.$activePage = this.$el.find('[data-page=' + route + ']')
                     that.setActive(route);
-                    that.setHeight(route);
                 }
-                
-                _.delay(function() {
-                    that.setActive(route);
-                    that.setHeight(route);
-                }, 500)
             },
             
-            setActive: _.debounce(function(page) {
+            setActive: function(page) {
                 this.$activePage.addClass('is-active').siblings().removeClass('is-active');
                 return this;
-            }, 1),
-            
-            setHeight: _.debounce(function(page) {
-                this.$el.find('.content-list').css('height', this.$activePage.children('.content-wrapper').outerHeight());
-                
-                this.$el.find('[data-icon]').each(function() {
-                    icon.render(this);
-                });
-                
-                return this;
-            }, 150)
+            },
         });
     }
 )

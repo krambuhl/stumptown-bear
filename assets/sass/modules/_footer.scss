@@ -67,7 +67,7 @@
             &:hover { background: $stb-blue; color: white; 
                 & + .footer-item-icon path { fill: rgba($stb-blue, 1); }}}
                 
-        &[data-link=history] { color: $stb-purple; 
+        &[data-link=timeline] { color: $stb-purple; 
             & + .footer-item-icon path { fill: rgba(white, 0.01); }
             &:hover { background: $stb-purple; color: white; 
                 & + .footer-item-icon path { fill: rgba($stb-purple, 1); }}}

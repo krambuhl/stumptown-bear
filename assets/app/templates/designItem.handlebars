@@ -1,0 +1,23 @@
+<li class="samples-item">
+    <header class="samples-header">
+        <h2 class="samples-header-main">{{title}}</h2>
+        <h3 class="samples-header-sub">{{description}}</h3>
+    </header>
+    
+    <section class="samples-preview">
+        <ul class="samples-preview-list">
+            {{#each images}}
+            <li class="samples-image" style="background-image: url({{src}})"></li>
+            {{/each}}
+        </ul>
+        
+        <div class="samples-preview-expand">
+            <div class="is-active"></div>
+            <div></div>
+        </div>
+    </section>
+    
+    <div class="samples-preview-close">
+        <i class="icon" data-icon="cross-diagnal"></i>
+    </div>
+</li>

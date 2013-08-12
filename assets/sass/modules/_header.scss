@@ -1,0 +1,33 @@
+.header {
+    margin: 0 auto;
+    padding: 96px 0 72px 0;
+    background-color: #222;
+
+    width: 100%;
+    min-width: gridw(12);
+    max-width: gridw(15);
+    
+    text-align: center;
+}
+
+.header.is-fixed { margin-bottom: 96px; }
+
+.header-logo {
+    display: block;
+    @include grid(1.5);
+    height: 60px;
+    margin: 0 auto;
+    
+    margin: 0 auto 14px auto;
+}
+
+.header-main {
+    font-size: 30px;
+    font-family: "museo sans", arial;
+    font-weight: 300;
+    
+    text-transform: uppercase;
+    color: white;    
+}
+
+.header-main-alt { font-weight: 700; }

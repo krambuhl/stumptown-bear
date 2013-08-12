@@ -1,0 +1,108 @@
+.footer {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    
+    width: gridw(12, $gutter);
+    
+    @include clearfix;
+    
+    &, * { 
+        @include transition-duration(0.1s);
+        @include transition-property(width, padding, opacity, background, fill, color);
+        @include transition-timing-function(ease);
+    }
+}
+
+.footer {
+    position: relative;
+    display: block;
+    
+    min-width: gridw(12, gutter);
+    max-width: gridw(12, $gutter + 120);
+
+    & + * { margin-top: $spacing-quad; }
+}
+
+.footer-wrapper {
+    display: block;
+    @include grid(12, $gutter);
+    margin: 0 auto;
+    
+    //background: #222;
+    
+}
+
+
+.footer-links {
+    display: block;
+    float: left;
+}
+
+.footer-item {
+    position: relative;
+    float: left;
+    
+    & > a {
+        display: block;
+        padding: $spacing-half  * 1.15
+                 $spacing * 0.75 
+                 $spacing-half * 0.75
+                 $spacing * 0.75;
+    
+        font-family: $site-headerfont;
+        font-weight: 500;
+        font-size: 14px;
+    
+        text-transform: uppercase;
+        text-decoration: none;
+        
+        &[data-link=design] { color: $stb-green; 
+            & + .footer-item-icon path { fill: rgba(white, 0.01); }
+            &:hover { background: $stb-green; color: white; 
+                & + .footer-item-icon path { fill: rgba($stb-green, 1); }}}
+                
+        &[data-link=code] { color: $stb-blue; 
+            & + .footer-item-icon path { fill: rgba(white, 0.01); }
+            &:hover { background: $stb-blue; color: white; 
+                & + .footer-item-icon path { fill: rgba($stb-blue, 1); }}}
+                
+        &[data-link=timeline] { color: $stb-purple; 
+            & + .footer-item-icon path { fill: rgba(white, 0.01); }
+            &:hover { background: $stb-purple; color: white; 
+                & + .footer-item-icon path { fill: rgba($stb-purple, 1); }}}
+                
+        &[data-link=contact] { color: $stb-red; 
+            & + .footer-item-icon path { fill: rgba(white, 0.01); }
+            &:hover { background: $stb-red; color: white; 
+                & + .footer-item-icon path { fill: rgba($stb-red, 1); }}}
+    }
+}
+
+.footer-item-icon {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    
+    margin: -2px 0 0 -4.5px;
+    
+    width: 9px;
+    height: 9px;
+    
+    path { fill: rgba(white, 0.01); }
+}
+
+
+.footer-copy {
+    display: block;
+    float: right;
+    padding: $spacing-half  * 1.15 0 $spacing-half * 0.75 0;
+    
+    color: #222;
+    
+    font-family: $site-headerfont;
+    font-weight: 500;
+    font-size: 14px;
+    
+    text-transform: uppercase;
+}

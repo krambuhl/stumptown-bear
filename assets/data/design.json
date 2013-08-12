@@ -1,0 +1,60 @@
+[{
+    "title": "Webtrends Today",
+    "description": "HTML+CSS+Javascript Using Social APIs & Miscellaneous Design",
+    
+    "images": [{ 
+            "src": "http://stream.stumptownbear.com/portfolio/wt-today/overview.jpg", 
+            "description": "High level information about each connection social network." 
+        }, { 
+            "src": "http://stream.stumptownbear.com/portfolio/wt-today/twitter.jpg", 
+            "description": "Shows most recent and effective tweets along with user's profile stats." 
+        }, { 
+            "src": "http://stream.stumptownbear.com/portfolio/wt-today/facebook.jpg", 
+            "description": "Displays measurments from Facebook insight." 
+        }, { 
+            "src": "http://stream.stumptownbear.com/portfolio/wt-today/webtrends.jpg", 
+            "description": "Presents up-to-the-moment highlights from a Webtrends Analytics 10 profile." 
+        }, { 
+            "src": "http://stream.stumptownbear.com/portfolio/wt-today/youtube.jpg", 
+            "description": "Displays core stats and most recent or effective videos." 
+        }]
+}, {
+    "title": "Webtrends DI Lab",
+    "description": "Interactive Design & Social Data Visualization",
+    
+    "images": [
+        { "src": "http://stream.stumptownbear.com/portfolio/wt-dilab/dataviz-msn.jpg" },
+        { "src": "http://stream.stumptownbear.com/portfolio/wt-dilab/dataviz-redbull.jpg" },
+        { "src": "http://stream.stumptownbear.com/portfolio/wt-dilab/dataviz-telegraph.jpg" }
+    ]
+}, {
+    "title": "Precision Machines",
+    "description": "Creative Direction & Idenity",
+    
+    "images": [
+        { "src": "http://stream.stumptownbear.com/work/fullsize/pm-2.jpg" },
+        { "src": "http://stream.stumptownbear.com/work/fullsize/pm-1.jpg" },
+        { "src": "http://stream.stumptownbear.com/work/fullsize/pm-3.jpg" }
+    ]
+}, {
+    "title": "IOUNOI",
+    "description": "Creative Direction & Idenity",
+    
+    "images": [
+        { "src": "http://stream.stumptownbear.com/portfolio/iounoi/iounoi-1.jpg" },
+        { "src": "http://stream.stumptownbear.com/portfolio/iounoi/iounoi-2.jpg" },
+        { "src": "http://stream.stumptownbear.com/portfolio/iounoi/iounoi-3.jpg" },
+        { "src": "http://stream.stumptownbear.com/portfolio/iounoi/iounoi-logo.jpg" }
+    ]
+}, {
+    "title": "Other Projects",
+    "description": "Design Prototypes & All Sorts of Experiments",
+    
+    "images": [
+        { "src": "http://stream.stumptownbear.com/portfolio/open-remix/open-remix.png" },
+        { "src": "http://stream.stumptownbear.com/portfolio/southridge-tech/southridge-tech-1.png" },
+        { "src": "http://stream.stumptownbear.com/portfolio/southridge-high-school/banner.png" },
+        { "src": "http://stream.stumptownbear.com/portfolio/minutes-app/ma-1.jpg" },
+        { "src": "http://stream.stumptownbear.com/portfolio/blue-shoe-project/bsp1.jpg" }
+    ]
+}]

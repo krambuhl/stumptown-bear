@@ -1,0 +1,47 @@
+//font sizes
+
+$baseline: 14px;
+$fontsize-xsmall: $baseline / 2;
+$fontsize-small:  $baseline / (1.5);
+$fontsize-normal: $baseline;
+$fontsize-medium: $baseline * 2;
+$fontsize-large:  $baseline * 3;
+
+// site spacing, keep it consistant bitches
+
+$spacing: 12px;
+$spacing-double: $spacing * 2;
+$spacing-quad:   $spacing * 4;
+$spacing-half:   $spacing / 2;
+$spacing-fourth: $spacing / 4;
+
+
+// ***** 
+//   Site-wide Variables
+// *****
+
+$site-fontfamily: "Droid Serif", "FF Meta Serif", Helvetica, Tahoma, sans-serif;
+$site-headerfont: "Museo Sans";
+
+// COLORS
+
+$site-color-bg:   #fff;
+$site-color-font: #333;
+
+$site-color-bg-alt:   #444;
+$site-color-font-alt: #ddd;
+
+$selection-color: #4a975e; // when a user highlights text this is the super duper color!
+
+//stb colors
+$stb-green:  #4a975e;
+$stb-blue:   #396f85;
+$stb-purple: #7f5f97;
+$stb-red:    #d44242;
+
+//stb alt colors
+$stb-green-dark:  darken($stb-green,  5%);
+$stb-blue-dark:   darken($stb-blue,   5%);
+$stb-purple-dark: darken($stb-purple, 5%);
+$stb-red-dark:    darken($stb-red,    5%);
+

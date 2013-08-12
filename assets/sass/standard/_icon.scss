@@ -1,0 +1,27 @@
+.icon {
+    path, 
+    rect, 
+    elipse { 
+        fill: white; 
+        stroke: none; 
+    }
+}
+
+.icon-black {
+    path, 
+    rect, 
+    elipse { fill: #000; }
+}
+
+.icon-gray {
+    path, 
+    rect, 
+    elipse { fill: #333; }
+}
+
+.icon-16 { display: block; height: 16px; width: 24px; }
+.icon-24 { display: block; height: 24px; width: 32px; }
+.icon-32 { display: block; height: 32px; width: 48px; }
+.icon-48 { display: block; height: 48px; width: 64px; }
+.icon-64 { display: block; height: 64px; width: 96px; }
+.icon-96 { display: block; height: 96px; width: 128px; }

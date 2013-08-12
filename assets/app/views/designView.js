@@ -55,6 +55,11 @@ define([
                         this.$loader.addClass('is-hidden');
                         this.$samples.removeClass('is-hidden');
                     }, this));
+                    
+                    _.delay(_.bind(function() { 
+                        this.$loader.addClass('is-hidden');
+                        this.$samples.removeClass('is-hidden');
+                    }, this), 1500)
                 }, this));
             },
             

@@ -76,8 +76,6 @@ define([
             preloadImages: function(imgList, callback) {
                 var loaded = 0, 
                     images = [];
-                      
-                    
                     
                 var inc = function() {
                     loaded += 1;

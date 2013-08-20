@@ -33,8 +33,6 @@ define([
                 ];
                 
                 this.$el.append(_.map(this.views, function(view) { return view.el; }));
-                
-                console.log(this.$el);
             },
             
             yield: function(route) {

@@ -49,4 +49,5 @@
 .content-wrapper {
     display: block; 
     @include clearfix;
+    min-height: 480px;
 }

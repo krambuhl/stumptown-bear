@@ -10,6 +10,11 @@ $gridtotes: $column + $gutter;
 
 // responsive breakpoints 
 
+@mixin grid-respond ($grid-min, $grid-max) {
+    @media #{"only screen and (min-width: " + gridw($grid-min) + ") and (max-width: " + gridw($grid-max) + ")"} { * > { @content; } }
+}
+
+
 
 
 $respond-mobile: "only screen and (max-width: 480px)";
@@ -44,4 +49,11 @@ $respond-retina:  "only screen and (-webkit-min-device-pixel-ratio: 1.5), only s
     @if ($media == large)  { @include grid(24); }
     @if ($media == huge)   { @include grid(32); }
 }
+
+
+
+    @include grid-respond(4, 12) {
+        body { width: 720px; }
+    }
+
 

@@ -87,6 +87,9 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   -o-animation: rotate 2s infinite linear;
   animation: rotate 2s infinite linear; }
 
+@media only screen and (min-width: 300px) and (max-width: 940px) {
+  * > body {
+    width: 720px; } }
 body {
   background: url(../images/dot-grid.png) top center repeat fixed !important;
   text-transform: none;
@@ -430,7 +433,8 @@ pre, code {
 .content-wrapper {
   display: block;
   overflow: hidden;
-  *zoom: 1; }
+  *zoom: 1;
+  min-height: 480px; }
 
 .footer {
   position: relative;

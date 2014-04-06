@@ -38,7 +38,11 @@ pre, code { font-family: monospace;}
 // DEFAULTS
 
 
-* { @include box-sizing(border-box); *behavior: url(assets/library/boxsizing.htc); }
+* { 
+    @include transform(translate3d(0, 0, 0));
+    @include box-sizing(border-box); 
+    *behavior: url(assets/library/boxsizing.htc); 
+}
 
 
 .is-hidden { @include opacity(0); }

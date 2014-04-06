@@ -1,11 +1,9 @@
 .history {
-    float: left;
-    margin-left: 60px;
-    @include grid(12, $gutter);
+    @include clearfix;
     
-    text-align: left;
-    overflow: hidden;
-    
+    .content-wrapper {  
+        margin: 0 auto;
+    }
 }
 .history-header { margin-bottom: 30px; }
 

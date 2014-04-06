@@ -1,5 +1,4 @@
 .contact { 
-    @include grid(12, $gutter);
     padding-bottom: $spacing-quad * 1.5;
     
     line-height: 1.7em;
@@ -25,7 +24,7 @@
 
 .contact-divider { 
     display: block;
-    @include grid(4);
+    max-width: gridw(4);
     height: 1px;
     
     margin: $spacing-double auto $spacing-double * 1.5 auto;
@@ -38,14 +37,16 @@
 } 
 
 .contact-paragraph {
-    @include grid(8);
+    max-width: gridw(8);
+    padding: 0 $spacing;
     
     margin: 0 auto $spacing-double * 1.5 auto;
 }
 
 .contact-image {
     display: block;
-    @include grid(10);
+    max-width: gridw(10);
+    width: 100%;
     
     margin: 0 auto $spacing-double * 1.5 auto;;
 }
@@ -53,7 +54,7 @@
 
 .contact-list {
     display: block;
-    @include grid(9);
+    max-width: gridw(9);
     margin: 0 auto;
     
     @include clearfix;
@@ -67,8 +68,11 @@
     
     &:nth-child(2n) {
         margin: 0 $gutter; 
+
+        & > a {
+            background: darken($stb-red, 2);
+        }
     }
-    
     
     path { fill: white; }//rgba($stb-red, 0.5); }
     
@@ -90,6 +94,7 @@
             
             &[data-icon=linkedin] { margin-top: -12px; }
             &[data-icon=email] { margin-top: -6px; }
+            &[data-icon=twitter] { margin-top: 6px; }
         }
         
         &:hover {
@@ -98,20 +103,50 @@
             
             path { fill: white; }// $stb-red; }
         };
-    }
-    
+    }   
 }
 
-//
-//<section id="contact" class="stb-contact contact yield">
-//    <p class="contact-paragraph">I'm Evan Krambuhl (sometimes Evan Price). I am the creator of beautiful, funcational experiences and forward thinking development.  I specialize in simplicity.  I make products that are powerful and easy to use.</p>
-//        
-//    <div class="contact-paragraph">Away from work I am a musician, releasing 6 albums over the last nine years as <a href="http://pmisdead.com">Precision Machines,</a> my musical identity.  I play guitar, piano and drums and most recently I released an 11 track Electric-Rock album called, &quot;<a href="http://nad.iounoi.com">Nourish and Destroy</a>&quot; under my <cite title="I Owe You No I"> IOUNOI</cite> pseudonym.</div>
-//    
-//    <div class="contact-paragraph">There are a few different ways to get a hold of me, feel free to drop a line to say hello or ask for my expertise on your project.</div>
-//
-//    <ul class="contact-list">
-//        <li class="contact-item"><a href="https://twitter.com/evan_is"><i class="contact-list-item icon icon-48" data-icon="twitter"></i></a></li>
-//        <li class="contact-item"><a href="mailto:evan.krambuhl@gmail.com"><i class="contact-list-item icon icon-48" data-icon="email"></i></a></li>
-//    </ul>
-//</section>
+
+
+@include grid-respond (6, 9) {
+    .contact-list {
+        @include grid(6);
+    }
+
+    .contact-item > a {
+        @include grid(2);
+        height: gridw(2);
+        padding: gridw(2) / 2 - 24px 0 0 0;
+
+        & > .icon { 
+            display: inline-block; 
+            height: 48px;
+            width: 54px;
+            
+            &[data-icon=linkedin] { margin-top: 0px; }
+            &[data-icon=email] { margin-top: 0px; }
+        }
+    }
+}
+
+@include grid-respond (0, 6) {
+    .contact-list {
+        width: auto;
+        display: inline-block;
+    }
+
+    .contact-item > a {
+        @include grid(1.25);
+        height: gridw(1.25);
+        padding: gridw(1.25) / 2 - 16px 0 0 0;
+
+        & > .icon { 
+            display: inline-block; 
+            height: 32px;
+            width: 40px;
+            
+            &[data-icon=linkedin] { margin-top: 0px; }
+            &[data-icon=email] { margin-top: 0px; }
+        }
+    }
+}

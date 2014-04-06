@@ -61,7 +61,7 @@ define([
             setActive: function($page) {
                 $page.addClass('is-active').siblings().removeClass('is-active');
                 return this;
-            },
+            }
         });
     }
 )

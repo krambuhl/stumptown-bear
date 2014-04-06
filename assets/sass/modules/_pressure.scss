@@ -1,14 +1,16 @@
 .pressure {
     position: relative;
     display: block;
-    margin: 0 auto;
+    margin: 0 auto $spacing-quad auto; ;
     
     width: 100%;
-    min-width: gridw(12);
     max-width: gridw(15);
-    height: 64px;
-
-    & + * { margin-top: $spacing-quad; }
+    
+    &, * {
+        @include transition-duration(0.5s);
+        @include transition-property(height, padding);
+        @include transition-timing-function(ease);   
+    }
 }
 
 .pressure::before,
@@ -16,7 +18,7 @@
     content: '\0020';
     position: absolute;
     top: 0;
-    bottom: 14px;
+    bottom: 0;
     
     z-index: -1;
 }
@@ -26,18 +28,20 @@
 
 .pressure-list {
     position: relative;
-    @include grid(12, $gutter);
+    @include grid(12);
     margin: 0 auto;
+    
     background-color: $stb-red;
     
-    height: 50px;
     font-size: 0;
 }
 
 .pressure-item {
     display: inline-block;
+    vertical-align: top;
     position: relative;
-    height: 50px;
+    height: 52px;
+    padding: 0;
     
     text-align: center;
     text-transform: uppercase;
@@ -45,17 +49,16 @@
     font-family: "museo sans", helvetica;
     font-weight: 300;
     font-size: 16px;
-    
+
     @include transition-duration(0.25s);
-    @include transition-property(width, height);
-    @include transition-timing-function(ease);
+    @include transition-property(width, height, padding);
     
     & > a {      
         position: relative;
         display: block;
         width: 100%;
         height: 100%;
-        padding: 18px;
+        padding: 18px 0;
         
         z-index: 3;
         
@@ -77,6 +80,8 @@
         
     &:nth-child(4) { background-color: $stb-red;
         path { fill: $stb-red; }}
+        
+      
 }
 
 .pressure-item-icon {
@@ -99,16 +104,54 @@
 // states
 
 .pressure-list:hover > .pressure-item  {
-    @include grid(2.66, $gutter);
-    
-    &:hover { @include grid(4, $gutter); 
+    width: 24%;
+
+    &:hover { width: 28%;
         & > .pressure-item-icon { bottom: -12px; }}
 }
 
 .pressure-list:not(:hover) > .pressure-item  {
-    @include grid(3, $gutter);
+    width: 25%;
     
-    &.is-active  { @include grid(3, $gutter); 
+    &.is-active  { width: 25%;
         & > .pressure-item-icon { bottom: -8px; }}
 }
+
+@include grid-respond (5, 12) { 
+    .pressure-list { width: 100%; }
+    .pressure-item {
+        height: 68px;
+        
+        & > a {
+            padding: 27px 0 0 0;
+            
+            & > span {
+                display: block;
+            }
+        }
+    }
+}
+
+@include grid-respond (0, 5) { 
+    .pressure-list { width: 100%; }
+    .pressure-item {
+        display: block;
+        width: 100% !important;
+        height: 54px;
+
+        @include transition-property(none);
+
+        & > a {
+            padding: 20px 0 0 0;
+        }
+    }
+
+    .pressure-item-icon {
+        z-index: 10;
+    }
+}
+
+
+
+
 

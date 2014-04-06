@@ -15,6 +15,8 @@ define([
             template: Handlebars.compile(pressureTemplate),
             
             initialize: function() {
+                this.window = $(window);
+                this.hb = $("html, body");
                 this.render();
             },
             
@@ -32,6 +34,10 @@ define([
                 var $target = $(e.currentTarget);
                     
                 $target.addClass('is-active').siblings().removeClass('is-active');
+
+                if (this.window.width() <= 480) {
+                    this.hb.animate({ scrollTop: $(".content").position().top - 20 }, 1000);
+                }
             },
             
             yieldActive: function(name) {

@@ -6,14 +6,14 @@
             "src": "http://stream.stumptownbear.com/portfolio/wt-today/overview.jpg", 
             "description": "High level information about each connection social network." 
         }, { 
-            "src": "http://stream.stumptownbear.com/portfolio/wt-today/twitter.jpg", 
-            "description": "Shows most recent and effective tweets along with user's profile stats." 
+            "src": "http://stream.stumptownbear.com/portfolio/wt-today/webtrends.jpg", 
+            "description": "Presents up-to-the-moment highlights from a Webtrends Analytics 10 profile." 
         }, { 
             "src": "http://stream.stumptownbear.com/portfolio/wt-today/facebook.jpg", 
             "description": "Displays measurments from Facebook insight." 
         }, { 
-            "src": "http://stream.stumptownbear.com/portfolio/wt-today/webtrends.jpg", 
-            "description": "Presents up-to-the-moment highlights from a Webtrends Analytics 10 profile." 
+            "src": "http://stream.stumptownbear.com/portfolio/wt-today/twitter.jpg", 
+            "description": "Shows most recent and effective tweets along with user's profile stats." 
         }, { 
             "src": "http://stream.stumptownbear.com/portfolio/wt-today/youtube.jpg", 
             "description": "Displays core stats and most recent or effective videos." 

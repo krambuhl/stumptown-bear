@@ -1,17 +1,27 @@
  // WE'RE ON THE GRID, MOTHER FUCKER!
 
 $max: 12;
-$column: 60px;
-$gutter: 20px;
-$gridtotes: $column + $gutter;
+$column: 80px;
+$gutter: 0px;
 
-@mixin    grid  ($span: $max, $offset: 0px) { width:  ($column * $span) + ($gutter * ($span - 1)) + $offset; }
-@function gridw ($span: $max, $offset: 0px) { @return ($column * $span) + ($gutter * ($span - 1)) + $offset; }
+@function gridw ($span: $max, $offset: 0px) { 
+    @return ($column * $span) + ($gutter * ($span - 1)) + $offset; 
+}
 
-// responsive breakpoints 
+@mixin grid  ($span: $max, $offset: 0px) { 
+    width: gridw($span, $offset); 
+}
 
-@mixin grid-respond ($grid-min, $grid-max) {
-    @media #{"only screen and (min-width: " + gridw($grid-min) + ") and (max-width: " + gridw($grid-max) + ")"} { * > { @content; } }
+@mixin grid-respond ($grid-min, $grid-max, $media: "screen") {    
+    $grid: if(
+        $grid-min != 0,
+        "only " + $media + " and (min-width: " + gridw($grid-min) + ") and (max-width: " + gridw($grid-max) + ")",
+        "only " + $media + " and (max-width: " + gridw($grid-max) + ")"
+    );
+   
+    @media #{$grid} { 
+        @content;
+    };
 }
 
 
@@ -28,32 +38,6 @@ $respond-huge:   "only screen and (min-width: 1920px)";  // huge screens (HD and
 
 $respond-retina:  "only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 144dpi)";
 
-// respond to the grid
 
-@mixin respond ($media) {
-    @if ($media == mobile) { @media #{$respond-mobile} { @content; }}
-    @if ($media == tablet) { @media #{$respond-tablet} { @content; }}
-    @if ($media == small)  { @media #{$respond-small}  { @content; }}
-    @if ($media == screen) { @media #{$respond-screen} { @content; }}
-    @if ($media == large)  { @media #{$respond-large}  { @content; }}
-    @if ($media == huge)   { @media #{$respond-huge}   { @content; }}
-}
-
-//  respond the grid
-
-@mixin rgrid ($media) {
-    @if ($media == mobile) { width: 100%; }
-    @if ($media == tablet) { @include grid(8);  }
-    @if ($media == small)  { @include grid(12); }
-    @if ($media == screen) { @include grid(18); }
-    @if ($media == large)  { @include grid(24); }
-    @if ($media == huge)   { @include grid(32); }
-}
-
-
-
-    @include grid-respond(4, 12) {
-        body { width: 720px; }
-    }
 
 

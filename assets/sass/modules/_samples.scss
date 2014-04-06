@@ -43,7 +43,7 @@
     overflow: hidden;
     
     background: rgba(#000, 0);
-    border-bottom: 2px solid rgba(#222, 0);
+    border-bottom: 2px solid rgba(#ccc, 0);
 }
 
 .samples-preview-expand {
@@ -165,7 +165,7 @@
 
 .samples-header-main  {
     float: left;
-    width: 100%;
+    width: 50%;
     
     font-family: "museo sans";
     font-weight: 500;
@@ -175,7 +175,7 @@
 
 .samples-header-sub  {
     float: right;
-    width: 100%;
+    width: 50%;
     margin-top: 10px;
     
     text-align: right;
@@ -213,7 +213,7 @@
     .samples-preview {
         background: rgba(mix(white, #eee), 1);
 
-        border-bottom: 2px solid #222;
+        border-bottom: 2px solid #ccc;
     }
     
     .samples-preview-close { @include opacity(1); z-index: 100; }
@@ -222,10 +222,12 @@
 @include grid-respond (0, 12) {
     .samples-header-main {
         clear: both;
+        width: 100%;
     }
     
     .samples-header-sub { 
         float: left;
+        width: 100%;
         clear: both;
         text-align: left;
     }
@@ -280,13 +282,12 @@
         max-width: 540px;
         width: 100%;
         margin: 0 auto;
-        padding: $spacing;
     }
 
     .samples-image {
         width: 100%;
         max-height: 100%;
-        margin-bottom: 3px;
+        margin-bottom: 0;//3px;
 
         padding-bottom: (100% / 3);
 

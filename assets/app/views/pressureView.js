@@ -35,8 +35,8 @@ define([
                     
                 $target.addClass('is-active').siblings().removeClass('is-active');
 
-                if (this.window.width() <= 480) {
-                    this.hb.animate({ scrollTop: $(".content").position().top - 20 }, 1000);
+                if (this.window.width() <= 640) {
+                    this.hb.animate({ scrollTop:(this.window.width() <= 480 ? $(".content").position().top - 20 : this.$el.position().top) }, 360);
                 }
             },
             

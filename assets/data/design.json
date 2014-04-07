@@ -1,6 +1,6 @@
 [{
     "title": "Juniper Deception Force",
-    "description": "HTML+CSS+Javascript. Apple App Store and Social Integration.",
+    "description": "HTML+CSS+Javascript. App Store & Social Integration",
     
     "images": [
         { "src": "http://stream.stumptownbear.com/portfolio/deception-force/deception-force-1.jpg" },
@@ -9,7 +9,7 @@
     ]
 }, {
     "title": "Juniper Data Center Rap Battle",
-    "description": "HTML+CSS+Javascript. Site Archeticture & Interactive Design with Social Sharing",
+    "description": "HTML+CSS+Javascript. Site Archeticture & Interactive Design. Social Integration",
     
     "images": [
         { "src": "http://stream.stumptownbear.com/portfolio/rap-battle/rap-battle-1.jpg" },
@@ -17,16 +17,7 @@
         { "src": "http://stream.stumptownbear.com/portfolio/rap-battle/rap-battle-3.jpg" }
     ]
 }, {
-    "title": "Polycom Defy Distance",
-    "description": "HTML+CSS+Javascript. Interactive Design and Front-end Development.",
-    
-    "images": [
-        { "src": "http://stream.stumptownbear.com/portfolio/polycom-defy-distance/defy-distance-1.jpg" },
-        { "src": "http://stream.stumptownbear.com/portfolio/polycom-defy-distance/defy-distance-2.jpg" },
-        { "src": "http://stream.stumptownbear.com/portfolio/polycom-defy-distance/defy-distance-3.jpg" }
-    ]
-}, {
-    "title": "Webtrends Today",
+    "title": "Webtrends Today iPad App",
     "description": "HTML+CSS+Javascript Using Social APIs & Miscellaneous Design",
     
     "images": [{ 
@@ -52,7 +43,17 @@
     "images": [
         { "src": "http://stream.stumptownbear.com/portfolio/wt-dilab/dataviz-msn.jpg" },
         { "src": "http://stream.stumptownbear.com/portfolio/wt-dilab/dataviz-redbull.jpg" },
-        { "src": "http://stream.stumptownbear.com/portfolio/wt-dilab/dataviz-telegraph.jpg" }
+        { "src": "http://stream.stumptownbear.com/portfolio/wt-dilab/dataviz-telegraph.jpg" },
+        { "src": "http://stream.stumptownbear.com/portfolio/wt-dilab/dataviz-stream-musa.jpg" }
+    ]
+}, {
+    "title": "Polycom Defy Distance",
+    "description": "HTML+CSS+Javascript. Interactive Design & Front-end Development.",
+    
+    "images": [
+        { "src": "http://stream.stumptownbear.com/portfolio/polycom-defy-distance/defy-distance-1.jpg" },
+        { "src": "http://stream.stumptownbear.com/portfolio/polycom-defy-distance/defy-distance-2.jpg" },
+        { "src": "http://stream.stumptownbear.com/portfolio/polycom-defy-distance/defy-distance-3.jpg" }
     ]
 }, {
     "title": "Precision Machines",
@@ -73,6 +74,16 @@
         { "src": "http://stream.stumptownbear.com/portfolio/iounoi/iounoi-3.jpg" }
     ]
 }, {
+    "title": "Webtrends Prototypes",
+    "description": "Various Design Prototypes and Ideation",
+    
+    "images": [
+        { "src": "http://stream.stumptownbear.com/portfolio/dl-team-dashboard/dashboard.png" },
+        { "src": "http://stream.stumptownbear.com/portfolio/wt-design/live-view.jpg" },
+        { "src": "http://stream.stumptownbear.com/portfolio/wt-design/sales-enablement-1.jpg" },
+        { "src": "http://stream.stumptownbear.com/portfolio/wt-design/sales-enablement-2.jpg" }
+    ]
+}, {
     "title": "Other Projects",
     "description": "Design Prototypes & All Sorts of Experiments",
     
@@ -80,10 +91,6 @@
         { "src": "http://stream.stumptownbear.com/portfolio/open-remix/open-remix.png" },
         { "src": "http://stream.stumptownbear.com/portfolio/southridge-tech/southridge-tech-1.png" },
         { "src": "http://stream.stumptownbear.com/portfolio/southridge-high-school/banner.png" },
-        { "src": "http://stream.stumptownbear.com/portfolio/minutes-app/ma-1.jpg" },
-        { "src": "http://stream.stumptownbear.com/portfolio/dl-team-dashboard/dashboard.png" },
-        { "src": "http://stream.stumptownbear.com/portfolio/wt-design/live-view.jpg" },
-        { "src": "http://stream.stumptownbear.com/portfolio/wt-design/sales-enablement-1.jpg" },
-        { "src": "http://stream.stumptownbear.com/portfolio/wt-design/sales-enablement-2.jpg" }
+        { "src": "http://stream.stumptownbear.com/portfolio/minutes-app/ma-1.jpg" }
     ]
 }]

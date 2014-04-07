@@ -10,7 +10,7 @@
     @include clearfix;
     
     &, * { 
-        @include transition-duration(0.5s);
+        @include transition-duration(0.25s);
         @include transition-property(width, height, padding, margin, opacity, color, background, border);
         @include transition-timing-function(ease);
         
@@ -59,7 +59,7 @@
         @include transition-duration(0s);
         background: rgba($stb-purple, 0.05);
         
-        & ~ .timeline-item { @include opacity(0.1);  @include transition-duration(0.5s); }
+        & ~ .timeline-item { @include opacity(0.1);  @include transition-duration(0.25s); }
     }
 }
 
@@ -104,5 +104,20 @@
     .timeline-item,
     .timeline-item.is-active ~ .timeline-item { 
         @include opacity(1); 
+    }
+}
+
+
+
+@include grid-respond(5, 8) {
+    .timeline-item {
+        padding: $spacing-double;
+    }
+}
+
+
+@include grid-respond(0, 5) {
+    .timeline-item {
+        padding: $spacing;
     }
 }

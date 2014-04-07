@@ -1,7 +1,7 @@
 require.config({
     baseUrl: "assets",
     paths: {
-        jquery: "../bower_components/jquery/dist/jquery",
+        jquery: "library/jquery",
         underscore: "../bower_components/underscore/underscore",
         backbone: "../bower_components/backbone/backbone",
         handlebars: "../bower_components/handlebars/handlebars",
@@ -30,6 +30,9 @@ require.config({
             exports: "Handlebars"
         },
         icon: {
+            deps: [
+                "underscore"
+            ],
             exports: "icon"
         }
     }
@@ -48,5 +51,9 @@ define([
     
     // Initialize routing and start Backbone.history()
     new Router();
-    Backbone.history.start();   
+    Backbone.history.start();
+
+    if ('ontouchstart' in window || 'onmsgesturechange' in window) {
+        $("html").addClass('has-touch');
+    }
 });

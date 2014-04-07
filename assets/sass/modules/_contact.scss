@@ -10,7 +10,7 @@
     @include clearfix();
     
     &, * { 
-        @include transition-duration(0.5s);
+        @include transition-duration(0.25s);
         @include transition-property(width, height, padding, margin, opacity, color, background, border);
         @include transition-timing-function(ease);
         

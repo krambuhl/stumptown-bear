@@ -80,8 +80,6 @@
         
     &:nth-child(4) { background-color: $stb-red;
         path { fill: $stb-red; }}
-        
-      
 }
 
 .pressure-item-icon {
@@ -103,17 +101,17 @@
 
 // states
 
-.pressure-list:hover > .pressure-item  {
+html:not(.has-touch) .pressure-list:hover > .pressure-item  {
     width: 24%;
 
-    &:hover { width: 28%;
+    &:hover { width: 28%; z-index: 20;
         & > .pressure-item-icon { bottom: -12px; }}
 }
 
-.pressure-list:not(:hover) > .pressure-item  {
+.pressure-list > .pressure-item  {
     width: 25%;
     
-    &.is-active  { width: 25%;
+    &.is-active  { width: 25%; z-index: 20;
         & > .pressure-item-icon { bottom: -8px; }}
 }
 
@@ -132,7 +130,17 @@
     }
 }
 
+@include grid-respond (5, 8) { 
+    .pressure {
+        margin: 0 auto $spacing-double auto; ;
+    }
+}
+
 @include grid-respond (0, 5) { 
+    .pressure {
+        margin: 0 auto $spacing auto; ;
+    }
+
     .pressure-list { width: 100%; }
     .pressure-item {
         display: block;

@@ -121,4 +121,8 @@
     .footer-links,
     .footer-item,
     .footer-copy { float: none; text-align: center; margin-right: 0; }
+
+    .footer-copy {
+        margin-top: $spacing-double;
+    }
 }

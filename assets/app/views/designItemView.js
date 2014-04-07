@@ -9,7 +9,7 @@ define([
         return Backbone.View.extend({
             events: {
                 "click .samples-image": "swapPreviewImage",
-                "hover .samples-image": "swapPreviewImage",
+                "hover .samples-image": "onImageHover",
                 "click .samples-preview": "openPreview",
                 "click .samples-preview-close": "closePreview",
                 
@@ -23,15 +23,18 @@ define([
                 var that = this;
                 
                 this.$window = $(window);
+                this.html = $("html");
                 this.render(model);
 
                 
                 this.$window.on('keydown.' + this.cid, function(e) {
                      if (e.which == 27) that.closePreview().cancelPreviewTimer();
-                }).on("resize", function() {
+                }).on("resize", _.throttle(function() {
                     that.isMobile = that.$window.outerWidth() < 640 ? true : false;
                     that.resizeActiveImage();
-                })
+
+                    if (that.isMobile) that.$el.removeClass('is-active');
+                }, 100));
             },
             
             render: function(model) {
@@ -143,6 +146,12 @@ define([
                         "data-ratio": (this.height / this.width)
                     });
                 }); 
+            },
+
+            onImageHover: function() {
+                if (!this.html.hasClass("has-touch")) {
+                    this.swapPreviewImage()
+                }
             },
             
             // action: user clicks preview img container

@@ -4,16 +4,6 @@
     margin-bottom: $spacing-double;
     
     @include clearfix;
-    
-    &, * { 
-        @include transition-duration(0.5s);
-        @include transition-property(height, margin, opacity);
-        @include transition-timing-function(ease-out);
-        
-        -webkit-transform: translate3d(0, 0, 0);
-        -webkit-backface-visibility: hidden;
-        -webkit-perspective: 1000;
-    }
 }
 
 .content-list {
@@ -39,9 +29,6 @@
     &.is-active {    
         position: relative;
         @include opacity(1);
-        @include transition-duration(0.25s);
-        @include transition-timing-function(ease-in);
-        // @include transition-duration(1s);
         z-index: 10;
     }
 }

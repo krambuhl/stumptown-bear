@@ -18,10 +18,10 @@ body {
     -webkit-tap-highlight-color: transparent; 
 }
 
-::selection 	 	{ background: $selection-color; }
-::-moz-selection 	{ background: $selection-color; }
-img::selection 		{ background: $selection-color; }
-img::-moz-selection	{ background: $selection-color; } 
+::selection 	 	{ background: $selection-color; color: white; }
+::-moz-selection 	{ background: $selection-color; color: white; }
+img::selection 		{ background: $selection-color; color: white; }
+img::-moz-selection	{ background: $selection-color; color: white; } 
 
 
 

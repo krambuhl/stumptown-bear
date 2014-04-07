@@ -36,7 +36,7 @@
     color: white;
     background: #333;
     
-    @include transition-duration(0.5s);
+    @include transition-duration(0.25s);
     @include transition-property(background);
     @include transition-timing-function(ease);
     

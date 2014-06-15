@@ -128,6 +128,11 @@ gulp.task('copy-images', function() {
     .pipe(gulp.dest(dir(destDir, images)));
 });
 
+gulp.task('copy-fonts', function() {
+  return gulp.src(dir(sourceDir, 'fonts', '**/*'))
+    .pipe(gulp.dest(dir(destDir, 'fonts')));
+});
+
 
 // __watch__ task:
 gulp.task('watch', function () {
@@ -159,7 +164,7 @@ gulp.task('upload', ['compile'], function () {
 // });
 
 
-gulp.task('copy', ['copy-images']);
+gulp.task('copy', ['copy-images', 'copy-fonts']);
 
 gulp.task('compile', ['styles', 'app', 'grunt-icons', 'copy', 'build']);
 gulp.task('default', ['compile', 'watch']);

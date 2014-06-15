@@ -5,5 +5,5 @@
 	"scripts": ["app.js"],
 
 	"stylesheetPath": "",
-	"stylesheets": ["style.css"]
+	"stylesheets": ["fonts/fonts.css", "style.css"]
 }

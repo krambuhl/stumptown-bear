@@ -12,9 +12,10 @@ body {
     font-variant: normal;
     font-style: normal;
     font-weight: normal;
-    font-size: 15px;
     font-family: $fontstack-text;
-    line-height: 1.3em;
+
+    font-size: 18px;
+    line-height: 1.6em;
 
     -webkit-font-smoothing: antialiased;
     -webkit-text-size-adjust: 100%;
@@ -23,21 +24,10 @@ body {
 
 ::selection 	 	{ background: $selection-color; }
 ::-moz-selection 	{ background: $selection-color; }
-img::selection 		{ background: $selection-color; }
-img::-moz-selection	{ background: $selection-color; }
+img::selection   	{ background: $selection-color; }
+img::-moz-selection  { background: $selection-color; }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: $fontstack-header;
-}
-
-a        { text-decoration: none; }
 em, cite { font-style: italic; }
-
-.relative {
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
 
 // DEFAULTS
 
@@ -46,3 +36,9 @@ em, cite { font-style: italic; }
     transition: none 0.25s ease;
     -webkit-backface-visibility: hidden;
 }
+
+@include grid-respond(0, 5) { body { font-size: 14px; }}
+@include grid-respond(5, 7.5) { body { font-size: 16px; }}
+@include grid-respond(9, 12) { body { font-size: 21px; }}
+@include grid-respond(12, 15) { body { font-size: 24px; }}
+@include grid-respond(15) { body { font-size: 32px; }}

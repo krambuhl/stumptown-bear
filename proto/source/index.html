@@ -23,11 +23,22 @@
 </head>
 <body>
 
-<section id="application">
-  <div class="stb-logo">
-    
-  </div>
-</section>
+<div id="application">
+  <section class="cell cell-full">
+    <header class="header">
+      <div class="header-logo logo">
+        <i class="logo-icon icon" data-icon="stb-logo"></i>
+        <h1 class="logo-name">Stumptown<span class="logo-name-alt">Bear</span></h1>
+      </div>
+
+      <nav class="header-menu menu">
+        <a href="#/" class="menu-item" data-rel="projects">Projects</a>
+        <a href="#/" class="menu-item" data-rel="blog">Blog</a>
+        <a href="#/" class="menu-item" data-rel="contact">Contact</a>
+      </nav>
+    </header>
+  </section>
+</div>
 
 {{#each scripts}}
 <script src="{{.}}"></script>

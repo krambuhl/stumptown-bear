@@ -110,7 +110,7 @@ gulp.task('app', function() {
 //
 // - static handlebars
 //   + output: various files to './dist/'
-gulp.task('build', ['base'], function() {
+gulp.task('build', function() {
   var data = require(dir(sourceDir, "config.json"));
 
   var options = {
@@ -143,7 +143,7 @@ gulp.task('watch', function () {
   gulp.watch(dir(sourceDir, 'svg', '**/*.svg'), ['icons']);
 
   // run `app` task on js file changes in './source/app'
-  gulp.watch(dir(sourceDir, '**/*.{json,html,hbs,handlebars}'), ['compile']);
+  gulp.watch(dir(sourceDir, '**/*.{json,html,hbs,handlebars}'), ['build']);
 });
 
 
@@ -161,6 +161,5 @@ gulp.task('upload', ['compile'], function () {
 
 gulp.task('copy', ['copy-images']);
 
-gulp.task('base', ['styles', 'app', 'grunt-icons', 'copy']);
-gulp.task('compile', ['base', 'build']);
+gulp.task('compile', ['styles', 'app', 'grunt-icons', 'copy', 'build']);
 gulp.task('default', ['compile', 'watch']);

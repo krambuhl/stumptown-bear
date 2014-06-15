@@ -1,6 +1,6 @@
 {
-  "name": "stumptownbear-version-8",
-  "version": "8.0.0",
+  "name": "stumptownbear",
+  "version": "8.1.0",
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-contrib-compass": "~0.4.1",

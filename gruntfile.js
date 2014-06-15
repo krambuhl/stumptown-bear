@@ -1,10 +1,6 @@
-var percentBetween = function(n1, n2, pos) {
-    return Math.floor(pos * n2) + n1;
-};
-
 module.exports = function (grunt) {
     // load NPM Tasks
-    
+
     // Bower Tasks
     grunt.loadNpmTasks('grunt-bower-task');
     grunt.loadNpmTasks('grunt-bower-requirejs');
@@ -14,7 +10,6 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-compass');
     grunt.loadNpmTasks('grunt-contrib-clean');
-    grunt.loadNpmTasks('grunt-requirejs');
 
 
     // Project configuration.
@@ -27,17 +22,31 @@ module.exports = function (grunt) {
                 files: ['assets/sass/**/*.scss'],
                 tasks: ['clean:0', 'compass:dev']
             },
-            
+
             options: {
                 spawn: false,
                 interrupt: true,
-                livereload: true
+            }
+        },
+
+        bower: {
+            target: {
+                rjsConfig: 'assets/script/script.js'
             }
         },
 
         // TASKS
         clean: ['assets/style/', 'tmp/'],
 
+        uglify: {
+            options: {
+                banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
+            },
+            build: {
+                src: 'src/<%= pkg.name %>.js',
+                dest: 'build/<%= pkg.name %>.min.js'
+            }
+        },
 
         compass: { // Task
             options: { // Target options
@@ -45,15 +54,15 @@ module.exports = function (grunt) {
                 cssDir: 'assets/style/',
                 noLineComments: true
             },
-            
-            dist: { 
+
+            dist: {
                 options: {
                     outputStyle: "compressed",
                     environment: "production"
                 }
             },
-            
-            dev: { 
+
+            dev: {
                 options: {
                     outputStyle: "nested",
                     environment: "development"
@@ -64,26 +73,11 @@ module.exports = function (grunt) {
 
 
     // Define Tasks
-    
-    // Default Task
-    grunt.registerTask('default', ['develop']);
-    
-    // Build Tasks
-    grunt.registerTask('production', ['clean', 'compass:dist'])
-    grunt.registerTask('develop', ['clean', 'compass:dev', 'watch']);
-    
-    // Component Installs
-    grunt.registerTask('install', ['bower-install']);
-    grunt.registerTask('bower-install', function () {
-        require('bower').commands
-            .install([
-                'underscore',
-                'backbone',
-                'requirejs',
-                'handlebars',
-                'jasmine',
-                'fastclick'
-            ]).on('end', this.async());
-    });
 
+    // Default Task
+    grunt.registerTask('default', ['production']);
+
+    // Build Tasks
+    grunt.registerTask('production', ['clean', 'compass:dist']);
+    grunt.registerTask('develop', ['clean', 'compass:dev']);
 };

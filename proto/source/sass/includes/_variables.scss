@@ -1,0 +1,30 @@
+// Site-wide Variables
+
+
+
+// FONTS
+$font-regular: 'PT Mono', sans-serif;
+
+$fontstack-text: $font-regular, sans-serif;
+$fontstack-header: $font-regular, Verdana, sans-serif;
+$fontstack-mono: monospace;
+
+
+// COLORS
+
+$color-light: white;
+$color-dark: #1e2223;
+
+$site-bg: $color-light;
+$site-color: $color-dark;
+
+$selection-color: mix($color-light, $color-dark, 70); // when a user highlights text this is the super duper color!
+
+
+// site spacing, keep it consistant bitches
+
+$spacing: 20px;
+$spacing-double: $spacing * 2;
+$spacing-quad:   $spacing * 4;
+$spacing-half:   $spacing / 2;
+$spacing-fourth: $spacing / 4;

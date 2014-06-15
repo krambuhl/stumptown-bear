@@ -59,7 +59,9 @@ define([
                     _.delay(_.bind(function() { 
                         this.$loader.addClass('is-hidden');
                         this.$samples.removeClass('is-hidden');
-                    }, this), 1500)
+                    }, this), 1500);
+
+                    $(window).trigger('resize');
                 }, this));
             },
             
@@ -72,14 +74,10 @@ define([
             // eikes / imgpreload.js
             // https://gist.github.com/eikes/3925183
             // Copyright (C) 2012 Eike Send
-            
             preloadImages: function(imgList, callback) {
-                var loaded = 0, 
-                    images = [];
-                    
+                var loaded = 0, images = [];
                 var inc = function() {
                     loaded += 1;
-                    
                     if (loaded === imgList.length && callback) callback();
                 };
 
@@ -89,9 +87,7 @@ define([
                     images[i].onerror = inc;
                     images[i].onload = inc;
                     images[i].src = imgList[i];
-                } 
-                
-                //debugger;
+                }
             }
         });
     }

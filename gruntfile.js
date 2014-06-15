@@ -1,6 +1,6 @@
 module.exports = function (grunt) {
     // load NPM Tasks
-    
+
     // Bower Tasks
     grunt.loadNpmTasks('grunt-bower-task');
     grunt.loadNpmTasks('grunt-bower-requirejs');
@@ -22,13 +22,13 @@ module.exports = function (grunt) {
                 files: ['assets/sass/**/*.scss'],
                 tasks: ['clean:0', 'compass:dev']
             },
-            
+
             options: {
                 spawn: false,
                 interrupt: true,
             }
         },
-        
+
         bower: {
             target: {
                 rjsConfig: 'assets/script/script.js'
@@ -37,7 +37,7 @@ module.exports = function (grunt) {
 
         // TASKS
         clean: ['assets/style/', 'tmp/'],
-        
+
         uglify: {
             options: {
                 banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
@@ -54,15 +54,15 @@ module.exports = function (grunt) {
                 cssDir: 'assets/style/',
                 noLineComments: true
             },
-            
-            dist: { 
+
+            dist: {
                 options: {
                     outputStyle: "compressed",
                     environment: "production"
                 }
             },
-            
-            dev: { 
+
+            dev: {
                 options: {
                     outputStyle: "nested",
                     environment: "development"
@@ -73,25 +73,11 @@ module.exports = function (grunt) {
 
 
     // Define Tasks
-    
+
     // Default Task
     grunt.registerTask('default', ['production']);
-    
-    // Build Tasks
-    grunt.registerTask('production', ['clean', 'compass:dist'])
-    grunt.registerTask('develop', ['clean', 'compass:dev']);
-    
-    // Component Installs
-    grunt.registerTask('install', ['bower-install', 'bower']);
-    grunt.registerTask('bower-install', function () {
-        require('bower').commands
-            .install([
-                'jquery',
-                'underscore',
-                'backbone',
-                'requirejs',
-                'handlebars'
-            ]).on('end', this.async());
-    });
 
+    // Build Tasks
+    grunt.registerTask('production', ['clean', 'compass:dist']);
+    grunt.registerTask('develop', ['clean', 'compass:dev']);
 };

@@ -3,7 +3,8 @@
     display: block;
     margin: 0 auto;
     
-    width: gridw(12, $gutter);
+    width: 100%;
+    max-width: gridw(12, $spacing-double);
     
     @include clearfix;
     
@@ -18,15 +19,14 @@
     position: relative;
     display: block;
     
-    min-width: gridw(12, gutter);
-    max-width: gridw(12, $gutter + 120);
+    width: 100%;
+    padding: 0 $spacing;
 
     & + * { margin-top: $spacing-quad; }
 }
 
 .footer-wrapper {
     display: block;
-    @include grid(12, $gutter);
     margin: 0 auto;
     
     //background: #222;
@@ -42,13 +42,14 @@
 .footer-item {
     position: relative;
     float: left;
+    margin-right: $spacing * 0.75;
     
     & > a {
         display: block;
         padding: $spacing-half  * 1.15
                  $spacing * 0.75 
                  $spacing-half * 0.75
-                 $spacing * 0.75;
+                 0;
     
         font-family: $site-headerfont;
         font-weight: 500;
@@ -56,6 +57,15 @@
     
         text-transform: uppercase;
         text-decoration: none;
+        
+        &:hover {
+            padding: $spacing-half  * 1.15
+                     $spacing * 0.75 
+                     $spacing-half * 0.75
+                     $spacing * 0.75;
+        }
+        
+        
         
         &[data-link=design] { color: $stb-green; 
             & + .footer-item-icon path { fill: rgba(white, 0.01); }
@@ -105,4 +115,14 @@
     font-size: 14px;
     
     text-transform: uppercase;
+}
+
+@include grid-respond(0, 8) {
+    .footer-links,
+    .footer-item,
+    .footer-copy { float: none; text-align: center; margin-right: 0; }
+
+    .footer-copy {
+        margin-top: $spacing-double;
+    }
 }

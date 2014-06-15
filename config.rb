@@ -1,4 +1,5 @@
 # Require any additional compass plugins here.
+require 'sass-media_query_combiner'
 
 # Set this to the root of your project when deployed:
 http_path = "/"
@@ -6,6 +7,7 @@ css_dir = "assets"
 sass_dir = "assets/style"
 images_dir = "assets/images"
 javascripts_dir = "assets/scripts"
+
 
 # You can select your preferred output style here (can be overridden via the command line):
 # output_style = :expanded or :nested or :compact or :compressed

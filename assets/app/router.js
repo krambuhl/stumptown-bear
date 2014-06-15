@@ -1,6 +1,6 @@
 define([
     "backbone",
-    "app/app"
+    "app/views/appView"
 ], function(Backbone, AppView) {
     return Backbone.Router.extend({
         initialize: function() {
@@ -12,10 +12,11 @@ define([
 
         routes: {
             "":  "design",
-            "design/":  "design",
+            "portfolio/":  "design",
             "code/":    "code",
             "timeline/": "timeline",
-            "contact/": "contact"
+            "contact/": "contact",
+            "*else": "design"
         },
         
         debug: function(msg) {

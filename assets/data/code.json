@@ -1,6 +1,12 @@
 [{
+    "title": "Backbone.Tendon",
+    "description": "Backbone.Tendon is a small set of moduler objects to quickly get stretching with Backbone (in-development).",
+    
+    "download-link": "https://github.com/krambuhl/Backbone.Tendon/archive/develop.zip",
+    "source-link": "https://github.com/krambuhl/Backbone.Tendon"
+}, {
     "title": "Northplate",
-    "description": "Boilerplate code for html projects using SMACSS style moduler CSS definitions using Sass and Compass",
+    "description": "Boilerplate code for html projects using SMACSS style moduler CSS definitions using Sass and Compass.",
     
     "download-link": "https://github.com/krambuhl/Northplate/archive/master.zip",
     "source-link": "https://github.com/krambuhl/Northplate"

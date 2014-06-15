@@ -31,3 +31,17 @@
 }
 
 .header-main-alt { font-weight: 700; }
+
+
+
+@include grid-respond (0, 12) {
+    .header {
+        min-width: 0;
+    }
+}
+
+@include grid-respond (0, 5) {
+    .header {
+        padding: 64px 0 54px 0;
+    }
+}

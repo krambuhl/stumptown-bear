@@ -1,10 +1,10 @@
 .samples {
-    @include grid(12, $gutter);
+    width: gridw(12);
     padding-top: 6px;
     
     &, * { 
-        @include transition-duration(0.5s);
-        @include transition-property(width, height, opacity);
+        @include transition-duration(0.25s);
+        @include transition-property(all);
         @include transition-timing-function(ease);
 
         -webkit-transform: translate3d(0, 0, 0);
@@ -26,13 +26,15 @@
 .samples-item {
     position: relative;
     width: 100%;
+    overflow: hidden;
     
-    &:not(:first-child) { margin: $gutter * 4 auto; };
+    &:not(:first-child) { margin: 40px 0; };
 }
 
 
 
 .samples-preview {
+    float: left;
     position: relative;
     display: block;
     width: 100%;
@@ -40,36 +42,43 @@
     margin-bottom: $spacing; 
     overflow: hidden;
     
-    background: #000;
+    background: rgba(#000, 0);
+    border-bottom: 2px solid rgba(#ccc, 0);
 }
 
 .samples-preview-expand {
     position: relative;
     margin: 0 auto;
     @include grid(8);
+    height: 0;
     
     overflow: hidden;
      
-    @include opacity(0);
+    @include opacity(1);
+
+    @include transition-duration(0.25s);
+    @include transition-property(height);
+    @include transition-timing-function(ease);
     
     & > div {
         position: absolute;
         top: 48px;
-        left: 0;
-        right: 0;
+        left: $spacing;
+        right: $spacing;
         
         height: 460px;
         
-        width: 100%;
         @include opacity(0);
+
+        @include transition-duration(0s);
+        @include transition-property(opacity);
+        @include transition-timing-function(linear);
         
         text-align: center;
     
         background-repeat: no-repeat;
         background-position: center center;
         @include background-size(contain);
-        
-        @include transition-property(top, opacity);
         
         &.is-active {
             top: 48px;
@@ -82,27 +91,28 @@
 .samples-preview-list {
     float: left;
     position: relative;
-    width: 1000%;
-    height: 100%;
     
-    font-size: 0;
-    text-align: left;
     overflow: hidden;
     
     background: transparent;
 }
 
 .samples-image {
-    display: inline-block;
     position: relative;
+    float: left;
     
-    height: gridw(4, $gutter);
-    @include grid(4, $gutter);
+    height: gridw(4, 0px);
+    width:  gridw(4, 0px);
     
     overflow: hidden;
     
     background-position: center center;
     @include background-size(cover);
+    
+    
+    &:nth-child(3n+1) {
+        clear: left;
+    };
             
     cursor: pointer;
 }
@@ -130,8 +140,8 @@
 
 .samples-preview-close {
     position: absolute;
-    top: 45px;
-    right: 0px;//-48px;
+    top: 0;
+    right: 0;//-48px;
     
     width: 48px;
     height: 48px;
@@ -140,21 +150,22 @@
     background: #000;
     cursor: pointer;
     
-    z-index: 100;
+    z-index: -1;
     
     @include opacity(0);
 }
 
 
 .samples-header  { 
+    float: left;
     width: 100%;
     margin-bottom: 15px;
     text-align: left; 
-    @include clearfix();
 }
 
 .samples-header-main  {
     float: left;
+    width: 50%;
     
     font-family: "museo sans";
     font-weight: 500;
@@ -164,6 +175,7 @@
 
 .samples-header-sub  {
     float: right;
+    width: 50%;
     margin-top: 10px;
     
     text-align: right;
@@ -185,33 +197,113 @@
     z-index: 10;
 
     .samples-preview-expand { 
-        @include grid(8); 
+        max-width: gridw(8); 
+        width: 100%;
         height: 524px;
         margin: ($gutter * 2) auto;
         
         @include opacity(1);
     }
     
-    .samples-image {
-        @include grid(2);
+    .samples-image {    
         height: gridw(2);
+        width:  gridw(2);
+    } 
+    
+    .samples-preview {
+        background: rgba(mix(white, #eee), 1);
+
+        border-bottom: 2px solid #ccc;
     }
     
-    & > .samples-preview-close { @include opacity(1); }
+    .samples-preview-close { @include opacity(1); z-index: 100; }
 } 
 
+@include grid-respond (0, 12) {
+    .samples-header-main {
+        clear: both;
+        width: 100%;
+    }
+    
+    .samples-header-sub { 
+        float: left;
+        width: 100%;
+        clear: both;
+        text-align: left;
+    }
+}
+
+
+@include grid-respond (10, 12) {
+    .samples {
+        width: gridw(10);
+        margin: 0 auto;
+        
+    }
+    
+    .samples-image {
+        height: gridw(10) / 3;
+        width:  gridw(10) / 3;
+    } 
+}
+
+
+@include grid-respond (8, 10) {
+    .samples {
+        width: gridw(8);
+        margin: 0 auto;
+        
+    }
+    
+    .samples-image {
+        height: floor(gridw(8) / 3);
+        width:  floor(gridw(8) / 3);
+    } 
+}
 
 
 
+@include grid-respond (0, 8) {
+    .samples {
+        width: 100%;
+        margin: 0 auto;
 
+        text-align: center;
+    }
+    
+    .samples-header-main,
+    .samples-header-sub {
+        text-align: center;
+        padding: 0 $spacing;
+    }
 
+    .samples-preview-list {
+        float: none;
+        max-width: 540px;
+        width: 100%;
+        margin: 0 auto;
+    }
 
+    .samples-image {
+        width: 100%;
+        max-height: 100%;
+        margin: 2px 0;
 
+        padding-bottom: (100% / 5) * 2;
 
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
 
+        @include transition-duration(0.25s);
+        @include transition-timing-function(ease-in-out);
 
+        height: auto;
+        cursor: auto;
 
-
-
-
-
+        &.is-active {
+            // height: gridw(3);
+            padding-bottom: 75%;
+        }
+    }
+}

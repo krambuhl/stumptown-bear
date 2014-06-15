@@ -9,7 +9,7 @@ $fontsize-large:  $baseline * 3;
 
 // site spacing, keep it consistant bitches
 
-$spacing: 12px;
+$spacing: 20px;
 $spacing-double: $spacing * 2;
 $spacing-quad:   $spacing * 4;
 $spacing-half:   $spacing / 2;
@@ -26,12 +26,11 @@ $site-headerfont: "Museo Sans";
 // COLORS
 
 $site-color-bg:   #fff;
-$site-color-font: #333;
+$site-color-font: #222;
 
 $site-color-bg-alt:   #444;
 $site-color-font-alt: #ddd;
 
-$selection-color: #4a975e; // when a user highlights text this is the super duper color!
 
 //stb colors
 $stb-green:  #4a975e;
@@ -45,3 +44,4 @@ $stb-blue-dark:   darken($stb-blue,   5%);
 $stb-purple-dark: darken($stb-purple, 5%);
 $stb-red-dark:    darken($stb-red,    5%);
 
+$selection-color: darken($site-color-bg-alt, 10); // when a user highlights text this is the super duper color!

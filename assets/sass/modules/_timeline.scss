@@ -1,5 +1,4 @@
 .timeline { 
-    @include grid(12, $gutter);
     padding-top: 6px;
     
     line-height: 1.7em;
@@ -11,7 +10,7 @@
     @include clearfix;
     
     &, * { 
-        @include transition-duration(0.5s);
+        @include transition-duration(0.25s);
         @include transition-property(width, height, padding, margin, opacity, color, background, border);
         @include transition-timing-function(ease);
         
@@ -26,6 +25,7 @@
 
 .timeline-header { 
     margin: 0 auto $spacing-double auto;
+    padding: 0 $spacing;
     
     font-family: $site-headerfont, Helvetica, Sans-serif;
     font-size: 30px;
@@ -36,7 +36,8 @@
 
 .timeline-description {
     margin: 0 auto $spacing-double auto;
-    @include grid(10);
+    max-width: gridw(10);
+    padding: 0 $spacing-double;
 
     font-size: 20px;
     
@@ -58,13 +59,13 @@
         @include transition-duration(0s);
         background: rgba($stb-purple, 0.05);
         
-        & ~ .timeline-item { @include opacity(0.05);  @include transition-duration(0.5s); }
+        & ~ .timeline-item { @include opacity(0.1);  @include transition-duration(0.25s); }
     }
 }
 
 .timeline-list {
     margin: 0 auto 0 auto;
-    @include grid(8);  
+    max-width: gridw(8);  
 
 }
 
@@ -97,5 +98,26 @@
     border-top: 1px solid rgba($stb-purple, 0.25);
     color: #444;
     color: rgba(#222, 0.5);
+}
 
+@include grid-respond(0, 8) {
+    .timeline-item,
+    .timeline-item.is-active ~ .timeline-item { 
+        @include opacity(1); 
+    }
+}
+
+
+
+@include grid-respond(5, 8) {
+    .timeline-item {
+        padding: $spacing-double;
+    }
+}
+
+
+@include grid-respond(0, 5) {
+    .timeline-item {
+        padding: $spacing;
+    }
 }

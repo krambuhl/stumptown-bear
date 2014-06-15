@@ -7,7 +7,7 @@
     @include clearfix;
 
     &, * {
-        @include transition-duration(0.5s);
+        @include transition-duration(0.25s);
         @include transition-property(height, margin, opacity);
         @include transition-timing-function(ease);
     }
@@ -20,25 +20,33 @@
 .code-header {
     display: block;
     margin: 0 auto $spacing-double auto;
-    @include grid(10, $gutter);
-    
+    max-width: gridw(10, $gutter);
+    width: 100%;
+
     text-transform: uppercase;
     font-family: "Museo Sans";
     font-size: 32px;
     font-weight: 700;
 }
 
+.code-header-main { 
+    padding-right: 30px;
+    word-break: break-word;
+}
+
 .code-container {
     display: block;
     margin: 0 auto $spacing-double auto;
-    @include grid(10, $gutter);
+    max-width: gridw(10, $gutter);
+    width: 100%;
     
     @include clearfix;
 }
 
 .code-description {
     float: left;
-    @include grid(6, $gutter);
+    width: 100%;
+    max-width: gridw(6, $gutter);
     min-height: gridw(2, $gutter);
     padding: $spacing-double;
     
@@ -52,7 +60,6 @@
     display: block;
     @include grid(2, $gutter);
     height: gridw(2, $gutter);
-    padding: $spacing-double * 1.5 0;
     
     text-decoration: none;
     text-align: center;
@@ -64,21 +71,19 @@
     color: white;
     background: $stb-blue;
 
-    @include transition-duration(0.5s);
+    @include transition-duration(0.25s);
     
     &:nth-child(2n) { 
         background: mix(#222, $stb-blue, 10%);
     };
+
+    &:hover { 
+        color: white; 
+        background: mix(#222, $stb-blue, 15%);
+    }
     
     .icon { 
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 48px;
-        height: 48px;
-        margin: -24px auto auto -24px;
-        
-        path { fill: white; }
+        display: none;
     }
     
     span {
@@ -87,45 +92,26 @@
         left: 0;
         right: 0;
         
-        @include opacity(0);
-        
         width: 100%;
         margin-top: -16px;
         
         text-align: center;
     }
-    
-    &:hover {
-        color: white;
-        @include transition-duration(0s);
-        
-        .icon { @include opacity(0) }
-        span  { @include opacity(1) }
-    };
 }
 
-//<li class="code-item">
-//    <header class="code-header">
-//        <h2 class="code-header-main">{{title}}</h2>
-//    </header>
-//    
-//    <section class="code-container">
-//        <div class="code-description">{{description}}</div>
-//
-//        <a class="code-download" href="{{dowload-link}}">
-//            <i class="icon" icon-icon="down-arrow"></i>
-//            <span>Download</span>
-//        </a>
-//        
-//        <a class="code-source" href="{{ource-link}}">
-//            <i class="icon" icon-icon="github-octocat"></i>
-//            <span>Source</span>
-//        </a>
-//        
-//        <ul class="code-images">
-//        {{#each images}}
-//            <li class="code-image"><img class="code-image" src="{{.}}" /></li>
-//        {{/each}}
-//        </ul>
-//    </section>
-//</li>
+
+@include grid-respond (0, 10.15) {
+    .code-header { 
+        padding-left: $spacing-double;
+    }
+
+    .code-description {
+        max-width: 100%;
+    }
+
+    .code-download {
+        width: 100%;
+        max-width: 50%;
+        height: 54px;
+    }
+}

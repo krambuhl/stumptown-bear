@@ -1,0 +1,56 @@
+.heading {
+	font-family: $fontstack-header;
+	font-weight: 700;
+}
+
+.heading-light {
+	font-weight: 300;
+}
+
+.heading-medium {
+	font-weight: 500;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	@extend .heading;
+}
+
+h1 { font-size: 6rem; line-height: 1.6em; }
+h2 { font-size: 4.5rem; line-height: 1.5em; }
+h3 { font-size: 3rem; line-height: 1.4em; }
+h4 { font-size: 2.75rem; line-height: 1.4em; }
+h5 { font-size: 2.5rem; line-height: 1.4em; }
+h6 { font-size: 2.25rem; line-height: 1.4em; }
+
+
+@include grid-respond(0, 12) {
+	h1, h2, h3, h4, h5, h6 {
+		line-height: 1.4em;
+	}
+}
+
+@include grid-respond(0, 7.5) {
+
+	h1 { font-size: 2.5rem; }
+	h2 { font-size: 2.25rem; }
+	h3 { font-size: 2rem; }
+	h4 { font-size: 1.75rem; }
+	h5 { font-size: 1.5rem; }
+	h6 { font-size: 1.25rem; }
+}
+
+
+@include grid-respond(0, 5) {
+	h1 { font-size: 2.25rem; }
+	h2 { font-size: 2.125rem; }
+}
+
+
+@include grid-respond(7.5, 12) {
+	h1 { font-size: 4rem; }
+	h2 { font-size: 3rem; }
+	h3 { font-size: 2.5rem; }
+	h4 { font-size: 2.25rem; }
+	h5 { font-size: 2rem; }
+	h6 { font-size: 1.75rem; }
+}

@@ -1,0 +1,9 @@
+.control {}
+
+.control-state {
+	display: none;	
+}
+
+.control-state.is-default {
+	display: block;
+}

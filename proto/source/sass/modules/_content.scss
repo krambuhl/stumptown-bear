@@ -1,0 +1,17 @@
+.content {
+	& > * {}
+
+	p, ul, ol, blockquote, pre, code {}
+
+	p {}
+	ul, ol {}
+
+	blockquote {
+		& > * {}
+		& > label {}
+	}
+
+	pre {
+		& > code {}
+	}
+}

@@ -14,9 +14,18 @@ var App = Struck.View.extend({
   },
 
   setup: function () {
+    this.setupGrunticon();
     this.setupFastClick();
     this.setupViewportUnits();
     this.setupCells();
+  },
+
+  setupGrunticon: function () {
+    grunticon([
+      "svg/icons.data.svg.css",
+      "svg/icons.data.png.css",
+      "svg/icons.fallback.css"
+    ]);
   },
 
   setupFastClick: function () {

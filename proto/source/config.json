@@ -2,7 +2,7 @@
 	"baseurl": "http://proto.stumptownbear.com/v9",
 
 	"scriptsPath": "",
-	"scripts": ["app.js"],
+	"scripts": ["svg/grunticon.loader.js", "app.js"],
 
 	"stylesheetPath": "",
 	"stylesheets": ["fonts/fonts.css", "style.css"]

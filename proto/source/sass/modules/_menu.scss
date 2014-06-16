@@ -1,0 +1,7 @@
+.menu {}
+
+.menu-item {
+	&[data-rel="projects"] {}
+	&[data-rel="blog"] {}
+	&[data-rel="contact"] {}
+}

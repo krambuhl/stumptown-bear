@@ -1,9 +1,12 @@
 // includes (sass utilities)
 @import "includes/reset";
-@import "includes/mixins";
 @import "includes/variables";
-@import "includes/grid";
-@import "includes/animation";
+
+// various mixins
+@import "includes/mixins/animation";
+@import "includes/mixins/respond";
+@import "includes/mixins/grid";
+@import "includes/mixins/clearfix";
 
 // standard modules
 @import "standard/base";
@@ -13,7 +16,7 @@
 @import "standard/content";
 
 // custom stuff
-// @import "modules/screen";
+@import "modules/cell";
 
 // layouts
 // @import "layouts/tracks";

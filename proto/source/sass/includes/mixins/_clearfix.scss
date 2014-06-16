@@ -12,3 +12,7 @@
         clear: both;
     }
 }
+
+@mixin clearfix {
+    @extend .clearfix;
+}

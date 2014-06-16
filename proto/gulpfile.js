@@ -74,9 +74,9 @@ function dir() { return slice(arguments).join('/'); }
 gulp.task('styles', function() {
   gulp.src(dir(sourceDir, css, 'style.scss'))
     .pipe(sass({ style: 'expanded', errLogToConsole: true })) //sourceComments: 'map',
+    .pipe(cmq())
     .pipe(autoprefix('last 3 version', 'safari 5', 'ie 9', 'opera 12.1', 'ios 6', 'android 4', { cascade: true }))
     .pipe(gulp.dest(destDir))
-    .pipe(cmq())
     .pipe(minify())
     .pipe(rename('min/style.min.css'))
     .pipe(gulp.dest(destDir));
@@ -91,7 +91,7 @@ gulp.task('styles', function() {
 //     + output: 'app-bundle.js'
 
 gulp.task('app', function() {
-  var bundler = watchify(dir(sourceDir, 'app', 'app.js'), { debug: false });
+  var bundler = watchify(dir(sourceDir, 'app', 'app.js'), { debug: true });
 
   bundler.transform('brfs');
   bundler.on('update', rebundle);

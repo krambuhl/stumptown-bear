@@ -3,14 +3,18 @@ var _ = require('lodash');
 var Struck = require('struck');
 var fastclick = require('fastclick');
 
-var Cell = require('./cell.js');
 
+var Cell = require('./modules/cell.js');
+var State = require('./modules/state.js');
+var Field = require('./modules/field.js');
 
 var App = Struck.View.extend({
   el: '#application',
 
   ui: {
-    cells: '.cell'
+    cells: '.cell',
+    states: '.state',
+    fields: '.fields'
   },
 
   setup: function () {
@@ -18,6 +22,7 @@ var App = Struck.View.extend({
     this.setupFastClick();
     this.setupViewportUnits();
     this.setupCells();
+    this.setupStateModules();
   },
 
   setupGrunticon: function () {
@@ -37,10 +42,15 @@ var App = Struck.View.extend({
   },
 
   setupCells: function () {
-    this.cells = _.reduce(this.ui.cells, function (cells, cell) {
-      cells.push(new Cell({ el: cell }));
-      return cells;
-    }, [], this);
+    this.cells = _.map(this.ui.cells, function (cell) {
+      return new Cell({ el: cell });
+    }, this);
+  },
+
+  setupStateModules: function () {
+    this.stateModules =_.map(this.ui.states, function (state) {
+      return new State({ el: state });
+    }, this);
   }
 });
 

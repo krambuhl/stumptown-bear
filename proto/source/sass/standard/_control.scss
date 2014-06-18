@@ -1,9 +1,9 @@
 .control {}
 
 .control-state {
-	display: none;	
+	display: none;
 }
 
-.control-state.is-default {
-	display: block;
+.control-state.is-active {
+	display: inline-block;
 }

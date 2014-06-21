@@ -24,13 +24,15 @@
 <body>
 
 <div id="application">
-  <section class="cell cell-full state l-header">
-    <div class="control">
-      <a href="javascript:;" class="state-control control-link" data-state="default">Search <i class="icon icon-18 icon-search"></i></a>
-      <a href="javascript:;" class="state-control control-link" data-state="search">Close <i class="icon icon-18 icon-close"></i></a>
+  <section class="cell cell-full switch l-navdeck">
+    <div class="l-navdeck-control">
+      <div class="control">
+        <a href="javascript:;" class="switch-control control-link" data-switch="default">Search <i class="icon icon-18 icon-search"></i></a>
+        <a href="javascript:;" class="switch-control control-link" data-switch="search">Close <i class="icon icon-18 icon-close"></i></a>
+      </div>
     </div>
 
-    <header class="state-section header cell cell-full" data-state="default">
+    <header class="switch-content header cell cell-full" data-switch="default">
       <div class="header-logo logo">
         <i class="logo-icon icon icon-stb-logo"></i>
         <h1 class="logo-name">Stumptown<span class="logo-name-alt">Bear</span></h1>
@@ -43,7 +45,7 @@
       </nav>
     </header>
 
-    <section class="state-section search cell cell-full" data-state="search">
+    <section class="switch-content search cell cell-full" data-switch="search">
       <form action="#/search" method="post">
         <div class="search-query field">
           <label class="field-label" for="query">Search</label>

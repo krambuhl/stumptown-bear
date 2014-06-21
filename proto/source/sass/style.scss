@@ -19,14 +19,15 @@
 @import "standard/field";
 
 // custom stuff
-@import "modules/state";
+@import "modules/switch";
 @import "modules/logo";
 @import "modules/content";
+@import "modules/header";
 @import "modules/menu";
 
 // layouts / cells
 @import "layouts/cell";
-@import "layouts/header";
+@import "layouts/navdeck";
 @import "layouts/search";
 @import "layouts/article";
 

@@ -5,7 +5,7 @@ var fastclick = require('fastclick');
 
 
 var Cell = require('./modules/cell.js');
-var State = require('./modules/state.js');
+var Switch = require('./modules/switch.js');
 var Field = require('./modules/field.js');
 
 var App = Struck.View.extend({
@@ -13,7 +13,7 @@ var App = Struck.View.extend({
 
   ui: {
     cells: '.cell',
-    states: '.state',
+    switches: '.switch',
     fields: '.fields'
   },
 
@@ -22,7 +22,7 @@ var App = Struck.View.extend({
     this.setupFastClick();
     this.setupViewportUnits();
     this.setupCells();
-    this.setupStateModules();
+    this.setupSwitches();
   },
 
   setupGrunticon: function () {
@@ -47,9 +47,9 @@ var App = Struck.View.extend({
     }, this);
   },
 
-  setupStateModules: function () {
-    this.stateModules =_.map(this.ui.states, function (state) {
-      return new State({ el: state });
+  setupSwitches: function () {
+    this.switches = _.map(this.ui.switches, function(aswitch) {
+      return new Switch({ el: aswitch });
     }, this);
   }
 });

@@ -1,9 +1,29 @@
-.control {}
+.control {
+	position: relative;
+
+	font-family: $font-sans;
+	font-size: 14px;
+	font-weight: 700;
+}
 
 .control-state {
-	display: none;
+	position: absolute;
+	top: 0;
+	right: 0;
+	opacity: 0;
+
+	transition-property: opacity;
+	pointer-events: none;
+
+	&, &:hover {
+		border-bottom: none;
+	}
+
+	.icon { height: 12px; margin-left: 3px; }
 }
 
 .control-state.is-active {
-	display: inline-block;
+	z-index: 10;
+	opacity: 1;
+	pointer-events: auto;
 }

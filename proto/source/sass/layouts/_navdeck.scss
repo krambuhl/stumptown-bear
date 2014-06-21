@@ -1,3 +1,30 @@
-.header {}
-.header-logo {}
-.header-menu {}
+.l-navdeck {
+
+	.switch-content {
+		position: absolute;
+		top: 0;
+
+		opacity: 0;
+		pointer-events: none;
+
+		transition-property: opacity;
+
+		&.is-active {
+			opacity: 1;
+			pointer-events: auto;
+		}
+	}
+}
+
+.l-navdeck-control {
+	position: absolute;
+	top: 5vw;
+	right: 5vw;
+	z-index: 100;
+
+	width: 100%;
+	max-width: 90%;
+	margin: 0 auto;
+
+	text-align: right;
+}

@@ -3,11 +3,13 @@
 
 
 // FONTS
-$font-regular: "Droid Serif";
+$font-serif: "Droid Serif";
+$font-sans: "Museo Sans";
+$font-mono: "PT Mono";
 
-$fontstack-text: $font-regular, sans-serif;
-$fontstack-header: "Museo Sans", Verdana, sans-serif;
-$fontstack-mono: 'PT Mono', monospace;
+$fontstack-text: $font-serif, sans-serif;
+$fontstack-header: $font-sans, Verdana, sans-serif;
+$fontstack-mono: $font-mono, monospace;
 
 
 // COLORS

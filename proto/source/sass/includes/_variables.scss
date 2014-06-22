@@ -13,6 +13,10 @@ $fontstack-mono: $font-mono, monospace;
 
 // COLORS
 
+// stb base
+$stb-dark:  #222;
+$stb-light: #fff;
+
 //stb colors
 $stb-green:  #4a975e;
 $stb-blue:   #396f85;
@@ -27,13 +31,10 @@ $stb-red-dark:    darken($stb-red,    5%);
 
 
 
-$color-light: white;
-$color-dark: #1e2223;
+$site-bg: $stb-light;
+$site-color: $stb-dark;
 
-$site-bg: $color-light;
-$site-color: $color-dark;
-
-$selection-color: mix($color-light, $color-dark, 70); // when a user highlights text this is the super duper color!
+$selection-color: mix($stb-light, $stb-green, 70); // when a user highlights text this is the super duper color!
 
 
 // site spacing, keep it consistant bitches

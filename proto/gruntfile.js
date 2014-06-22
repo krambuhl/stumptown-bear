@@ -1,4 +1,4 @@
- module.exports = function (grunt) {
+module.exports = function (grunt) {
     // load NPM Tasks
     require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
@@ -13,31 +13,14 @@
 
         */
 
-        svgmin: {
+        iconizr: {
             options: {
-                plugins: [
-                  { removeViewBox: false },
-                  { removeUselessStrokeAndFill: false }
-                ]
+                prefix: 'icon',
+                verbose: 1
             },
-            dist: {
-                files: [{
-                    expand: true,
-                    cwd: 'source/svg/',
-                    dest: 'dist/svg/',
-                    src: '*.svg'
-                }]
-            }
-        },
-
-        grunticon: {
-            dist: {
-                files: [{
-                    expand: true,
-                    cwd: 'dist/svg',
-                    src: ['*.svg', '*.png'],
-                    dest: 'dist/svg'
-                }]
+            generate: {
+                src: 'source/svg',
+                dest: 'dist/svg',
             }
         }
     });
@@ -46,6 +29,6 @@
     // Define Tasks
 
     // icons
-    grunt.registerTask('icons', ['svgmin', 'grunticon']);
+    grunt.registerTask('icons', ['iconizr']);
 
 };

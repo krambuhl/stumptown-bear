@@ -7,12 +7,25 @@ $font-serif: "Droid Serif";
 $font-sans: "Museo Sans";
 $font-mono: "PT Mono";
 
-$fontstack-text: $font-serif, sans-serif;
-$fontstack-header: $font-sans, Verdana, sans-serif;
+$fontstack-serif: $font-serif, sans-serif;
+$fontstack-sans: $font-sans, Verdana, sans-serif;
 $fontstack-mono: $font-mono, monospace;
 
-
 // COLORS
+
+//stb colors
+$stb-green:  #4a975e;
+$stb-blue:   #396f85;
+$stb-purple: #7f5f97;
+$stb-red:    #d44242;
+
+//stb alt colors
+$stb-green-dark:  darken($stb-green,  5%);
+$stb-blue-dark:   darken($stb-blue,   5%);
+$stb-purple-dark: darken($stb-purple, 5%);
+$stb-red-dark:    darken($stb-red,    5%);
+
+
 
 $color-light: white;
 $color-dark: #1e2223;

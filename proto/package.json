@@ -9,6 +9,8 @@
     "groc": "~0.6.3",
     "grunt": "^0.4.5",
     "grunt-grunticon": "^1.2.6",
+    "grunt-iconizr": "^0.2.2",
+    "grunt-svg-sprite": "^0.3.2",
     "grunt-svgmin": "^0.4.0",
     "gulp": "~3.6.2",
     "gulp-autoprefixer": "0.0.7",

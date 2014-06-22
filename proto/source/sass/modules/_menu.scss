@@ -1,7 +1,51 @@
-.menu {}
+.menu {
+	margin-bottom: 0;
+	transition-property: margin;
+}
 
 .menu-item {
-	&[data-rel="projects"] {}
-	&[data-rel="blog"] {}
-	&[data-rel="contact"] {}
+	float: left;
+	width: 22.5%;
+	margin-right: 2.5%;
+	padding: 2.5% 0;
+
+	color: white;
+
+	border: none;
+
+	text-align: center;
+	font-family: $fontstack-sans;
+	font-weight: 300;
+
+	transition-property: width, margin, padding;
+
+	&[data-rel="projects"] { background-color: $stb-green; }
+	&[data-rel="blog"] { background-color: $stb-blue; }
+	&[data-rel="contact"] {
+		float: right;
+		margin-right: 0;
+
+		background-color: $stb-red;
+	}
+}
+
+
+@include grid-respond(0, 7.5) {
+	.menu {
+		margin-bottom: 5%;
+	}
+
+	.menu-item {
+		width: 30%;
+		margin-right: 5%;
+		padding: 5% 0;
+
+		&[data-rel="contact"] { margin-right: 0; }
+	}
+}
+
+@include grid-respond(12) {
+	.menu-item {
+		padding: 2% 0;
+	}
 }

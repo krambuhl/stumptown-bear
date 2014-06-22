@@ -10,6 +10,7 @@ var fs = require('fs');
 var path  = require('path');
 var slice = require('sliced');
 var es = require('event-stream');
+var _ = require('underscore');
 
 // gulp general plugins
 var plumber = require('gulp-plumber');

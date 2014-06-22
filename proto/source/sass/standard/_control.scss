@@ -4,6 +4,11 @@
 	font-family: $font-sans;
 	font-size: 14px;
 	font-weight: 700;
+	line-height: 1em;
+}
+
+.content-light {
+	a, a:hover { color: white; }
 }
 
 .control-state {
@@ -11,15 +16,19 @@
 	top: 0;
 	right: 0;
 	opacity: 0;
+	pointer-events: none;
 
 	transition-property: opacity;
-	pointer-events: none;
 
 	&, &:hover {
 		border-bottom: none;
 	}
 
-	.icon { height: 12px; margin-left: 3px; }
+	.icon {
+		width: 18px;
+		height: 18px;
+		margin-left: 3px;
+	}
 }
 
 .control-state.is-active {

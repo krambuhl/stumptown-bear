@@ -1,5 +1,5 @@
 .heading {
-	font-family: $fontstack-header;
+	font-family: $fontstack-sans;
 	font-weight: 700;
 	font-size: 2.5rem;
 	line-height: 1.4em;
@@ -17,6 +17,7 @@ h1, h2, h3, h4, h5, h6 {
 	@extend .heading;
 }
 
+// normal screens
 h1 { font-size: 4rem; }
 h2 { font-size: 3rem; }
 h3 { font-size: 2.5rem; }
@@ -24,7 +25,7 @@ h4 { font-size: 2.25rem; }
 h5 { font-size: 2rem; }
 h6 { font-size: 1.75rem; }
 
-
+// small screens
 @include grid-respond(0, 6) {
 	h1 { font-size: 2.25rem; }
 	h2 { font-size: 2.125rem; }
@@ -38,16 +39,8 @@ h6 { font-size: 1.75rem; }
 	h5 { font-size: 1.5rem; }
 	h6 { font-size: 1.25rem; }
 }
-//
-// @include grid-respond(12) {
-// 	h1 { font-size: 5rem; line-height: 1.6em; }
-// 	h2 { font-size: 4rem; line-height: 1.5em; }
-// 	h3 { font-size: 3rem; line-height: 1.4em; }
-// 	h4 { font-size: 2.75rem; line-height: 1.4em; }
-// 	h5 { font-size: 2.5rem; line-height: 1.4em; }
-// 	h6 { font-size: 2.25rem; line-height: 1.4em; }
-// }
 
+//large screens
 @include grid-respond(12) {
 	h1 { font-size: 5rem; line-height: 1.6em; }
 	h2 { font-size: 4rem; line-height: 1.5em; }

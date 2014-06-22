@@ -18,19 +18,10 @@ var App = Struck.View.extend({
   },
 
   setup: function () {
-    this.setupGrunticon();
     this.setupFastClick();
     this.setupViewportUnits();
     this.setupCells();
     this.setupSwitches();
-  },
-
-  setupGrunticon: function () {
-    grunticon([
-      "svg/icons.data.svg.css",
-      "svg/icons.data.png.css",
-      "svg/icons.fallback.css"
-    ]);
   },
 
   setupFastClick: function () {
@@ -38,7 +29,7 @@ var App = Struck.View.extend({
   },
 
   setupViewportUnits: function () {
-    require('viewport-units-buggyfill').init();
+    // require('viewport-units-buggyfill').init();
   },
 
   setupCells: function () {

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<head>
+  <title>Stumptown Bear</title>
+  <meta name="description" content="" />
+  <meta name="author"     content="IL7.io, Evan Krambuhl" />
+  <meta name="keywords"   content="">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <!-- mobile icon -->
+  <link rel="shortcut icon"   href="{{baseurl}}/images/favicon-32.jpg">
+  <link rel="apple-touch-icon" href="{{baseurl}}/images/favicon-128.jpg">
+
+  <script type="text/javascript">
+  !function(){var e=window,t=e.document,s=arguments,r="createElementNS",a="http://www.w3.org/",n="svg",A=function(e){var A=t.getElementsByTagName("script")[0],i=t.createElement("link");i.rel="stylesheet",i.type="text/css",i.href=s[4]+s[1*e|2*(t[r]&&t[r](a+"2000/"+n,n).createSVGRect&&t.implementation.hasFeature(a+"TR/SVG11/feature#Image","1.1"))],A.parentNode.insertBefore(i,A)},i=new e.Image;i.onerror=function(){A(0)},i.onload=function(){A(1===i.width&&1===i.height)},i.src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="}("sprite-png-sprite.css","sprite-png-data.css","sprite-svg-sprite.css","sprite-svg-data.css","svg/");
+  </script>
+
+
+  <noscript>
+    <link href="svg/sprite-png-sprite.css" rel="stylesheet" type="text/css" media="all">
+  </noscript>
+
+  {{#each stylesheets}}
+  <link href="{{.}}" rel="stylesheet" />
+  {{/each}}
+</head>
+<body>
+
+<div id="application">
+  <section class="cell cell-full switch l-navdeck">
+    <div class="l-navdeck-control">
+      <div class="control content-light">
+        <a href="javascript:;" class="switch-control control-state" data-switch="default" data-switchto="search">Search <i class="icon icon-search"></i></a>
+        <a href="javascript:;" class="switch-control control-state" data-switch="search" data-switchto="default">Close <i class="icon icon-close"></i></a>
+      </div>
+    </div>
+
+    <header class="switch-content l-navdeck-content header cell cell-full" data-switch="default">
+      <div class="header-wrapper">
+        <div class="header-logo logo">
+          <i class="logo-icon icon icon-stb-logo"></i>
+          <h1 class="logo-name">Stumptown<span class="logo-name-alt">Bear</span></h1>
+        </div>
+
+        <nav class="header-menu menu">
+          <a href="#/projects" class="menu-item" data-rel="projects">Projects</a>
+          <a href="#/blog" class="menu-item" data-rel="blog">Blog</a>
+          <a href="#/contact" class="menu-item" data-rel="contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <section class="switch-content l-navdeck-content search cell" data-switch="search">
+      <form action="#/search" method="post">
+        <div class="search-query field">
+          <label class="field-label" for="query">Search</label>
+          <input class="field-input input-text" type="text" name="query" id="query" placeholder="Search" />
+          <i class="icon icon-12 icon-search"></i>
+        </div>
+
+        <div class="search-dropdown field">
+          <label class="field-label" for="tag">Tag</label>
+          <div class="input-select-wrap">
+            <select class="field-input input-select" name="tag" id="tag">
+              <option value="javascript">Javascript</option>
+              <option value="html">HTML</option>
+              <option value="css">CSS</option>
+            </select>
+            <i class="input-select-icon icon icon-12 icon-carrot-down"></i>
+          </div>
+        </div>
+
+        <div class="search-dropdown field">
+          <label class="field-label" for="tag">Sort</label>
+          <div class="input-select-wrap">
+            <select class="field-input input-select" name="tag" id="tag">
+              <option value="recent">Recent</option>
+              <option value="views">Views</option>
+            </select>
+            <i class="input-select-icon icon icon-12 icon-carrot-down"></i>
+          </div>
+        </div>
+      </form>
+    </section>
+  </section>
+
+  <section class="l-content cell article">
+    <article class="article-content content">
+      <h1>HTML Ipsum Presents</h1>
+      <p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
+      <h2>Header Level 2</h2>
+      <ol>
+         <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+         <li>Aliquam tincidunt mauris eu risus.</li>
+      </ol>
+      <p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
+      <blockquote><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.</p>
+      <label>Tesla</label></blockquote>
+      <h3>Header Level 3</h3>
+      <pre><code>#header h1 a {
+      display: block;
+      width: 300px;
+      height: 80px;
+}</code></pre>
+      <p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
+      <h4>Header Level 4</h4>
+      <p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
+      <h5>Header Level 5</h5>
+      <p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
+      <h6>Header Level 6</h6>
+      <ul>
+        <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+        <li>Aliquam tincidunt mauris eu risus.</li>
+        <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+        <li>Aliquam tincidunt mauris eu risus.</li>
+        <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+        <li>Aliquam tincidunt mauris eu risus.</li>
+      </ul>
+      <p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
+      <pre><code>#header h1 a {
+    display: block;
+    width: 300px;
+    height: 80px;
+}</code></pre>
+      <p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
+    </article>
+  </section>
+</div>
+
+{{#each scripts}}
+<script src="{{.}}"></script>
+{{/each}}
+
+</body>
+</html>

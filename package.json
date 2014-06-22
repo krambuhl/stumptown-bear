@@ -5,7 +5,7 @@
     "node": "0.10.x"
   },
   "scripts": {
-    "postinstall": "gulp",
+    "postinstall": "gulp compile",
     "start": "node index.js"
   },
   "devDependencies": {

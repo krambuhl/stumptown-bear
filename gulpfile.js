@@ -25,6 +25,7 @@ var shell = require('gulp-shell');
 var inject = require("gulp-inject");
 var handlebars = require('gulp-compile-handlebars');
 var ftp = require('gulp-ftp');
+var browserify = require('gulp-browserify');
 
 // css tasks
 var sass = require('gulp-sass');
@@ -73,7 +74,7 @@ function dir() { return slice(arguments).join('/'); }
 // - media query combiner
 // - css minifier
 gulp.task('styles', function() {
-  gulp.src(dir(sourceDir, css, 'style.scss'))
+  return gulp.src(dir(sourceDir, css, 'style.scss'))
     .pipe(sass({ style: 'expanded', errLogToConsole: true })) //sourceComments: 'map',
     .pipe(cmq())
     .pipe(autoprefix('last 3 version', 'safari 5', 'ie 9', 'opera 12.1', 'ios 6', 'android 4', { cascade: true }))
@@ -91,7 +92,7 @@ gulp.task('styles', function() {
 //   - browserify
 //     + output: 'app-bundle.js'
 
-gulp.task('app', function() {
+gulp.task('watchify', function() {
   var bundler = watchify(dir(sourceDir, 'app', 'app.js'), { debug: true });
 
   bundler.transform('brfs');
@@ -106,6 +107,17 @@ gulp.task('app', function() {
   return rebundle();
 });
 
+gulp.task('browserify', function () {
+  return gulp.src(dir(sourceDir, 'app', 'app.js'))
+    .pipe(browserify({
+      insertGlobals : true,
+      debug: false
+    }))
+    .pipe(gulp.dest(dir(destDir, 'app.js')));
+});
+
+
+
 // __build__ task:
 // compiles static templates with enviornment data
 //
@@ -118,7 +130,7 @@ gulp.task('build', function() {
     helpers: { }
   };
 
-  gulp.src(dir(sourceDir, 'index.html'))
+  return gulp.src(dir(sourceDir, 'index.html'))
     .pipe(handlebars(data, options))
     .pipe(gulp.dest(destDir));
 });
@@ -167,5 +179,7 @@ gulp.task('upload', ['compile'], function () {
 
 gulp.task('copy', ['copy-images', 'copy-fonts']);
 
-gulp.task('compile', ['styles', 'app', 'copy', 'build']);
-gulp.task('default', ['compile', 'watch']);
+gulp.task('compile', ['styles', 'copy', 'build']);
+
+gulp.task('default', ['compile', 'watchify',  'watch']);
+gulp.task('heroku-build', ['compile', 'browserify']);

@@ -167,5 +167,5 @@ gulp.task('upload', ['compile'], function () {
 
 gulp.task('copy', ['copy-images', 'copy-fonts']);
 
-gulp.task('compile', ['styles', 'app', 'grunt-icons', 'copy', 'build']);
+gulp.task('compile', ['styles', 'app', 'copy', 'build']);
 gulp.task('default', ['compile', 'watch']);

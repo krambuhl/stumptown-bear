@@ -14,7 +14,7 @@
 
 .header-logo {
 	position: absolute;
-	top: 32%;
+	top: 35%;
 	padding: 0 5vw;
 	width: 100%;
 
@@ -26,18 +26,6 @@
 	bottom: 0;
 	width: 100%;
 	padding: 0 5vw;
-}
-
-@include grid-respond(0, 6) {
-	.header-logo {
-		top: 35%;
-	}
-}
-
-@include grid-respond(6, 7.5) {
-	.header-logo {
-		top: 30%;
-	}
 }
 
 @media all and (max-height: 400px) {

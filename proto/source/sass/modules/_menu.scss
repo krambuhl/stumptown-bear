@@ -7,15 +7,18 @@
 	float: left;
 	width: 22.5%;
 	margin-right: 2.5%;
-	padding: 2.5% 0;
+	padding: 3% 0 2.5% 0;
 
 	color: white;
 
 	border: none;
 
 	text-align: center;
+	text-transform: uppercase;
+
 	font-family: $fontstack-sans;
 	font-weight: 300;
+	font-size: 1.2rem;
 
 	transition-property: width, margin, padding;
 
@@ -38,7 +41,9 @@
 	.menu-item {
 		width: 30%;
 		margin-right: 5%;
-		padding: 5% 0;
+		padding: 5% 0 4.5% 0;
+
+		font-size: 1.3rem;
 
 		&[data-rel="contact"] { margin-right: 0; }
 	}
@@ -46,6 +51,7 @@
 
 @include grid-respond(12) {
 	.menu-item {
-		padding: 2% 0;
+		padding: 2.5% 0 2.25% 0;;
+		font-size: 1.1rem;
 	}
 }

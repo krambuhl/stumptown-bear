@@ -1,4 +1,4 @@
-body {
+html {
     background: $site-bg;
     color: $site-color;
 
@@ -14,7 +14,7 @@ body {
     font-weight: normal;
     font-family: $fontstack-serif;
 
-    font-size: 18px;
+    font-size: 12px;
     line-height: 1.6em;
 
     -webkit-font-smoothing: antialiased;
@@ -38,7 +38,7 @@ em, cite { font-style: italic; }
 }
 
 
-@include grid-respond(0, 6) { body { font-size: 16px; }}
-@include grid-respond(9, 12) { body { font-size: 20px; }}
-@include grid-respond(12, 15) { body { font-size: 23px; }}
-@include grid-respond(15) { body { font-size: 26px; }}
+@include grid-respond(0, 6) { html { font-size: 11px; }}
+@include grid-respond(9, 12) { html { font-size: 13px; }}
+@include grid-respond(12, 15) { html { font-size: 14px; }}
+@include grid-respond(15) { html { font-size: 15px; }}

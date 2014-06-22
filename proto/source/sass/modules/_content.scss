@@ -1,5 +1,5 @@
 .content {
-	font-size: 1.25rem;
+	font-size: 1.2rem;
 	line-height: 2.5rem;
 
 	& > * {
@@ -21,8 +21,22 @@
 	ol { list-style: lower-roman outside; }
 
 	blockquote {
+		margin-left: 7.5vw;
+		padding-left: 2.5vw;
+
+		border-left: 2px solid $stb-dark;
+
+		font-size: 1.1em;
+
 		& > * {}
-		& > label {}
+		& > label {
+			display: block;
+			margin-top: 0.75vw;
+
+			font-size: 1.25em;
+			line-height: 1.25em;
+			font-style: italic;
+		}
 	}
 
 	pre {
@@ -32,9 +46,25 @@
 		color: $stb-light;
 
 		font-family: $fontstack-mono;
-		font-size: 16px;
+		font-size: 1rem;
 		line-height: 2rem;
 
 		& > code {}
+	}
+}
+
+@include grid-respond(0, 7.5) {
+	.content {
+		& > * {
+			margin-bottom: 5vw;
+		}
+
+		blockquote {
+			margin-left: 5vw;
+		}
+
+		pre {
+			padding: 5vw;
+		}
 	}
 }

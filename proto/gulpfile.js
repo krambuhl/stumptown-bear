@@ -179,7 +179,7 @@ gulp.task('upload', ['compile'], function () {
 
 gulp.task('copy', ['copy-images', 'copy-fonts']);
 
-gulp.task('compile', ['styles', 'copy', 'build']);
+gulp.task('compile', ['styles', 'grunt-iconizr', 'copy', 'build']);
 
 gulp.task('default', ['compile', 'watchify',  'watch']);
 gulp.task('heroku-build', ['compile', 'browserify']);

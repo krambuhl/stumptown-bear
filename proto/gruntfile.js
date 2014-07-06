@@ -7,10 +7,9 @@ module.exports = function (grunt) {
         pkg: grunt.file.readJSON('package.json'),
 
         /*
-            Icons
-                - svgmin: Minify SVG files (remove cruft)
-                - grunticon: compile icon files from svgs
+            Iconizr
 
+            compile icon files from svgs
         */
 
         iconizr: {

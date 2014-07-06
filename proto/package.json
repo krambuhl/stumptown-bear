@@ -4,15 +4,14 @@
   "engines": {
     "node": "0.10.x"
   },
-  "scripts": {
-
-  },
+  "scripts": {},
   "devDependencies": {
     "brfs": "~1.1.1",
     "docco": "~0.6.3",
     "event-stream": "~3.1.5",
     "groc": "~0.6.3",
     "grunt": "^0.4.5",
+    "grunt-cli": "^0.1.13",
     "grunt-grunticon": "^1.2.6",
     "grunt-iconizr": "^0.2.2",
     "grunt-svg-sprite": "^0.3.2",

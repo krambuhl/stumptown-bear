@@ -5,6 +5,7 @@
     "node": "0.10.x"
   },
   "scripts": {
+    "install": "npm install grunt-cli gulp",
     "postinstall": "gulp heroku-build"
   },
   "devDependencies": {
@@ -43,7 +44,6 @@
     "gulp-uglify": "~0.2.1",
     "gulp-watch": "~0.6.4",
     "gulp-wrap-docco": "0.0.3",
-    "http": "0.0.0",
     "map-stream": "~0.1.0",
     "matchdep": "^0.3.0",
     "pygmentize": "~0.5.3",

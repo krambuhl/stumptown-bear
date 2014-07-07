@@ -1,0 +1,36 @@
+.icon-close { 
+	background-position: 0 0;
+	background-repeat: no-repeat;
+	background-image: url(icons/icons.png);
+}
+
+.icon-close-dark { 
+	background-position: 0 -96px;
+	background-repeat: no-repeat;
+	background-image: url(icons/icons.png);
+}
+
+.icon-search { 
+	background-position: 0 -192px;
+	background-repeat: no-repeat;
+	background-image: url(icons/icons.png);
+}
+
+.icon-search-dark { 
+	background-position: 0 -288px;
+	background-repeat: no-repeat;
+	background-image: url(icons/icons.png);
+}
+
+.icon-stb-logo { 
+	background-position: 0 -384px;
+	background-repeat: no-repeat;
+	background-image: url(icons/icons.png);
+}
+
+.icon-stb-logo-dark { 
+	background-position: 0 -442px;
+	background-repeat: no-repeat;
+	background-image: url(icons/icons.png);
+}
+

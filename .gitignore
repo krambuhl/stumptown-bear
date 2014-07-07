@@ -4,3 +4,4 @@ comps
 ./dist
 ./proto/dist
 ftp.json
+node_modules

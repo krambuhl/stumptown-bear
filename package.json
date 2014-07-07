@@ -5,7 +5,7 @@
     "node": "0.10.x"
   },
   "scripts": {
-    "install": "npm install -g gulp grunt-cli",
+    "install": "npm install gulp grunt-cli",
     "postinstall": "cd proto && npm install",
     "start": "node index.js"
   },

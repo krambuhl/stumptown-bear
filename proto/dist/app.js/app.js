@@ -18749,7 +18749,7 @@ $(function() {
   window.app = new App();
 });
 
-}).call(this,require("oMfpAn"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/fake_c81c4b6b.js","/")
+}).call(this,require("oMfpAn"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/fake_d56751f2.js","/")
 },{"./modules/cell.js":10,"./modules/field.js":11,"./modules/switch.js":12,"buffer":2,"fastclick":1,"jquery":6,"lodash":7,"oMfpAn":5,"struck":8}],10:[function(require,module,exports){
 (function (process,global,Buffer,__argument0,__argument1,__argument2,__argument3,__filename,__dirname){
 var $ = require('jquery');

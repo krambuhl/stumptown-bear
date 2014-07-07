@@ -6,7 +6,7 @@
   },
   "scripts": {
     "install": "cd proto && npm install",
-    "postinstall": "cd proto && npm install && gulp heroku-build",
+    "postinstall": "cd proto && npm install",
     "start": "node index.js"
   },
   "repository": {

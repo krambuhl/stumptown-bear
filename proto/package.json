@@ -4,7 +4,9 @@
   "engines": {
     "node": "0.10.x"
   },
-  "scripts": {},
+  "scripts": {
+    "postinstall": "gulp heroku-build"
+  },
   "devDependencies": {
     "brfs": "~1.1.1",
     "docco": "~0.6.3",

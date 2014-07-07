@@ -1,5 +1,6 @@
 .DS_Store
 .sass-cache
 comps
-dist
+./dist
+./proto/dist
 ftp.json

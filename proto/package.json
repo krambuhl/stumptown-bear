@@ -5,7 +5,6 @@
     "node": "0.10.x"
   },
   "scripts": {
-    "install": "npm install grunt-cli gulp",
     "postinstall": "gulp heroku-build"
   },
   "devDependencies": {

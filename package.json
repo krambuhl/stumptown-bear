@@ -5,11 +5,16 @@
     "node": "0.10.x"
   },
   "scripts": {
+    "install": "cd proto && npm install",
     "start": "node index.js"
   },
   "repository": {
     "type": "git",
     "url": "git@github.com:krambuhl/Stumptown-Bear.git"
   },
-  "private": true
+  "private": true,
+  "dependencies": {
+    "express": "^4.5.1",
+    "path": "^0.4.9"
+  }
 }

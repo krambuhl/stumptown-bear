@@ -1,8 +1,8 @@
-var http = require("http");
+var express = require('express');
+var app = express();
+var path = require('path');
 
-http.createServer(function(req, res) {
-  res.writeHead(301, {
-    "location": "./proto/dist/"
-  });
-  res.end();
-}).listen(80, "localhost");
+//app.use(express.static(__dirname)); // Current directory is root
+app.use(express.static(path.join(__dirname, 'proto/dist'))); //  "public" off of current is root
+
+app.listen(process.env.PORT || 8080);

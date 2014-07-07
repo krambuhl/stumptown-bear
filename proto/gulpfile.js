@@ -1,6 +1,6 @@
 //gulp
 var gulp = require('gulp');
-require('gulp-grunt')(gulp);
+// require('gulp-grunt')(gulp);
 
 // npm package
 var pkg = require('./package.json');

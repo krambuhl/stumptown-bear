@@ -2,7 +2,7 @@ module.exports = function (grunt) {
     // load NPM Tasks
     // require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
-    grunt.loadNpmTasks('./node_modules/grunt-iconizr/tasks/iconizr.js');
+    grunt.loadNpmTasks('grunt-conizr');
 
     // Project configuration.
     grunt.initConfig({

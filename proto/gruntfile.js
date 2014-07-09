@@ -1,6 +1,8 @@
 module.exports = function (grunt) {
     // load NPM Tasks
-    require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
+    // require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
+
+    grunt.loadNpmTasks('grunt-iconizr');
 
     // Project configuration.
     grunt.initConfig({

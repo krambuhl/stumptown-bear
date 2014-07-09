@@ -5,8 +5,7 @@
     "node": "0.10.x"
   },
   "scripts": {
-    "install": "gulp heroku-build",
-    "postinstall": "grunt heroku-build"
+    "install": "gulp heroku-build && grunt heroku-build"
   },
   "dependencies": {
     "brfs": "~1.1.1",

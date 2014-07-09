@@ -30,7 +30,6 @@ module.exports = function (grunt) {
     // Define Tasks
 
     // icons
-    grunt.registerTask('icons', ['iconizr']);
     grunt.registerTask('heroku-build', ['iconizr']);
 
 };

@@ -5,7 +5,7 @@
     "node": "0.10.x"
   },
   "scripts": {
-    "postinstall": "echo 'ds';gulp heroku-build"
+    "postinstall": "ls -la; gulp heroku-build"
   },
   "devDependencies": {
     "brfs": "~1.1.1",

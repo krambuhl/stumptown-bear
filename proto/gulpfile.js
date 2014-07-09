@@ -3,7 +3,7 @@ var pkg = require('./package.json');
 
 //gulp
 var gulp = require('gulp');
-require('gulp-grunt')(gulp);
+// require('gulp-grunt')(gulp);
 
 // npm tools
 var fs = require('fs');
@@ -179,7 +179,7 @@ gulp.task('upload', ['compile'], function () {
 
 gulp.task('copy', ['copy-images', 'copy-fonts']);
 
-gulp.task('compile', ['styles', 'grunt-iconizr', 'copy', 'build']);
+gulp.task('compile', ['styles', 'copy', 'build']);
 
 gulp.task('default', ['compile', 'watchify',  'watch']);
 gulp.task('heroku-build', ['compile', 'browserify']);

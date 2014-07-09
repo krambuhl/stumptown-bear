@@ -7,7 +7,7 @@
   "scripts": {
     "postinstall": "cd node_modules && ls -la; gulp heroku-build"
   },
-  "devDependencies": {
+  "dependencies": {
     "brfs": "~1.1.1",
     "docco": "~0.6.3",
     "event-stream": "~3.1.5",
@@ -49,19 +49,18 @@
     "sliced": "0.0.5",
     "underscore": "~1.6.0",
     "vinyl-source-stream": "~0.1.1",
-    "watchify": "~0.8.2"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:krambuhl/Stumptown-Bear.git"
-  },
-  "dependencies": {
+    "watchify": "~0.8.2",
     "express": "^4.5.1",
     "fastclick": "~1.0.1",
     "hammerjs": "~1.1.2",
     "jquery": "^2.1.1",
     "lodash": "~2.4.1",
     "struck": "git://github.com/krambuhl/Struck.git#develop"
+  },
+
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:krambuhl/Stumptown-Bear.git"
   },
   "private": true
 }

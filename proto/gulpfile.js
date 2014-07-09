@@ -1,9 +1,9 @@
+// npm package
+var pkg = require('./package.json');
+
 //gulp
 var gulp = require('gulp');
 require('gulp-grunt')(gulp);
-
-// npm package
-var pkg = require('./package.json');
 
 // npm tools
 var fs = require('fs');

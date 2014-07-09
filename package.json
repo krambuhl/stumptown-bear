@@ -5,7 +5,6 @@
     "node": "0.10.x"
   },
   "scripts": {
-    "install": "npm install gulp grunt-cli",
     "postinstall": "cd proto && npm install",
     "start": "node index.js"
   },
@@ -16,5 +15,9 @@
   "private": true,
   "dependencies": {
     "express": "^4.5.1"
+  },
+  "devDependencies": {
+    "grunt-cli": "^0.1.13",
+    "gulp": "^3.8.5"
   }
 }

@@ -5,7 +5,7 @@
     "node": "0.10.x"
   },
   "scripts": {
-    "install": "cd proto && npm install",
+    "postinstall": "npm install ./proto/package.json",
     "start": "node index.js"
   },
   "repository": {

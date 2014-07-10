@@ -4,3 +4,4 @@ comps
 ./dist
 proto/dist
 ftp.json
+proto/node_modules/iconizr

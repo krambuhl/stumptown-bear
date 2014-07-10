@@ -130,7 +130,7 @@ gulp.task('build', function() {
     helpers: { }
   };
 
-  return gulp.src(dir(sourceDir, 'index.html'))
+  return gulp.src(dir(sourceDir, '**.html'))
     .pipe(handlebars(data, options))
     .pipe(gulp.dest(destDir));
 });

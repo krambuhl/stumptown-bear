@@ -5,7 +5,7 @@
     "node": "0.10.x"
   },
   "scripts": {
-    "install": "gulp heroku-build && grunt heroku-build"
+    "postinstall": "gulp heroku-build && grunt heroku-build"
   },
   "dependencies": {
     "brfs": "~1.1.1",
@@ -45,7 +45,6 @@
     "gulp-watch": "~0.6.4",
     "gulp-wrap-docco": "0.0.3",
     "hammerjs": "~1.1.2",
-    "iconizr": "^0.2.2",
     "jquery": "^2.1.1",
     "lodash": "~2.4.1",
     "map-stream": "~0.1.0",

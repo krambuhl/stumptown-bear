@@ -1,11 +1,12 @@
 {
   "name": "stumptownbear",
   "version": "9.0.1",
+  "homepage": "https://github.com/krambuhl/Stumptown-Bear",
   "engines": {
     "node": "0.10.x"
   },
   "scripts": {
-    "install": "cd proto && npm install",
+    "install": "cd html && npm install && npm run vendor",
     "start": "node index.js"
   },
   "repository": {

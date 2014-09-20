@@ -1,17 +1,11 @@
 module.exports = function (grunt) {
-    // load NPM Tasks
-    // require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
-
     grunt.loadNpmTasks('grunt-iconizr');
 
     // Project configuration.
     grunt.initConfig({
-        pkg: grunt.file.readJSON('package.json'),
-
         /*
             Iconizr
-
-            compile icon files from svgs
+            -- compile icon files from svgs
         */
 
         iconizr: {
@@ -27,9 +21,8 @@ module.exports = function (grunt) {
     });
 
 
-    // Define Tasks
-
     // icons
-    grunt.registerTask('heroku-build', ['iconizr']);
+    grunt.registerTask('build', ['iconizr']);
+    grunt.registerTask('default', ['build']);
 
 };

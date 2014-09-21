@@ -1,0 +1,70 @@
+.content {
+	font-size: 1.2rem;
+	line-height: 2.5rem;
+
+	& > * {
+		margin-bottom: 2vw;
+		padding: 0 5vw;
+	}
+
+	p, ul, ol, blockquote, pre, code {}
+
+	p {
+		max-width: gridw(12);
+	}
+
+	ul, ol {
+		margin-left: 5vw;
+	}
+
+	ul { list-style: square outside; }
+	ol { list-style: lower-roman outside; }
+
+	blockquote {
+		margin-left: 7.5vw;
+		padding-left: 2.5vw;
+
+		border-left: 2px solid $stb-dark;
+
+		font-size: 1.1em;
+
+		& > * {}
+		& > label {
+			display: block;
+			margin-top: 0.75vw;
+
+			font-size: 1.25em;
+			line-height: 1.25em;
+			font-style: italic;
+		}
+	}
+
+	pre {
+		padding: 2.5vw 5vw;
+
+		background-color: $stb-dark;
+		color: $stb-light;
+
+		font-family: $fontstack-mono;
+		font-size: 1rem;
+		line-height: 2rem;
+
+		& > code {}
+	}
+}
+
+@include respond(0, 600px) {
+	.content {
+		& > * {
+			margin-bottom: 5vw;
+		}
+
+		blockquote {
+			margin-left: 5vw;
+		}
+
+		pre {
+			padding: 5vw;
+		}
+	}
+}

@@ -1,3 +1,3 @@
 $(function() {
-	window.app = new App();
+	window.app = new Stump.Application();
 });

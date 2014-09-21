@@ -1,17 +1,21 @@
 {
-	"name": "web-boilerplate",
+	"name": "stumptownbear",
 	"homepage": "https://github.com/krambuhl/web-boilerplate",
 	"authors": [
 		"Evan Krambuhl <thekrambuhl@gmail.com>"
 	],
 	"license": "MIT",
-	"version": "0.4.0",
+	"version": "9.0.1",
 	"repository": {
 		"type": "git",
-		"url": "git@github.com:krambuhl/web-boilerplate.git"
+		"url": "git@github.com:krambuhl/Stumptown-Bear.git"
 	},
 	"dependencies": {
 		"jquery": "~2.1.1",
-		"underscore": "~1.6.0"
+		"underscore": "~1.6.0",
+		"patchbay": "git@github.com:krambuhl/Patchbay.git#develop",
+		"hammerjs": "~1.1",
+		"spin.js": "~2.0.1",
+		"inview": "*"
 	}
 }

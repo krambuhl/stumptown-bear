@@ -1,12 +1,12 @@
 {
-	"title": "Web Boilerplate",
+	"title": "Stumptown Bear",
 
-	"description": "A Website Boilerplate",
+	"description": "The home of Evan Krambuhl on the web",
 	"author": "IL7 / Evan Krambuhl",
 
-	"icon": "",
-	"apple-icon": "",
+	"icon": "http://stream.stumptownbear.com/favicons/favicon.ico",
+	"apple-icon": "http://stream.stumptownbear.com/favicons/favicon-128.png",
 
 	"scripts": ["lib", "app"],
-	"stylesheets": ["styles/style"]
+	"stylesheets": ["fonts/fonts", "styles/style"]
 }

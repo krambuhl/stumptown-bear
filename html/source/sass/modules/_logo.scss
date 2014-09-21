@@ -1,0 +1,64 @@
+.logo {}
+
+.logo-icon {
+	display: inline-block;
+
+	width: 25vw;
+	min-width: 106px;
+	max-width: 212px;
+
+	height: 15vw;
+	min-height: 64px;
+	max-height: 128px;
+}
+
+.logo-name {
+	margin-top: $spacing;
+	font-weight: 300;
+
+	font-size: 40px;
+	line-height: 40px;
+
+	text-transform: uppercase;
+}
+
+.logo-name-alt {
+	font-weight: 700;
+}
+
+@include respond(0, 480px) {
+	.logo-name {
+		font-size: 24px !important;
+	}
+}
+
+@include respond(0, 600px) {
+	.logo-icon {
+		margin-left: -2vw;
+	}
+
+	.logo-name {
+		margin-top: 2vw;
+		font-size: 32px;
+		line-height: 32px;
+	}
+}
+
+@include respond(720px, 960px) {
+	.logo-name {
+		font-size: 48px;
+	}
+}
+
+@include respond(960px) {
+	.logo-name {
+		font-size: 54px;
+	}
+}
+
+
+@media all and (max-height: 400px) {
+	.logo-name-alt {
+		display: inline;
+	}
+}

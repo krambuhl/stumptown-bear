@@ -17,11 +17,19 @@
 @import "standard/input";
 @import "standard/link";
 @import "standard/slice";
+@import "standard/media";
 
 // custom stuff
-// @import "modules/";
+@import "modules/logo";
+@import "modules/content";
+@import "modules/header";
+@import "modules/menu";
+@import "modules/search";
+@import "modules/image";
+@import "modules/gallery";
 
-// layouts / cells
-// @import "layouts/";
+// layouts
+@import "layouts/cell";
+@import "layouts/project";
 
 // state

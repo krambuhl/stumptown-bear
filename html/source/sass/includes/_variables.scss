@@ -9,12 +9,32 @@ $fontstack-mono: $font-mono, monospace;
 
 // COLORS
 
-$site-dark:  #222;
-$site-light: #fff;
+// stb base
+$stb-dark:  #222;
+$stb-light: #fff;
 
-//site colors
-$site-bg: $site-light;
-$site-color: $site-dark;
+//stb colors
+$stb-green:  #4a975e;
+$stb-blue:   #396f85;
+$stb-purple: #7f5f97;
+$stb-red:    #d44242;
 
-// when a user highlights text this is the super duper color!
-$selection-color: mix($site-light, $site-dark);
+//stb alt colors
+$stb-green-dark:  darken($stb-green,  5%);
+$stb-blue-dark:   darken($stb-blue,   5%);
+$stb-purple-dark: darken($stb-purple, 5%);
+$stb-red-dark:    darken($stb-red,    5%);
+
+
+$site-bg: $stb-light;
+$site-color: $stb-dark;
+
+$selection-color: mix($stb-light, $stb-green, 70); // when a user highlights text this is the super duper color!
+
+
+// site spacing, keep it consistant bitches
+$spacing: 20px;
+$spacing-double: $spacing * 2;
+$spacing-quad:   $spacing * 4;
+$spacing-half:   $spacing / 2;
+$spacing-fourth: $spacing / 4;

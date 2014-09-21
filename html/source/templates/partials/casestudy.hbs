@@ -1,0 +1,40 @@
+<section class="project project-casestudy cell cell-full gallery">
+  <article class="project-section project-description">
+    <h2>{{title}}</h2>
+    <p>{{description}}</p>
+  </article>
+
+  <section class="project-section project-selector">
+    <nav class="project-nav">
+      <a href="#/" class="project-nav-item project-nav-information">
+        <i class="icon icon-arrow-left-thin icon-24"></i>
+        <span>Information</span>
+      </a>
+
+      <a href="#/" class="project-nav-item project-nav-gallery">
+        <span>Gallery</span>
+        <i class="icon icon-arrow-right-thin icon-24"></i>
+      </a>
+    </nav>
+
+    <div class="project-thumbnails">
+    {{#each images}}
+      <a class="project-thumbnail gallery-selector" data-src="{{src}}" href="javascript:;">
+      {{>image-square this}}
+      </a>
+    {{/each}}  
+    </div>
+  </section>
+
+  <section class="project-section project-gallery">
+    <nav class="project-nav">
+      <a href="#/" class="project-nav-item project-nav-close">
+        <span>Close</span>
+        <i class="icon icon-close-dark icon-16" /></i>
+        <i class="icon icon-close icon-16" /></i>
+      </a>
+    </nav>
+
+    <div class="gallery-wrapper"></div>
+  </section>
+</section>

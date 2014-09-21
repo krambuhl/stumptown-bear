@@ -1,0 +1,62 @@
+.menu {
+  padding: 0 5vw;
+	margin-bottom: 0;
+	transition-property: margin, padding;
+}
+
+.menu-item {
+	float: left;
+	width: 22.5%;
+	margin-right: 2.5%;
+  padding: 3% 0 2.5% 0;
+
+	color: white;
+
+	border: none;
+
+	text-align: center;
+	text-transform: uppercase;
+
+	font-family: $fontstack-sans;
+	font-weight: 500;
+	font-size: 1.1rem;
+
+	transition-property: width, margin, padding;
+
+	&[data-rel="projects"] { background-color: $stb-green; }
+	&[data-rel="articles"] { background-color: $stb-blue; }
+	&[data-rel="contact"] {
+		float: right;
+		margin-right: 0;
+
+		background-color: $stb-red;
+	}
+}
+
+@include respond(960px) {
+  .menu-item {
+    font-size: 1.3rem;
+  }
+}
+
+
+@include respond(0, 600px) {
+  .menu {
+    padding: 0;
+  }
+	.menu-item {
+		width: 33.33%;
+		margin-right: 0%;
+		padding: 5% 0 4% 0;
+
+		font-size: 1rem;
+
+		&[data-rel="contact"] { margin-right: 0; }
+	}
+}
+
+@include respond(0, 320px) {
+  .menu-item {
+   font-size: 0.8rem;
+  }
+}

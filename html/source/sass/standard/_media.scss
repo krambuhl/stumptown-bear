@@ -1,0 +1,12 @@
+.media {
+  display: table;
+
+  & > * {
+    display: table-cell;
+    vertical-align: middle;
+  }
+} 
+
+.media-top {
+  & > * { vertical-align: top; }
+}

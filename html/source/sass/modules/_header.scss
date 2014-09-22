@@ -1,4 +1,6 @@
 .header {
+  padding-top: 60%;
+
 	background: #222;
 	color: white;
 
@@ -27,10 +29,33 @@
 	width: 100%;
 }
 
+@include respond(480px, 960px) {
+  .header-logo {
+    top: 30%;
+  }
+
+  .header {
+    padding-top: 75%;
+  }
+}
+
+@include respond(0, 480px) {
+  .header-logo {
+    top: 25%;
+  }
+
+  .header {
+    padding-top: 90%;
+  }
+}
+
 @media all and (max-height: 400px) {
 	.header-logo {
-		top: 20%;
+		top: 25%;
 	}
+  .header {
+    padding-top: 75%;
+  }
 }
 
 

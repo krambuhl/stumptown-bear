@@ -17,7 +17,7 @@ Stump.ImageView = Patchbay.View.extend({
       width: 2,
       radius: 15,
       corners: 0,
-      color: '#222',
+      color: '#999',
       speed: 1.2,
       trail: 10,
       hwaccel: true
@@ -55,7 +55,7 @@ Stump.ImageView = Patchbay.View.extend({
 
   resize: function() {
     if(!this.$el.hasClass('image-square')) {
-      this.$el.css('padding-top', this.ratio * 100 + '%');
+      // this.$el.css('padding-top', this.ratio * 100 + '%');
     }
   }
 });

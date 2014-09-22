@@ -4,6 +4,7 @@
 
 .gallery-wrapper {
   position: relative;
+  height: 90%;
   overflow: hidden;
 }
 
@@ -13,8 +14,27 @@
   width: 100%;
   height: 100%;
 
-  opacity: 0;
-  transition-property: padding;
+  // opacity: 0;
+  // background-color: rgba(#eee, 0.25);
+
+  transition-property: padding, height;
 
   &.is-active { opacity: 1; }
+
+  & > .image {
+    height: 100%;
+    padding-top: 0;
+  }
+}
+
+@include respond(0, 600px) {
+  .gallery-item {
+    .image {
+      background-position: center center;
+    }
+
+    .image-preloader {
+      background-color: #000;
+    }
+  }
 }

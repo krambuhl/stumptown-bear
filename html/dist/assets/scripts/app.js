@@ -31,8 +31,8 @@ Stump.WindowView = Patchbay.View.extend({
 
   buildSize: function() {
     this.size = {
-      width: this.el.innerWidth,
-      height: this.el.innerHeight,
+      width: this.$el.width(),
+      height: this.$el.height(),
       screenWidth: this.el.outerWidth,
       screenHeight: this.el.outerHeight
     };
@@ -128,7 +128,7 @@ Stump.ImageView = Patchbay.View.extend({
       width: 2,
       radius: 15,
       corners: 0,
-      color: '#222',
+      color: '#999',
       speed: 1.2,
       trail: 10,
       hwaccel: true
@@ -166,7 +166,7 @@ Stump.ImageView = Patchbay.View.extend({
 
   resize: function() {
     if(!this.$el.hasClass('image-square')) {
-      this.$el.css('padding-top', this.ratio * 100 + '%');
+      // this.$el.css('padding-top', this.ratio * 100 + '%');
     }
   }
 });
@@ -175,6 +175,9 @@ Stump.CasestudyView = Patchbay.View.extend({
     infoControl: '.project-nav-information',
     galleryControl: '.project-nav-gallery',
     closeControl: '.project-nav-close',
+    description: '.project-description',
+    selector: '.project-selector',
+    gallery: '.project-gallery',
     wrapper: '.gallery-wrapper',
     nav: '.project-nav',
     images: '.image'
@@ -183,6 +186,7 @@ Stump.CasestudyView = Patchbay.View.extend({
   setup: function () {
     this.inview = this.addChild(this.el, Stump.InView);
     this.gallery = this.addChild(this.$el, Stump.GalleryView);
+    this.gallery.casestudy = this;
     
     this.listenOnce(this.inview, 'inview', function() {
       this.images = this.addChild(this.ui.images, Stump.ImageView);
@@ -191,19 +195,34 @@ Stump.CasestudyView = Patchbay.View.extend({
     });
 
     this.listenTo(this.ui.infoControl, 'click', _.bind(this.collapse, this));
-    this.listenTo(this.ui.galleryControl, 'click', _.bind(this.expand, this));
+    this.listenTo(this.ui.galleryControl, 'click', _.bind(this.controlExpand, this));
     this.listenTo(this.ui.closeControl, 'click', _.bind(this.collapse, this));
     this.listenTo(app.window, 'resize', this.resize);
+    this.listenTo(app.window, 'scroll', this.resize);
   },
 
   collapse: function() {
     this.tempState('animating', true);
+    this.tempState('collapsing', true);
     this.state('expanded', false);
+    this.trigger('collapse');
+
+    clearTimeout(this.collapseTimer);
+    this.collapseTimer = _.delay(function(self) {
+      self.tempState('animating', true);
+      $(window).resize();
+    }, 500, this);
   },
 
   expand: function() {
+    clearTimeout(this.collapseTimer);
     this.tempState('animating', true);
     this.state('expanded', true);
+    this.trigger('expand');
+  },
+
+  controlExpand: function() {
+    this.expand();
 
     _.defer(function(self) {
       if (self.gallery.images.length === 0) {
@@ -219,9 +238,18 @@ Stump.CasestudyView = Patchbay.View.extend({
     }, timeout || 500, this);
   },
 
-  resize: function() {
-    var useable = this.$el.height() - this.ui.nav.outerHeight(true);
-    this.ui.wrapper.css('height', useable);
+  resize: function(size) {
+    var dH = this.ui.description.outerHeight(),
+      sH = this.ui.selector.outerHeight(),
+      max = _.max([this.ui.description.height(), this.ui.selector.height()]);
+
+    this.lastHeight = this.minHeight;
+    this.minHeight = (size.width > 600 ? max : dH + sH) + (0.1 * size.width);
+    this.$el.attr('data-min', this.minHeight);
+
+    this.$el.attr('data-max', size.height);
+    // var useable = this.$el.height() - this.ui.nav.outerHeight(true);
+    // this.ui.wrapper.css('height', useable);
   }
 });
 
@@ -277,6 +305,8 @@ Stump.GalleryView = Patchbay.View.extend({
     this.itemTemplate = _.template('<div class="gallery-item" data-index="<%= index %>"><div class="image" data-src="<%= src %>"></div></div>');
     this.images = [];
     this.addedImages = [];
+    this.position = 0;
+
     this.getImages();
 
     this.hammer = new Hammer(this.ui.wrapper[0]);
@@ -287,11 +317,81 @@ Stump.GalleryView = Patchbay.View.extend({
 
     this.listenTo(app.window, 'resize', this.resize);
     this.listenTo(this.ui.selectors, 'click', _.bind(this.onItemClick, this));
+
+    this.listenTo(this, 'drag:left', this.prev);
+    this.listenTo(this, 'drag:right', this.next);
   },
 
-  dragStart: function() {},
-  dragMove: function() {},
-  dragEnd: function() {},
+  afterSetup: function() {
+    this.listenTo(this.casestudy, 'expand', function() {
+      this.expanded = true;
+      this.oldScroll = $('body').scrollTop();
+      $('body').animate({ 'scrollTop': this.$el.offset().top }, 500);
+
+      this.resize(app.window.data);
+    });
+
+    this.listenTo(this.casestudy, 'collapse', function() {
+      this.expanded = false;
+      this.resize(app.window.data);
+    });
+
+    _.delay(function(self) {
+      self.resize(app.window.data);
+    }, 250, this);
+  },
+
+  dragStart: function() {
+    this.delta = 0;
+    this.trigger('drag:start');
+    this.state('dragging', true);
+    this.startPosition = this.position;
+  },
+
+  dragMove: function(ev) {
+    this.lastDelta = this.delta;
+    this.delta = ev.gesture.deltaX;
+    this.position = this.startPosition + ev.gesture.deltaX;
+    this.offset = this.position + this.wrapperWidth * this.elIndex;
+
+    this.trigger('drag');
+    this.updateDirection();
+    this.positionElements(this.offset);
+  },
+
+  dragEnd: function() {
+    this.trigger('drag:end');
+    this.state('dragging', false);
+    this.tempState('animating', true);
+    // this.positionElements(Math.round(this.position / this.wrapperWidth) * this.wrapperWidth);
+    // this.position = this.startPosition + ev.gesture.deltaX;
+  },
+
+  updateDirection: _.throttle(function() {
+    this.lastDirection = this.direction;
+    this.direction = this.delta < this.lastDelta ? 'left' : 'right';
+    
+    if (this.lastDirection !== this.direction) {
+      this.changeDirection(this.direction);
+    }
+
+  }, 50),
+
+  changeDirection: function(direction) {
+    this.trigger('drag:' + direction);
+  },
+
+  positionElements: function(offset) {
+    var self = this;
+    this.ui.items.each(function(index) {
+      var translate = (self.wrapperWidth * index + offset);
+      $(this).css('transform', 'translate3d(' + translate + 'px, 0, 0)');
+    });
+  },
+
+  cleanupElements: function() {
+
+  },
 
   onItemClick: function(ev) {
     var index = $(ev.currentTarget).attr('data-index');
@@ -299,12 +399,28 @@ Stump.GalleryView = Patchbay.View.extend({
   },
 
   resize: function(size) {
+    var height, offset;
+    if (!this.state('expanded')) {
+      height = this.$el.attr('data-min');
+    } else {
+      offset = size.width > 600 ? 0 : size.width * 0.1;
+      height = size.height + offset;
+    }
+
+    this.wrapperWidth = this.ui.wrapper.innerWidth() * 1.025;
+
+    this.$el.css('height', height);
     this.setImagesOffset(size);
+
+    this.positionElements(this.offset);
   },
 
   setActive: function(index) {
+    this.lastIndex = this.index;
     this.index = index;
     this.addImage(index);
+
+    this.elIndex = this.ui.items.filter('[data-index=' + index + ']').index();
 
     this.ui.items.removeClass('is-active')
       .filter('[data-index=' + index + ']').addClass('is-active');
@@ -328,18 +444,6 @@ Stump.GalleryView = Patchbay.View.extend({
     });
   },
 
-  getImages: function() {
-    this.imageData = this.ui.selectors.map(function(index) {
-      var $this = $(this);
-      $this.attr('data-index', index);
-
-      return {
-        index: index,
-        src: $this.attr('data-src')
-      };
-    }).get();
-  },
-
   addImage: function(index) {
     if (_.indexOf(this.addedImages, index) !== -1) return;
 
@@ -348,6 +452,7 @@ Stump.GalleryView = Patchbay.View.extend({
     });
 
     var imageEl = $(this.itemTemplate(data));
+
 
     if (this.ui.items.length > 0) {
       var near = _.find(this.ui.items.get().reverse(), function(item) {
@@ -374,10 +479,29 @@ Stump.GalleryView = Patchbay.View.extend({
     });
   },
 
+  getImages: function() {
+    this.imageData = this.ui.selectors.map(function(index) {
+      var $this = $(this);
+      $this.attr('data-index', index);
+
+      return {
+        index: index,
+        src: $this.attr('data-src')
+      };
+    }).get();
+  },
+
   cleanup: function() {
     _.each(this.images, function(image) {
       image.destroy();
     });
+  },
+
+  tempState: function(name, state, timeout) {
+    this.state(name, state);
+    _.delay(function(self) { 
+      self.state(name, !state);
+    }, timeout || 500, this);
   }
 });
 

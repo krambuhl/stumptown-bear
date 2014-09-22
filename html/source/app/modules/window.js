@@ -29,8 +29,8 @@ Stump.WindowView = Patchbay.View.extend({
 
   buildSize: function() {
     this.size = {
-      width: this.el.innerWidth,
-      height: this.el.innerHeight,
+      width: this.$el.width(),
+      height: this.$el.height(),
       screenWidth: this.el.outerWidth,
       screenHeight: this.el.outerHeight
     };

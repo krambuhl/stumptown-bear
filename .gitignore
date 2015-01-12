@@ -1,8 +1,6 @@
 .DS_Store
 .sass-cache
-comps
-./dist
-proto/dist
-ftp.json
 node_modules
 bower_components
+dist
+tmp

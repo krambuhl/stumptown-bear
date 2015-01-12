@@ -1,22 +1,34 @@
 {
-  "name": "stumptownbear",
-  "version": "9.0.1",
-  "homepage": "https://github.com/krambuhl/Stumptown-Bear",
+  "name": "stumptown-bear",
+  "homepage": "https://github.com/krambuhl/stumptown-bear",
+  "version": "10.0.0",
   "engines": {
     "node": "0.10.x"
   },
   "scripts": {
-    "install": "cd html && npm install && npm run vendor",
-    "start": "node index.js"
+    "build": "broccoli build browser",
+    "serve": "broccoli serve",
+    "start": "ws -p $PORT -c -d ./browser",
+    "dstart": "export PORT=5000 && npm run start"
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:krambuhl/Stumptown-Bear.git"
+    "url": "git@github.com:krambuhl/stumptown-bear.git"
   },
   "private": true,
+  "devDependencies": {
+    "broccoli": "^0.13.3",
+    "broccoli-autoprefixer": "^2.0.0",
+    "broccoli-browserify": "^0.1.0",
+    "broccoli-es6-module-filter": "^0.1.9",
+    "broccoli-merge-trees": "^0.2.1",
+    "broccoli-sass": "^0.3.3",
+    "broccoli-static-compiler": "^0.2.1",
+    "broccoli-uglify-js": "^0.1.3",
+    "broccoli-es6-transpiler": "^1.0.1",
+    "broccoli-imagemin": "^0.2.1"
+  },
   "dependencies": {
-    "express": "^4.5.1",
-    "grunt-cli": "^0.1.13",
-    "gulp": "^3.8.5"
+    "local-web-server": "^0.5.15"
   }
 }

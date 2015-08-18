@@ -7,6 +7,7 @@
   },
   "scripts": {
     "test": "tape test",
+    "postinstall": "npm run build",
     "build": "gulp compile",
     "develop": "gulp develop ",
     "start": "http-server ./dist -p $PORT",

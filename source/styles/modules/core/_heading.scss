@@ -1,0 +1,23 @@
+@include module(heading) {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.4em;
+
+  @include mod(bold) { font-weight: 700; }
+  @include mod(light) { font-weight: 300; }
+  @include mod(italic) { font-style: italic; }
+
+  @include tag(h1) { font-size: 54px; }
+  @include tag(h2) { font-size: 40px; }
+  @include tag(h3) { font-size: 32px; }
+  @include tag(h4) { font-size: 24px; }
+}
+
+@mixin heading--small {
+  .heading { font-size: 20px; }
+
+  h1.heading { font-size: 40px; }
+  h2.heading { font-size: 32px; }
+  h3.heading { font-size: 24px; }
+  h4.heading { font-size: 18px; }
+}

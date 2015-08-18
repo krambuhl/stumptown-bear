@@ -1,0 +1,33 @@
+.l-code-content {
+  color: #666;
+  
+  a {
+    color: $color-blue;
+    text-decoration: none;
+    
+    &:hover {
+      text-decoration: underline;
+    } 
+  }
+
+  .card-header {
+    & > * {
+      display: inline-block;
+    }
+
+    .heading {
+      font-size: 24px;
+    }
+
+    span {
+      font-size: 14px;
+      color: $color-mid;
+    }
+  }
+
+  .card-content {
+    margin-top: 0;
+    font-size: 18px;
+    color: $color-mid; 
+  }
+}

@@ -1,0 +1,44 @@
+html, body {
+  min-height: 100%;
+  width: 100%;
+
+  background: $color-bg;
+  color: $color-color;
+
+  font-family: $fontstack-sans;
+  font-weight: 300;
+  font-size: 21px;
+  line-height: 1.3em;
+
+  -webkit-tap-highlight-color: transparent;
+  text-rendering: geometricPrecision;
+}
+
+img::selection, 
+::selection { 
+  background: $color-selection; 
+  color: mix($color-selection, $color-light, 20);
+}
+
+em, cite { font-style: italic; }
+strong { font-weight: bold; }
+small { font-size: 16px; font-weight: 500; }
+
+#{$type-headers} {
+  font-family: $fontstack-sans;
+}
+
+a {
+  text-decoration: underline;
+  color: darken($color-purple, 10);
+}
+
+* {
+  box-sizing: border-box;
+  
+  transition-property: none;
+  transition-duration: 0.35s;
+  transition-timing-function: ease-in-out;
+  
+  backface-visibility: hidden;
+}

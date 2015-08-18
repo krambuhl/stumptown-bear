@@ -1,0 +1,40 @@
+// FONTS
+$font-serif: "Droid Serif";
+$font-sans: "Museo Sans";
+$font-mono: "PT Mono";
+
+$fontstack-serif: $font-serif, sans-serif;
+$fontstack-sans: $font-sans, Verdana, sans-serif;
+$fontstack-mono: $font-mono, monospace;
+
+// COLORS
+$color-green: #47985c;
+$color-blue: #376f86;
+$color-purple: #7f5f97;
+$color-red: #d6403e;
+
+$color-dark:  #222;
+$color-mid: mix($color-dark, white, 75);
+$color-grey: mix(#eee, white);
+$color-light: white;
+
+//site colors
+$color-bg: $color-light;
+$color-color: $color-dark;
+
+// when a user highlights text this is the super duper color!
+$color-selection: #47985c;
+
+// spacing
+$size-spacing: 10px;
+$size-wrapper: 80px * 14;
+$size-tiny: 80px * 4;
+$size-small: 80px * 9;
+$size-medium: 80px * 9;
+$size-large: 80px * 15;
+
+// element types
+$type-headers: h1, h2, h3, h4, h5, h6;
+$type-lists: ol, ul;
+$type-inputs: input, button;
+

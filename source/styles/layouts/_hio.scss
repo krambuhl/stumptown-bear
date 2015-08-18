@@ -1,0 +1,15 @@
+@include module(l-hio) {
+  @include meta("module: layout-hio");
+  margin-top: $size-spacing * 2 !important;
+  
+  img {
+    width: 100%;
+    margin: $size-spacing * 2 0; 
+  }
+  
+  @include module(heading) {    
+    & + .heading {
+      margin-top: $size-spacing;
+    }
+  }
+}

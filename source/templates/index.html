@@ -1,0 +1,124 @@
+---
+title: Stumptown Bear
+slug: index
+---
+
+{% macro Header(title, subtitle, cls) %}
+  <header class="strata m-header {{cls}}">
+    <div class="wrapper">
+      <h2 class="heading">{{ title }}</h2>
+      <p class="heading">{{ subtitle }}</p>
+    </div>
+  </header>
+{% endmacro %}
+
+<section class="l-hio strata">
+  <div class="wrapper">
+    <h2 class="heading m-bold">Hio!</h2>
+    <h3 class="heading">I&#x27;m Evan Krambuhl.</h3>
+
+    <div class="caption">
+      <img class="image" src="{{ relativity }}assets/images/evan.jpg" alt="That's me" width="100%" />
+      <!-- <caption>That's Me</caption> -->
+    </div>
+
+    <p class="heading m-light">I make beautiful, functional experiences using forward-thinking development.</p>
+    <p class="heading m-light">I believe that minimalism highlights functionality and modular development is taking over the world.</p>
+    <h3 class="heading">Let’s build something together!</h3>
+  </div>
+</section>
+
+<section class="l-portfolio container" id="portfolio">
+  {{ Header("Portfolio", "I spend my time creating great experiences using simple, functional design.", "m-green") }}
+
+  <div class="l-portfolio-content strata">
+    <div class="wrapper">
+      <div class="cardgrid m-single">
+      {% set list = [
+        'trimet-org',
+        'ca-portfolio',
+        'deception-force',
+        'webtrends-today',
+        'webtrends-prototypes',
+        'design-lab',
+        'rap-battle',
+        'design-prototypes',
+        'il7',
+        'iounoi',
+        'precision-machines'
+      ] %}
+
+      {% for item in list %}
+        {% include "source/templates/_modules/postcard.swig" with collections.portfolio|where({ slug: item })|first %}
+      {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="l-code container" id="code">
+  {{ Header("Code", "I also maintain and contribute to a number of open source projects.", "m-blue") }}
+
+  <div class="l-code-content strata">
+    <div class="wrapper strata-padded">
+      <div class="cardgrid m-double">
+        {% for package in codes %}
+          <article class="card m-padded">
+            <header class="card-header">
+              <h3 class="heading"><a href="https://www.npmjs.com/package/{{ package.name }}">{{ package.name }}</a></h3>
+              <span>v{{ package.version }}</span>
+            </header>
+
+            <div class="card-content">
+              {{ package.description }}
+            </div>
+          </article>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="l-contact container" id="contact">
+  {{ Header("Contact", "You can find me on the social graph, feel free to drop a line and say hello.", "m-red") }}
+
+  <div class="l-contact-content strata">
+    <div class="wrapper strata-padded">
+
+      {% set list = [{
+        type: 'Twitter',
+        user: '@evan_is',
+        href: 'https://twitter.com/evan_is'
+      }, {
+        type: 'Email',
+        user: 'thekrambuhl@gmail.com',
+        href: 'mailto:thekrambuhl@gmail.com'
+      }, {
+        type: 'Github',
+        user: 'krambuhl',
+        href: 'https://github.com/krambuhl'
+      }, {
+        type: 'NPM',
+        user: 'krambuhl',
+        href: 'https://www.npmjs.com/~krambuhl'
+      }, {
+        type: 'LinkedIn',
+        href: 'https://www.linkedin.com/pub/evan-krambuhl/27/76/520'
+      }] %}
+
+      <div class="cardgrid m-double">
+        {% for contact in list %}
+          <article class="card m-padded">
+            <header class="card-header">
+              <h3 class="heading"><a href="{{ contact.href }}">{{ contact.type }}</a></h3>
+              {% if contact.user %}
+                <div class="l-contact-user">{{ contact.user }}</div>
+              {% endif %}
+            </header>
+          </article>
+        {% endfor %}
+      </div>
+
+    </div>
+  </div>
+</section>

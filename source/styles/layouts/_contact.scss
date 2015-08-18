@@ -1,0 +1,23 @@
+.l-contact-content {
+  color: #666;
+
+  a {
+    color: $color-red;
+    text-decoration: none;
+    
+    &:hover {
+      text-decoration: underline;
+    } 
+  }
+
+  .card-header {
+    .heading {
+      font-size: 24px;
+    }
+
+    .l-contact-user {
+      font-size: 18px;
+      color: $color-mid;
+    }
+  }
+}

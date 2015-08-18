@@ -1,0 +1,60 @@
+.cardgrid {  
+  &.m-double {
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: space-around;
+    
+    .card {
+      flex: 1 1 $size-tiny;
+      margin-top: $size-spacing * 2;
+      
+    }
+  }
+
+
+  &.m-single {
+    .card + .card {
+      margin-top: $size-spacing * 4; 
+    }
+  }
+
+  @include respond(730px) {
+    &.m-single {
+      .card + .card {
+        margin-top: $size-spacing * 6; 
+      }
+    }
+
+    &.m-double {
+      .card {
+        margin-top: $size-spacing * 3;
+        
+        &:nth-child(odd) { margin-right: $size-spacing * 1.5; } 
+        &:nth-child(even) { margin-left: $size-spacing * 1.5; } 
+      }
+    }
+  }
+}
+
+.card {
+  width: 100%; 
+}
+
+.card-header {
+  a { text-decoration: none; }  
+}
+
+.card-meta {
+  font-size: 18px;
+  font-weight: 300;
+   
+  color: $color-mid;
+  
+  span { font-weight: 500; }
+  a { color: $color-mid; } 
+}
+
+.card-content {
+  margin-top: $size-spacing;
+}

@@ -1,0 +1,16 @@
+[
+  "date-grab",
+  "functional-predicates",
+  "gates",
+  "hookie",
+  "komposit",
+  "listento-emitter",
+  "metalsmith-batch-dom",
+  "metalsmith-external-links",
+  "metalsmith-hierarchy",
+  "metalsmith-relativity",
+  "metalsmith-rewrite",
+  "mutators",
+  "object-contains",
+  "statum"
+]

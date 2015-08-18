@@ -1,0 +1,63 @@
+// Module
+@mixin module($ns, $sub)
+
+// example:
+@include module(card) { }
+
+// output:
+.card { }
+
+
+// Specify
+@mixin spec($ns, $spec)
+@mixin specify($ns, $spec)
+
+// example:
+@include specify(card, header) { }
+@include module(card) {
+  @include specify(header) { }
+}
+
+// output:
+.card-header { }
+
+
+// Element
+@mixin el($ns, $el)
+@mixin element($ns, $el)
+
+// example:
+@include element(card, a) { }
+@include module(card) {
+  @include element(a) { }
+}
+
+// output:
+a.card { }
+
+
+// Modifier
+@mixin mod($ns, $mod)
+@mixin modifier($ns, $mod)
+
+// example: 
+@include modifier(card, pinned) { }
+@include module(card) {
+  @include modifier(pinned) { }
+}
+
+// output:
+.card.m-pinned { }
+
+
+// State
+@mixin state($ns, $state)
+
+// example: 
+@include state(card, active) { }
+@include module(card) {
+  @include state(active) { }
+}
+
+// output:
+.card.is-active { }

@@ -1,0 +1,89 @@
+@function meta-create-line($value, $depth: 0, $head: '- ') {
+  $mbuf: ();
+  
+  @if $depth > 0 {
+    $mbuf: join($mbuf, $head);
+    @for $i from 1 through $depth {
+      $mbuf: join('  ', $mbuf)
+    }
+  }
+
+  $mbuf: join($mbuf, $value);
+
+  $buffer: '';
+  @for $i from 1 through length($mbuf) {
+    $buffer: $buffer + nth($mbuf, $i);
+  }
+
+  @return $buffer;
+}
+
+
+@function meta-create-list($header:null, $list:(), $depth: 0) {
+  $lines: ();
+  
+  @if $header {
+    $lines: join($lines, meta-create-line($header + ':', $depth));
+  }
+  
+  @each $item in $list {
+    $process: ();
+    
+    @if type-of($item) == map {
+      $process:(
+        // meta-create-line('', $depth, '-'),
+        meta-create-map($item, $depth + 1, true)
+      );
+    } @elseif type-of($item) == list {
+      $process: meta-create-list(null, $item, $depth + 1);
+    } @else {
+      $process: meta-create-line($item, $depth);
+    }
+
+    $lines: join($lines, $process);
+  }
+
+  @return $lines;
+}
+
+
+@function meta-create-map($map, $depth: 0, $isList: false) {
+  $lines: ();
+  $index: 0;
+  
+  @each $name, $value in $map {
+    $process: (meta-create-line($name + ':', $depth, ''));
+
+    @if type-of($value) == map {
+      $process: join($process, meta-create-map($value, $depth + 1));
+    } @elseif type-of($value) == list {
+      $process: join($process, meta-create-list(null, $value, $depth + 1));
+    } @else {
+      @if $isList and $index == 0 {
+
+        $process: meta-create-line($name + ': ' + $value, $depth - 1, '- ');
+        $index: 1;
+      } @else {
+        $process: meta-create-line($name + ': ' + $value, $depth, '');
+      }
+    }
+
+    $lines: join($lines, $process);
+  }
+
+  @return $lines;
+}
+
+
+
+@mixin meta($title, $meta: null, $depth: 0) {
+  $lines: (meta-create-line($title));
+  
+  @if $meta {
+    $lines: join($lines, meta-create-map($meta, 1));
+  }
+  
+  @each $line in $lines {
+    /* #{$line} */ 
+  }
+};

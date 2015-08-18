@@ -1,0 +1,18 @@
+
+.l-portfolio-content {
+  @include meta("module: layout-portfolio-content");
+
+  a { text-decoration: none; }
+  a:hover { text-decoration: underline; } 
+
+  .heading {    
+    a {
+      color: $color-dark;
+      font-weight: 700; 
+    }
+
+    & + .heading {
+      margin-top: $size-spacing;
+    }
+  }
+}

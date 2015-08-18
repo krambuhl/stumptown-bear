@@ -19,15 +19,13 @@ gulp.task('empty', function(done) {
  
 // Task `styles`
 // compiles stylesheet and optimises file
-var sass = require('gulp-ruby-sass');
+var sass = require('gulp-sass');
 var postcss = require('gulp-postcss');
 var autoprefixer = require('autoprefixer-core');
  
 gulp.task('styles', function() {
-  return sass('source/styles/')
-    .on('error', function (err) {
-      console.error('Error!', err.message);
-    })
+  return gulp.src('source/styles/*.scss')
+    .pipe(sass().on('error', sass.logError))
     .pipe(postcss([
       autoprefixer({ browsers: ['last 2 version'] })
     ]))

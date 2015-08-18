@@ -182,13 +182,10 @@ module.exports = [
   inPlace('swig'),
 
   rewrite([{
-    pattern: ['**', '!**/index.html'],
-    filename: '{path.dir}/{path.name}/index.html', // permalinks
-  }, {
     copy: true,
-    pattern: '**',
-    filename: '__headless/{path.dir}/{path.base}', // copy 
-  }]),
+    pattern: ['**', '**/*.html'],
+    filename: './__headless/{path.dir}/{path.name}.html', // copy 
+  }]),  
 
   fileMetadata([{
     pattern: '**/*', 

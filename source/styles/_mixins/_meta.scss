@@ -58,14 +58,11 @@
       $process: join($process, meta-create-map($value, $depth + 1));
     } @elseif type-of($value) == list {
       $process: join($process, meta-create-list(null, $value, $depth + 1));
+    } @elseif $isList and $index == 0 {
+      $process: meta-create-line($name + ': ' + $value, $depth - 1, '- ');
+      $index: 1;
     } @else {
-      @if $isList and $index == 0 {
-
-        $process: meta-create-line($name + ': ' + $value, $depth - 1, '- ');
-        $index: 1;
-      } @else {
-        $process: meta-create-line($name + ': ' + $value, $depth, '');
-      }
+      $process: meta-create-line($name + ': ' + $value, $depth, '');
     }
 
     $lines: join($lines, $process);
@@ -76,8 +73,8 @@
 
 
 
-@mixin meta($title, $meta: null, $depth: 0) {
-  $lines: (meta-create-line($title));
+@mixin meta($meta: null, $depth: 0) {
+  $lines: ();
   
   @if $meta {
     $lines: join($lines, meta-create-map($meta, 1));

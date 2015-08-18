@@ -1,18 +1,18 @@
 @include module(menu) {
-  @include spec(list) {
+  &-list {
     & > li {
       display: inline-block;
       vertical-align: middle;  
     }  
   }
 
-  @include spec(link) {
+  &-link {
     text-decoration: none;
     font-weight: 500; 
 
-    @include mod(portfolio) { color: $color-green; }
-    @include mod(code) { color: $color-blue; }
-    @include mod(blog) { color: $color-purple; }
-    @include mod(contact) { color: $color-red; }
+    &.m-portfolio { color: $color-green; }
+    &.m-code { color: $color-blue; }
+    &.m-blog { color: $color-purple; }
+    &.m-contact { color: $color-red; }
   }
 }

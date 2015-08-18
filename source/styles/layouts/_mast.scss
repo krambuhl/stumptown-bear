@@ -1,9 +1,6 @@
 @include module(l-mast) {
-  @include meta("module: layout-mast");
-   
   overflow: hidden; 
   background-color: rgba(white, 0.98);
-  box-shadow: rgba(black, 0.15) 0 2px 25px;
   
   transition-property: padding, box-shadow;
   
@@ -16,10 +13,16 @@
   
   &-logo { 
     float: left;
+    position: relative;
+    margin-top: 2px;
   }
 
   &-nav { 
-    float: right;
+    float: right; 
+  }
+
+  &.is-fixed {
+    box-shadow: rgba(black, 0.15) 0 2px 25px;
   }
   
   .menu-link {

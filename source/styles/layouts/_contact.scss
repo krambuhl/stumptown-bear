@@ -1,4 +1,4 @@
-.l-contact-content {
+@include module(l-contact-content) {
   color: #666;
 
   a {

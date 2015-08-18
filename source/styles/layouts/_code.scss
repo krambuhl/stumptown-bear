@@ -1,4 +1,4 @@
-.l-code-content {
+@include module(l-code-content) {
   color: #666;
   
   a {

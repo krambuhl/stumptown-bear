@@ -1,6 +1,6 @@
 
-.l-portfolio-content {
-  @include meta("module: layout-portfolio-content");
+@include module(l-portfolio-content) {
+  // @include meta("module: layout-portfolio-content");
 
   a { text-decoration: none; }
   a:hover { text-decoration: underline; } 

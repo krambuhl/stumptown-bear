@@ -63,8 +63,9 @@
   @include respond($size-medium) {
     max-width: $size-large;
   }
+  
+  @include respond(0, $size-small) {
+    @include heading--small;
+  }
 }
 
-@include respond(0, $size-small) {
-  @include heading--small;
-}

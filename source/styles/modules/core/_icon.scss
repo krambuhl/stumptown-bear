@@ -1,5 +1,5 @@
 @include module(icon) {
-  @include meta("module:icon");
+  // @include meta("module:icon");
   
   display: inline-block;
   vertical-align: middle;
@@ -10,14 +10,14 @@
   }
   
   @each $i in (16 24 32 48 64) {
-    @include spec($i) {
-      @include meta("icon-size", (size: $i + px));
+    #{".icon-" + $i} {
+      // @include meta("icon-size", (size: $i + px));
       
       width: #{$i}px;
       height: #{$i}px;
       
-      @include mod(wide) { width: #{$i   * 1.5}px; }
-      @include mod(tall) { height: #{$i * 1.5}px; }
+      &.m-wide { width: #{$i   * 1.5}px; }
+      &.m-tall { height: #{$i * 1.5}px; }
     }
   }
 }

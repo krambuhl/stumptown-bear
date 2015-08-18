@@ -3,7 +3,7 @@
   
   a { color: $color-dark; text-decoration: none; } 
   
-  @include module(icon) {
+  &-icon {
     display: inline-block;
     vertical-align: middle;
     
@@ -12,9 +12,12 @@
   }
 
 
-  @include spec(text) {
+  &-text {
     display: inline-block;
     vertical-align: middle;
+    
+    position: relative;
+    top: -3px;
     
     line-height: 16px; 
     font-size: 18px;
@@ -25,5 +28,5 @@
 }
 
 @mixin logo--small {
-  @include spec(logo, text) { display: none; }
+  .logo-text { display: none; }
 }

@@ -9,7 +9,8 @@
     "test": "tape test",
     "build": "gulp compile",
     "develop": "gulp develop ",
-    "start": "http-server ./dist"
+    "start": "http-server ./dist -p $PORT",
+    "dstart": "http-server ./dist -p 8080"
   },
   "repository": {
     "type": "git",
@@ -58,6 +59,9 @@
     "vinyl-source-stream": "^1.1.0"
   },
   "dependencies": {
-    "domready": "^1.0.8"
+    "domready": "^1.0.8",
+    "functional-predicates": "^0.1.0",
+    "simple-extend": "^0.1.0",
+    "statum": "^0.1.2"
   }
 }

@@ -36,8 +36,15 @@
   @include respond(0, 540px) {
     padding: $size-spacing $size-spacing * 2;
 
-    .logo {
+    &-logo {
       @include logo--small; 
+      margin-top: 4px;
     }
+
+    &-nav {
+      position: relative;
+      margin-top: 2px;
+    }
+
   }
 }

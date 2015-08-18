@@ -1,4 +1,4 @@
-<header class="l-mast is-fixed strata">
+<header class="l-mast strata">
   <div class="wrapper center">
     <h1 class="l-mast-logo logo"><a href="/#">
       <i class="icon icon-stb-logo"></i>

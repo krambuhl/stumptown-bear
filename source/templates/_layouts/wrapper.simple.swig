@@ -18,11 +18,13 @@
 <body>
 
 
-{% include "../_modules/mast.swig" %}
+{% include "../_modules/core/mast.swig" %}
 
 <div class="l-contents container">{{ contents|safe }}</div>
 
-{% include "../_modules/footer.swig" %}
+{% include "../_modules/core/footer.swig" %}
+
+<script src="/assets/bundle.js"></script>
 
 </body>
 </html>

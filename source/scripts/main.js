@@ -1,13 +1,11 @@
-// import App from './modules/app.js';
-// import dom from 'domquery';
-// import domready from 'domready';
+import domready from 'domready';
 
-// var w = window;
-// var d = document;
+import app from './app.js';
+import WindowView from './views/window.js';
 
-// domready(() => {
-//   var nav = d.getElementsByClass('l-mast-nav')[0];
-//   var portfolio = nav.getElementsByClass('m-portfolio')[0];
-//   var code = nav.getElementsByClass('m-code')[0];
-//   var content = nav.getElementsByClass('m-content')[0];
-// });
+domready(() => {
+  app.window = new WindowView();
+});
+
+
+window.app = app;

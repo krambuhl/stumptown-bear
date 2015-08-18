@@ -188,7 +188,7 @@ module.exports = [
   fileMetadata([{
     pattern: '**/*', 
     metadata: {
-      layout: 'wrapper.swig'
+      layout: 'wrapper.simple.swig'
     }
   }, {
     pattern: '__headless/**/*', 

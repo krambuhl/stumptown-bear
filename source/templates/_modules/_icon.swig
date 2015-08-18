@@ -1,1 +1,0 @@
-<i class="icon icon-{{name}}">{{alt}}</i>

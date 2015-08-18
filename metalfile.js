@@ -4,25 +4,20 @@ var layouts = require('metalsmith-layouts');
 var inPlace = require('metalsmith-in-place');
 var swigHelpers = require('metalsmith-swig-helpers');
 var ignore = require('metalsmith-ignore');
-var replace = require('metalsmith-replace');
-var slug = require('metalsmith-slug');
 var headings = require('metalsmith-headings');
 var headingsId = require('metalsmith-headings-identifier');
 var fileMetadata = require('metalsmith-filemetadata');
 var collections = require('metalsmith-collections');
-var copy = require('metalsmith-copy');
 var define = require('metalsmith-define');
 var pagination = require('metalsmith-pagination');
 var relativity = require('metalsmith-relativity');
 var paths = require('metalsmith-paths');
-var permalinks = require('metalsmith-permalinks');
 var rewrite = require('metalsmith-rewrite');
 var hierarchy = require('metalsmith-hierarchy');
 var metadata = require('metalsmith-metadata');
 var extlinks = require('metalsmith-external-links');
 
 var _ = require('lodash');
-var path = require('path');
 
 module.exports = [
   swigHelpers({
@@ -185,6 +180,9 @@ module.exports = [
     copy: true,
     pattern: ['**', '**/*.html'],
     filename: './__headless/{path.dir}/{path.name}.html', // copy 
+  }, {
+    pattern: ['**', '!**/index.html'],
+    filename: '{path.dir}/{path.name}/index.html'
   }]),  
 
   fileMetadata([{

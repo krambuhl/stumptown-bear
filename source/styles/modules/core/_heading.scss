@@ -6,14 +6,12 @@
   &.m-bold { font-weight: 700; }
   &.m-light { font-weight: 300; }
   &.m-italic { font-style: italic; }
-  
-  @at-root {
-    #{h1 + &} { font-size: 54px; }
-    #{h2 + &} { font-size: 40px; }
-    #{h3 + &} { font-size: 32px; }
-    #{h4 + &} { font-size: 24px; }
-  }
 }
+
+h1.heading { font-size: 54px; }
+h2.heading { font-size: 40px; }
+h3.heading { font-size: 32px; }
+h4.heading { font-size: 24px; }
 
 @mixin heading--small {
   .heading { font-size: 20px; }

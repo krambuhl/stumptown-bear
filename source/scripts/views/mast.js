@@ -5,7 +5,7 @@ import app from '../app.js';
 
 export default View.extend({
   setup() {
-    app.window.scrollTop.change(is.gt(40), res => {
+    app.window.scrollTop.change(is.gt(0), res => {
       this.el.classList[res ? 'add' : 'remove']('is-fixed')
     });
   }

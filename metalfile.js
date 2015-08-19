@@ -165,6 +165,16 @@ module.exports = [
 
   paths(),
   hierarchy(),
+
+  rewrite([{
+    copy: true,
+    pattern: ['**', '**/*.html'],
+    filename: './__headless/{path.dir}/{path.name}.html', // copy 
+  }, {
+    pattern: ['**', '!**/index.html'],
+    filename: '{path.dir}/{path.name}/index.html'
+  }]),  
+
   relativity({
     depth: 0
   }),
@@ -175,15 +185,6 @@ module.exports = [
   }),
 
   inPlace('swig'),
-
-  rewrite([{
-    copy: true,
-    pattern: ['**', '**/*.html'],
-    filename: './__headless/{path.dir}/{path.name}.html', // copy 
-  }, {
-    pattern: ['**', '!**/index.html'],
-    filename: '{path.dir}/{path.name}/index.html'
-  }]),  
 
   fileMetadata([{
     pattern: '**/*', 

@@ -12,8 +12,8 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
-  <link href="/assets/style.css" rel="stylesheet" />
-  <link href="/assets/icons.css" rel="stylesheet" />
+  <link href="{{relativity}}assets/style.css" rel="stylesheet" />
+  <link href="{{relativity}}assets/icons.css" rel="stylesheet" />
 </head>
 <body>
 
@@ -24,7 +24,7 @@
 
 {% include "../_modules/core/footer.swig" %}
 
-<script src="/assets/bundle.js"></script>
+<script src="{{relativity}}assets/bundle.js"></script>
 
 </body>
 </html>

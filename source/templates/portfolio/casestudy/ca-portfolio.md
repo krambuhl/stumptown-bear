@@ -1,13 +1,15 @@
 ---
-slug: trimet-org
-title: Trimet.org
-date: 2015
-collab:
-  title: TriMet
-  href: http://trimet.org
+slug: ca-portfolio
+title: CA Technologies Portfolio 
+date: 2014
+collab: 
+  title: John McNeil Studio
+  href: http://www.johnmcneilstudio.com/
 images: 
-  - assets/images/portfolio/trimet.jpg
+  - assets/images/portfolio/ca-portfolio-home.jpg
+  - assets/images/portfolio/ca-portfolio.jpg
 ---
+
 
 # Trimet.org Redesign
 

@@ -1,0 +1,7 @@
+.extend-base {
+  #{$type-headers} { @extend .heading };
+  
+  * + * {
+    margin-top: $size-spacing;
+  } 
+}

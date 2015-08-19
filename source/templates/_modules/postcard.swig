@@ -15,8 +15,8 @@
 
   <div class="card-content">
     <div class="card-image">
-      {% if image %}
-      <img class="image" src="{{ relativity }}{{ image }}" width="100%" alt="{{ title }}" />
+      {% if images %}
+      <img class="image" src="{{ relativity }}{{ images|first }}" width="100%" alt="{{ title }}" />
       {% else %}
       <img class="image" src="" width="100%" alt="{{ title }}" />
       {% endif %}

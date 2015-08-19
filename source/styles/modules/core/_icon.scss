@@ -8,16 +8,16 @@
     width: 100%;
     height: 100%;
   }
-  
-  @each $i in (16 24 32 48 64) {
-    #{".icon-" + $i} {
-      // @include meta("icon-size", (size: $i + px));
-      
-      width: #{$i}px;
-      height: #{$i}px;
-      
-      &.m-wide { width: #{$i   * 1.5}px; }
-      &.m-tall { height: #{$i * 1.5}px; }
-    }
+}
+
+@each $i in (16 24 32 48 64) {
+  #{".icon-" + $i} {
+    // @include meta("icon-size", (size: $i + px));
+    
+    width: #{$i}px;
+    height: #{$i}px;
+    
+    &.m-wide { width: #{$i   * 1.5}px; }
+    &.m-tall { height: #{$i * 1.5}px; }
   }
 }

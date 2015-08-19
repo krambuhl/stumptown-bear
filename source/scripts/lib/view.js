@@ -1,34 +1,113 @@
-class View {
-  constructor(opts) {
-    this.options = opts;
+import extend from 'extend';
+import pick from 'lodash.pick';
+import Delegate from 'dom-delegate';
+import objpath from 'get-object-path';
 
-    if (opts.el) this.setupElement(opts.el)
-    if (opts.ui) this.setupUI(opts.ui);
-    if (opts.events) this.setupEvents(opts.events);
+export default View;
 
-    this.setup();
-  }
+function View(opts) {
+  this.options = opts || {};
 
-  setup() {}
+  extend(this, pick(this.options, View.extKeys));
+  
+  // cono
+  this.beforeSetup();
 
-  setupElement(el) {
-    this.el = el instanceof Element ? el : document.querySelector(el);
-  }
+  if (this.el) this.setElement(this.el)
+  if (this.events) this.setupEvents(this.events);
+  if (this.ui) this.setupUI(this.ui);
+
+  this.setup();
+}
+
+View.extKeys = ['el', 'ui', 'events'];
+View.extend = require('simple-extend');
+
+View.prototype = {
+  beforeSetup() {},
+  setup() {},
+
+  setElement(el) {
+    var flag = el.addEventListener !== undefined;
+    this.el = flag ? el : document.querySelector(el);
+  },
 
   setupUI(ui) {
     this._ui = ui;
-    this.ui = Object.keys(ui).map(key => {
+    this.ui = Object.keys(ui).reduce((memo, key) => {
       var els = this.el.querySelectorAll(ui[key]);
-      return els.length > 1 ? els : els[0];
-    });
-  }
+      memo[key] = els.length > 1 ? els : els[0];
+      return memo;
+    }, {});
+  },
 
-  setupEvents(ev) {
-    this._events = ev;
-    Object.keys(ev).forEach(function() { });
+  setupEvents(events) {
+    this.delegate = new Delegate(this.el);
+
+    var self = this;
+    Object.keys(events).forEach(parseEvent);
+
+    function parseEvent(ev) {
+      var e = parseEventKey(self, ev),
+        callback = parseEventValue(self, events[ev]);
+
+      if (typeof e.target === 'string') {
+        delegate.on(e.events, e.target, cb);
+      } else {
+        e.target.addEventListener(e.events, cb);
+      }
+
+      function cb() {
+        callback.apply(self, arguments);
+      }
+    }
+  },
+
+  cleanup() {
+    this.beforeCleanup();
+    this.cleanupEvents(this.events);
+    this.afterCleanup();
+  },
+
+  beforeCleanup() {},
+  afterCleanup() {},
+
+  cleanupEvents(ev) {
+    var self = this;
+
+    Object.keys(events).forEach(parseEvent);
+
+    function parseEvent(ev) {
+      var e = parseEventKey(self, ev);
+      if (typeof e.target === 'string') {
+        delegate.off(e.events, e.target);
+      } else {
+        e.target.removeEventListener(e.events);
+      }
+    }
   }
 }
 
-View.extend = require('simple-extend')
+function parseEventKey(self, ev) {
+  var parts = ev.split(' ');
 
-export default View;
+  return {
+    target: parseEventPath(self, parts.pop().trim()),
+    events: parts.join(' ').trim()
+  };
+}
+
+function parseEventPath(self, path) {
+  var t = path;
+  
+  if (path.indexOf('@') === 0) {
+    t = objpath(self, path.substr(1))
+  }
+
+  return t;
+}
+
+function parseEventValue(self, val) {
+  return typeof val === 'string' ? 
+    objpath(self, val) : val;
+}

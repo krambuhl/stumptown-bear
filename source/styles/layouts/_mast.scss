@@ -11,14 +11,18 @@
   max-width: 100%; 
   z-index: 1000;
   
+  padding: $size-spacing $size-spacing * 2;
+    
   &-logo { 
     float: left;
     position: relative;
-    margin-top: 2px;
+    top: 3px;
   }
 
   &-nav { 
     float: right; 
+    position: relative;
+    top: 1px;
   }
 
   &.is-fixed {
@@ -34,17 +38,11 @@
   }
   
   @include respond(0, 540px) {
-    padding: $size-spacing $size-spacing * 2;
 
     &-logo {
       @include logo--small; 
-      margin-top: 4px;
     }
 
-    &-nav {
-      position: relative;
-      margin-top: 2px;
-    }
 
   }
 }

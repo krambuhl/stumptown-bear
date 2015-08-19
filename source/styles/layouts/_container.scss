@@ -1,7 +1,3 @@
 @include module(container) {
-  padding-top: $size-spacing * 7 - 1;
-  
-  @include respond(0, 540px) {   
-    padding-top: $size-spacing * 5 - 1;
-  }
+  padding-top: $size-spacing * 5 - 1;
 }

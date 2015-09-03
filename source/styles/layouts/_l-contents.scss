@@ -7,5 +7,4 @@
 
   @include respond($size-tiny, $size-small) { font-size: 90%; }
   @include respond-below($size-tiny) { font-size: 80%; }
-  @include respond-below(400px) { padding-top: 0; }
 }

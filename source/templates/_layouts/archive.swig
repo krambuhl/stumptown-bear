@@ -2,11 +2,9 @@
   <div class="wrapper">
     {% for post in pagination.files|segment(pagination.num, perPage) %}
       <div class="post">
-        <h3 class="heading"><a href="{{ post.path.href }}{{ post.path.name }}">{{post.title}}</a></h3>
+        <a href="{{ post.path.href }}{{ post.path.name }}"><h3 class="heading">{{post.title}}</h3></a>
       </div>
     {% endfor %}
-
-    {{contents|safe}}
   </div>
 </section>
 

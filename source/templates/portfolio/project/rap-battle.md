@@ -6,3 +6,5 @@ with: John McNeil Studio
 images: 
   - assets/images/portfolio/rap-battle.jpg
 ---
+
+# Juniper Data Center Rap Battle

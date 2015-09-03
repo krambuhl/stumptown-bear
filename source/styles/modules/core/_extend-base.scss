@@ -6,4 +6,8 @@
   } 
 
   img { @extend .image; }
+
+  a { text-decoration: underline; 
+    &:hover { text-decoration: underline; }
+  }
 }

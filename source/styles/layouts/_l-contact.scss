@@ -1,4 +1,4 @@
-@include module(l-contact-content) {
+.l-contact-content {
   color: #666;
 
   a {
@@ -14,10 +14,10 @@
     .heading {
       font-size: 24px;
     }
-
-    .l-contact-user {
-      font-size: 18px;
-      color: $color-mid;
-    }
   }
+}
+
+.l-contact-user {
+  font-size: 18px;
+  color: $color-mid;
 }

@@ -1,9 +1,10 @@
-
-@include module(l-portfolio-content) {
+.l-portfolio-content {
   // @include meta("module: layout-portfolio-content");
 
-  a { text-decoration: none; }
-  a:hover { text-decoration: underline; } 
+  a {
+    text-decoration: none;
+    &:hover { text-decoration: underline; } 
+  }
 
   .heading {    
     a {
@@ -12,7 +13,7 @@
     }
 
     & + .heading {
-      margin-top: $size-spacing;
+      margin-top: $size-space;
     }
   }
 }

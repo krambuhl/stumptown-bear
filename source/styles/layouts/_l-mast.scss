@@ -1,0 +1,66 @@
+.l-mast {
+  overflow: hidden; 
+  background-color: rgba(white, 0.98);
+  
+  transition-property: box-shadow;
+  transition-duration: 0.1s;
+  
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  max-width: 100%; 
+  z-index: 1000;
+  
+  padding: $size-space $size-space * 2;
+  
+  &.is-fixed {
+    box-shadow: rgba(black, 0.10) 0 2px 25px;
+  }
+}
+
+.l-mast-logo { 
+  float: left;
+  position: relative;
+  top: 1px;
+}
+
+.l-mast-nav { 
+  float: right; 
+  position: relative;
+  top: 1px;
+  
+  .menu-link {
+    display: block;
+    padding: 1px 3px; 
+    font-size: 16px;
+    
+    &:hover { text-decoration: underline; }
+  }
+}
+
+@include respond(0, 540px) {
+  .l-mast-logo {
+    @include logo--small; 
+  }
+}
+
+@include respond(0, 400px) {
+  .l-mast {
+    position: static;
+    
+    &.is-fixed { box-shadow: none; }
+  }
+
+  .l-mast-logo,
+  .l-mast-nav { 
+    float: none;
+    display: block;
+  }
+
+
+  .l-mast-nav {
+    margin-top: $size-space;
+    @include menu--stacked;
+  }
+}

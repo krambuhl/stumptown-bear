@@ -1,6 +1,4 @@
-@include module(icon) {
-  // @include meta("module:icon");
-  
+.icon { 
   display: inline-block;
   vertical-align: middle;
   
@@ -11,9 +9,7 @@
 }
 
 @each $i in (16 24 32 48 64) {
-  #{".icon-" + $i} {
-    // @include meta("icon-size", (size: $i + px));
-    
+  #{".icon-" + $i} {    
     width: #{$i}px;
     height: #{$i}px;
     

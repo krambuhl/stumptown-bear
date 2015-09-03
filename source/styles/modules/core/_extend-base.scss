@@ -2,6 +2,8 @@
   #{$type-headers} { @extend .heading };
   
   * + * {
-    margin-top: $size-spacing;
+    margin-top: $size-space;
   } 
+
+  img { @extend .image; }
 }

@@ -1,18 +1,27 @@
-@include module(menu) {
-  &-list {
-    & > li {
-      display: inline-block;
-      vertical-align: middle;  
-    }  
-  }
+.menu {}
 
-  &-link {
-    text-decoration: none;
-    font-weight: 500; 
+.menu-list {
+  & > * {
+    display: inline-block;
+    vertical-align: middle;  
+  }  
+}
 
-    &.m-portfolio { color: $color-green; }
-    &.m-code { color: $color-blue; }
-    &.m-blog { color: $color-purple; }
-    &.m-contact { color: $color-red; }
+.menu-link {
+  text-decoration: none;
+  font-weight: 500; 
+
+  &.m-portfolio { color: $color-green; }
+  &.m-code { color: $color-blue; }
+  &.m-blog { color: $color-purple; }
+  &.m-contact { color: $color-red; }
+}
+
+
+@mixin menu--stacked {
+  .menu-list {
+    & > * {
+      display: block; 
+    }
   }
 }

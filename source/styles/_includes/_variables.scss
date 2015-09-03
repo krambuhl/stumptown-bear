@@ -23,13 +23,13 @@ $color-bg: $color-light;
 $color-color: $color-dark;
 
 // when a user highlights text this is the super duper color!
-$color-selection: #47985c;
+// $color-selection: $color-dark;
 
 // spacing
-$size-spacing: 10px;
+$size-space: 0.6rem;
 $size-wrapper: 80px * 14;
 $size-tiny: 80px * 4;
-$size-small: 80px * 9;
+$size-small: 80px * 6;
 $size-medium: 80px * 9;
 $size-large: 80px * 15;
 

@@ -7,30 +7,29 @@
     
     .card {
       flex: 1 1 $size-tiny;
-      margin-top: $size-spacing * 2;
-      
+      margin-top: $size-space * 2;      
     }
   }
 
   &.m-single {
     .card + .card {
-      margin-top: $size-spacing * 4; 
+      margin-top: $size-space * 4; 
     }
   }
 
   @include respond(730px) {
     &.m-single {
       .card + .card {
-        margin-top: $size-spacing * 6; 
+        margin-top: $size-space * 6; 
       }
     }
 
     &.m-double {
       .card {
-        margin-top: $size-spacing * 3;
+        margin-top: $size-space * 3;
         
-        &:nth-child(odd) { margin-right: $size-spacing * 1.5; } 
-        &:nth-child(even) { margin-left: $size-spacing * 1.5; } 
+        &:nth-child(odd) { margin-right: $size-space * 1.5; } 
+        &:nth-child(even) { margin-left: $size-space * 1.5; } 
       }
     }
   }

@@ -20,14 +20,16 @@
 
 // layouts
 @import "layouts/cardgrid";
-@import "layouts/container";
 @import "layouts/strata";
-@import "layouts/mast";
-@import "layouts/hio";
-@import "layouts/portfolio";
-@import "layouts/code";
-@import "layouts/contact";
-@import "layouts/footer";
+@import "layouts/container";
+
+@import "layouts/l-mast";
+@import "layouts/l-contents";
+@import "layouts/l-hio";
+@import "layouts/l-portfolio";
+@import "layouts/l-code";
+@import "layouts/l-contact";
+@import "layouts/l-footer";
 
 
 // state

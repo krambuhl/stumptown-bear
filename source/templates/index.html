@@ -91,7 +91,7 @@ slug: index
         href: 'https://twitter.com/evan_is'
       }, {
         type: 'Email',
-        user: 'thekrambuhl@gmail.com',
+        user: 'the&shy;krambuhl&shy;@gmail.com',
         href: 'mailto:thekrambuhl@gmail.com'
       }, {
         type: 'Github',
@@ -112,7 +112,7 @@ slug: index
             <header class="card-header">
               <h3 class="heading"><a href="{{ contact.href }}">{{ contact.type }}</a></h3>
               {% if contact.user %}
-                <div class="l-contact-user">{{ contact.user }}</div>
+                <div class="l-contact-user">{{ contact.user|safe }}</div>
               {% endif %}
             </header>
           </article>

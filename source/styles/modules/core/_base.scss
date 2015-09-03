@@ -7,7 +7,7 @@ html, body {
 
   font-family: $fontstack-sans;
   font-weight: 300;
-  font-size: 21px;
+  font-size: 110%;
   line-height: 1.3em;
 
   -webkit-tap-highlight-color: transparent;
@@ -16,13 +16,13 @@ html, body {
 
 img::selection, 
 ::selection { 
-  background: $color-selection; 
-  color: mix($color-selection, $color-light, 20);
+  // background: $color-selection; 
+  // color: mix($color-selection, $color-light, 20);
 }
 
 em, cite { font-style: italic; }
 strong { font-weight: bold; }
-small { font-size: 16px; font-weight: 500; }
+small { font-size: 85%; font-weight: 500; }
 
 #{$type-headers} {
   font-family: $fontstack-sans;
@@ -30,7 +30,7 @@ small { font-size: 16px; font-weight: 500; }
 
 a {
   text-decoration: underline;
-  color: darken($color-purple, 10);
+  color: darken($color-dark, 10);
 }
 
 * {

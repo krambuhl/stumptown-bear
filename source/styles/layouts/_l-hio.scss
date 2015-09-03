@@ -1,0 +1,15 @@
+.l-hio {
+  // @include meta("module: layout-hio");
+  margin-top: $size-space * 2 !important;
+  
+  img {
+    width: 100%;
+    margin: $size-space * 2 0; 
+  }
+  
+  .heading {    
+    & + .heading {
+      margin-top: $size-space;
+    }
+  }
+}

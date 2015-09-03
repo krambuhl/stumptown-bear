@@ -1,12 +1,12 @@
-@include module(strata) {
+.strata {
   margin: auto;
-  max-width: $size-small;
-  padding: $size-spacing * 2;
+  max-width: $size-medium;
+  padding: $size-space * 2;
   
   transition-property: padding;
   
-  & + .strata {
-    margin-top: $size-spacing * 2;
+  & + & {
+    margin-top: $size-space * 2;
   }
 
   & > .wrapper {
@@ -15,15 +15,15 @@
   }
 
   &.m-padded {
-    padding: $size-spacing * 4 $size-spacing * 2;
+    padding: $size-space * 4 $size-space * 2;
   }
 
   &.m-header { 
-    padding: $size-spacing * 4 $size-spacing * 2;
+    padding: $size-space * 4 $size-space * 2;
     
     .wrapper {
       & > * + * {
-        margin-top: $size-spacing;
+        margin-top: $size-space;
       }
     }
   }
@@ -48,15 +48,10 @@
     color: $color-light; 
   }
 
-  @include respond($size-small, $size-medium) {
-    &.m-padded {
-      padding: $size-spacing * 2;
-    }
-  }
 
   @include respond($size-large) {
     &.m-padded {
-      padding: $size-spacing * 6 $size-spacing * 2;
+      padding: $size-space * 6 $size-space * 2;
     }
   }
 
@@ -64,7 +59,7 @@
     max-width: $size-large;
   }
   
-  @include respond(0, $size-small) {
+  @include respond(0, $size-medium) {
     @include heading--small;
   }
 }

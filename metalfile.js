@@ -18,6 +18,7 @@ var metadata = require('metalsmith-metadata');
 var extlinks = require('metalsmith-external-links');
 
 var _ = require('lodash');
+var datagrab = require('date-grab');
 
 module.exports = [
   swigHelpers({
@@ -57,6 +58,18 @@ module.exports = [
   markdown(),
   headings(),
 
+  function(f,m,d) {
+    Object.keys(f).forEach(function(filename) {
+      var data = f[filename];
+      var date = datagrab(['month', 'year'])(data.date);
+
+      data.month = date.month;
+      data.year = date.year;
+    });
+
+    d();
+  },
+
   fileMetadata([{
     pattern: '**/*', 
     metadata: {
@@ -70,7 +83,13 @@ module.exports = [
       layout: 'post.swig',
       type: 'post'
     }
-  },  {
+  }, {
+    pattern: 'blog/index.html', 
+    metadata: {
+      parent: 'index.html',
+      layout: 'simple.swig'
+    }
+  }, {
     pattern: 'code/**/*', 
     metadata: {
       parent: 'code/index.html',
@@ -111,33 +130,21 @@ module.exports = [
   }),
 
   collections({
-    posts: 'blog/**/*',
+    posts: 'blog/posts/**/*',
     portfolio: 'portfolio/**/*',
     code: 'code/**/*'
   }),
+
+  // rewrite({
+  //   pattern: 'blog/posts/**/*.html',
+  //   filename: 'blog/{path.base}'
+  // }),
 
   metadata({
     codes: 'data/packages.json'
   }),
 
-  // function(f,m,d) {
-  //   console.log(m.metadata().codes)
-  //   d();
-  // },
-
   pagination({
-    'collections.posts': {
-      perPage: 10,
-      layout: 'archive.swig',
-      first: 'blog/index.html',
-      path: 'blog/page/:num.html',
-      pageMetadata: {
-        title: 'Blog',
-        perPage: 10,
-        parent: 'index.html'
-      }
-    },
-
     'collections.portfolio': {
       perPage: 1000,
       layout: 'archive.swig',

@@ -12,6 +12,7 @@ h1.heading { font-size: 225%; }
 h2.heading { font-size: 200%; }
 h3.heading { font-size: 175%; }
 h4.heading { font-size: 150%; }
+h5.heading { font-size: 120%; }
 
 @mixin heading--small {
   .heading { font-size: 125%; }
@@ -20,6 +21,7 @@ h4.heading { font-size: 150%; }
   h2.heading { font-size: 170%; }
   h3.heading { font-size: 140%; }
   h4.heading { font-size: 120%; }
+  h5.heading { font-size: 105%; }
 }
 
 @mixin heading--large {
@@ -29,4 +31,5 @@ h4.heading { font-size: 150%; }
   h2.heading { font-size: 180%; }
   h3.heading { font-size: 160%; }
   h4.heading { font-size: 140%; }
+  h5.heading { font-size: 120%; }
 }

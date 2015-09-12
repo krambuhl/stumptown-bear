@@ -22,6 +22,7 @@
     "autoprefixer-core": "^5.2.1",
     "babelify": "^6.1.2",
     "browserify": "^10.2.4",
+    "date-grab": "^0.1.1",
     "del": "^1.2.0",
     "gulp": "^3.9.0",
     "gulp-consolidate": "^0.1.2",
@@ -63,11 +64,9 @@
     "extend": "^3.0.0",
     "functional-predicates": "^0.1.0",
     "statum": "^0.1.2",
-    
     "dom-delegate": "^2.0.3",
     "get-object-path": "0.0.2",
     "lodash.pick": "^3.1.0",
     "simple-extend": "^0.1.0"
-    
   }
 }

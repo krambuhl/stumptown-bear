@@ -9,7 +9,7 @@
       <ul class="menu-list" role="menu">
         <li role="menuitem"><a class="menu-link m-portfolio" href="/#portfolio">Portfolio</a></li>
         <li role="menuitem"><a class="menu-link m-code" href="/#code">Code</a></li>
-        <li role="menuitem"><a class="menu-link m-blog" href="/blog">Blog</a></li>
+        {# <li role="menuitem"><a class="menu-link m-blog" href="/blog">Blog</a></li> #}
         <li role="menuitem"><a class="menu-link m-contact" href="/#contact">Contact</a></li>
       </ul>
     </nav>

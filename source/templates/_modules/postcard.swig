@@ -1,6 +1,6 @@
 <article class="card" data-href="{{ path.href }}{{ path.name }}">
   <header class="card-header">
-    <h3 class="heading"><a href="{{ path.href }}{{ path.name }}">{{ title }}</a></h3>
+    <h3 class="heading">{{ title }}</h3>
     {% if collab %}
     <p class="card-meta">
       <span>{{ date }}</span> with   

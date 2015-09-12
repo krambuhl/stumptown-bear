@@ -1,5 +1,5 @@
 .container {
-  padding-top: $size-space * 5;
+  padding-top: $size-space * 4.5;
   
   @include respond-below(400px) { padding-top: 0; }
 }

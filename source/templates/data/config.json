@@ -10,7 +10,8 @@
   "metalsmith-hierarchy",
   "metalsmith-relativity",
   "metalsmith-rewrite",
-  "mutators",
   "object-contains",
-  "statum"
+  "mutators",
+  "statum",
+  "custom-event-polyfill"
 ]
